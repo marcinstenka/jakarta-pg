@@ -8,9 +8,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
-
-
 import stenka.marcin.heroes.fraction.entity.Fraction;
+import stenka.marcin.heroes.user.entity.User;
+
+import java.io.Serializable;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -20,10 +22,14 @@ import stenka.marcin.heroes.fraction.entity.Fraction;
 @ToString(callSuper = true)
 @EqualsAndHashCode()
 
-public class Unit {
+public class Unit implements Serializable {
+    private UUID id;
+
     private String name;
 
     private int quantity;
 
     private Fraction fraction;
+
+    private User user;
 }

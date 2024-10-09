@@ -3,6 +3,7 @@ package stenka.marcin.heroes.dataStore;
 import lombok.extern.java.Log;
 import stenka.marcin.heroes.serialization.CloningUtility;
 import stenka.marcin.heroes.user.entity.User;
+import stenka.marcin.heroes.unit.entity.Unit;
 
 import java.util.HashSet;
 import java.util.List;
@@ -14,6 +15,8 @@ public class DataStore {
 
     private final Set<User> users = new HashSet<>();
 
+    private final Set<Unit> units = new HashSet<>();
+
     private final CloningUtility cloningUtility;
 
     public DataStore(CloningUtility cloningUtility) {
@@ -22,6 +25,12 @@ public class DataStore {
 
     public synchronized List<User> findAllUsers() {
         return users.stream()
+                .map(cloningUtility::clone)
+                .collect(Collectors.toList());
+    }
+
+    public synchronized List<Unit> findAllUnits() {
+        return units.stream()
                 .map(cloningUtility::clone)
                 .collect(Collectors.toList());
     }
