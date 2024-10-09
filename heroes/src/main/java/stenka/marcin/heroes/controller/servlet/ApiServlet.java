@@ -8,6 +8,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import stenka.marcin.heroes.controller.servlet.exception.BadRequestException;
+import stenka.marcin.heroes.controller.servlet.exception.NotFoundException;
 import stenka.marcin.heroes.unit.controller.api.UnitController;
 import stenka.marcin.heroes.user.controller.api.UserController;
 import stenka.marcin.heroes.user.dto.PatchUserRequest;
@@ -66,17 +68,29 @@ public class ApiServlet extends HttpServlet {
         if (Paths.API.equals(servletPath)) {
             if (path.matches(Patterns.USERS.pattern())) {
                 response.setContentType("application/json");
-                response.getWriter().write(jsonb.toJson(userController.getUsers()));
+                try {
+                    response.getWriter().write(jsonb.toJson(userController.getUsers()));
+                } catch (NotFoundException ex) {
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                }
                 return;
             } else if (path.matches(Patterns.USER.pattern())) {
                 response.setContentType("application/json");
                 UUID uuid = extractUuid(Patterns.USER, path);
-                response.getWriter().write(jsonb.toJson(userController.getUser(uuid)));
+                try {
+                    response.getWriter().write(jsonb.toJson(userController.getUser(uuid)));
+                } catch (NotFoundException ex) {
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                }
                 return;
             } else if (path.matches(Patterns.USER_UNITS.pattern())) {
                 response.setContentType("application/json");
                 UUID uuid = extractUuid(Patterns.USER_UNITS, path);
-                response.getWriter().write(jsonb.toJson(unitController.getUserUnits(uuid)));
+                try {
+                    response.getWriter().write(jsonb.toJson(unitController.getUserUnits(uuid)));
+                } catch (NotFoundException ex) {
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                }
                 return;
             }
         }
@@ -91,8 +105,13 @@ public class ApiServlet extends HttpServlet {
         if (Paths.API.equals(servletPath)) {
             if (path.matches(Patterns.USER.pattern())) {
                 UUID uuid = extractUuid(Patterns.USER, path);
-                userController.putUser(uuid, jsonb.fromJson(request.getReader(), PutUserRequest.class));
-                response.addHeader("Location", createUrl(request, Paths.API, "users", uuid.toString()));
+                try {
+                    userController.putUser(uuid, jsonb.fromJson(request.getReader(), PutUserRequest.class));
+                    response.addHeader("Location", createUrl(request, Paths.API, "users", uuid.toString()));
+                } catch (BadRequestException ex) {
+                    response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+                }
+
                 return;
             }
         }
@@ -107,7 +126,11 @@ public class ApiServlet extends HttpServlet {
         if (Paths.API.equals(servletPath)) {
             if (path.matches(Patterns.USER.pattern())) {
                 UUID uuid = extractUuid(Patterns.USER, path);
-                userController.deleteUser(uuid);
+                try {
+                    userController.deleteUser(uuid);
+                } catch (NotFoundException ex) {
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                }
                 return;
             }
         }
@@ -121,7 +144,11 @@ public class ApiServlet extends HttpServlet {
         if (Paths.API.equals(servletPath)) {
             if (path.matches(Patterns.USER.pattern())) {
                 UUID uuid = extractUuid(Patterns.USER, path);
-                userController.patchUser(uuid, jsonb.fromJson(request.getReader(), PatchUserRequest.class));
+                try {
+                    userController.patchUser(uuid, jsonb.fromJson(request.getReader(), PatchUserRequest.class));
+                } catch (NotFoundException ex) {
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                }
                 return;
             }
         }

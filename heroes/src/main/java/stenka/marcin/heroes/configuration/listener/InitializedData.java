@@ -61,7 +61,7 @@ public class InitializedData implements ServletContextListener {
                 .accountCreation(LocalDate.of(2022, Month.MAY, 30))
                 .build();
         User piotrek = User.builder()
-                .id(UUID.fromString("d9f823f4-f057-4f18-aeb7-b6654bc3d312"))
+                .id(UUID.fromString("d9f823f4-f057-4f18-aeb7-b6654bc3d313"))
                 .name("Piotrek")
                 .accountCreation(LocalDate.of(2024, Month.SEPTEMBER, 14))
                 .build();
