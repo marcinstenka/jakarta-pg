@@ -18,8 +18,8 @@ public class CreateControllers implements ServletContextListener {
         UnitService unitService = (UnitService) event.getServletContext().getAttribute("unitService");
 
         event.getServletContext().setAttribute("userController", new UserSimpleController(
-                userService,
-                new DtoFunctionFactory()
+                new DtoFunctionFactory(),
+                userService
         ));
 
         event.getServletContext().setAttribute("unitController", new UnitSimpleController(

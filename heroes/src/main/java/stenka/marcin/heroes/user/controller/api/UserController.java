@@ -5,6 +5,7 @@ import stenka.marcin.heroes.user.dto.GetUsersResponse;
 import stenka.marcin.heroes.user.dto.PatchUserRequest;
 import stenka.marcin.heroes.user.dto.PutUserRequest;
 
+import java.io.InputStream;
 import java.util.UUID;
 
 public interface UserController {
@@ -17,4 +18,8 @@ public interface UserController {
     void patchUser(UUID id, PatchUserRequest request);
 
     void deleteUser(UUID id);
+
+    byte[] getUserAvatar(UUID id);
+
+    void putUserAvatar(UUID id, InputStream avatar, String pathToAvatars);
 }

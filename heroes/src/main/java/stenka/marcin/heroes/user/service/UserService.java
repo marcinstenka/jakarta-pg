@@ -3,6 +3,7 @@ package stenka.marcin.heroes.user.service;
 import stenka.marcin.heroes.user.entity.User;
 import stenka.marcin.heroes.user.repository.api.UserRepository;
 
+import java.io.InputStream;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -37,4 +38,5 @@ public class UserService {
     public void delete(UUID id) {
         userRepository.delete(userRepository.find(id).orElseThrow());
     }
+
 }

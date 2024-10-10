@@ -17,4 +17,11 @@
 		<listener-class>stenka.marcin.heroes.configuration.listener.CreateControllers</listener-class>
 	</listener>
 
+	<context-param>
+		<description>Location to store uploaded avatars</description>
+		<param-name>avatars-upload</param-name>
+		<param-value>
+			E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\avatars
+		</param-value>
+	</context-param>
 </web-app>

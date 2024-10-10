@@ -7,9 +7,15 @@ import stenka.marcin.heroes.user.dto.GetUserResponse;
 import stenka.marcin.heroes.user.dto.GetUsersResponse;
 import stenka.marcin.heroes.user.dto.PatchUserRequest;
 import stenka.marcin.heroes.user.dto.PutUserRequest;
+import stenka.marcin.heroes.user.entity.User;
 import stenka.marcin.heroes.user.service.UserService;
 import stenka.marcin.heroes.controller.servlet.exception.NotFoundException;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.UUID;
 
 public class UserSimpleController implements UserController {
@@ -18,7 +24,7 @@ public class UserSimpleController implements UserController {
 
     private final DtoFunctionFactory factory;
 
-    public UserSimpleController(UserService userService, DtoFunctionFactory factory) {
+    public UserSimpleController(DtoFunctionFactory factory, UserService userService) {
         this.factory = factory;
         this.userService = userService;
     }
@@ -61,5 +67,26 @@ public class UserSimpleController implements UserController {
                     throw new NotFoundException();
                 }
         );
+    }
+
+    @Override
+    public byte[] getUserAvatar(UUID id) {
+        Path pathToAvatar = Paths.get(userService.find(id).map(User::getAvatarPath).orElseThrow(NotFoundException::new));
+        try {
+            return Files.readAllBytes(pathToAvatar);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void putUserAvatar(UUID id, InputStream avatar, String pathToAvatars) {
+        userService.find(id).ifPresentOrElse(
+                entity -> ,// Tutaj zrobic zabawę na plikach
+                () -> {
+                    throw new NotFoundException();
+                }
+        );
+
     }
 }

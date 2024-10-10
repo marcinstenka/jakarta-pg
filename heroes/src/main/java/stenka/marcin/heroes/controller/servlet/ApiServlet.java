@@ -29,6 +29,8 @@ public class ApiServlet extends HttpServlet {
 
     private UnitController unitController;
 
+    private String avatarPath;
+
     public static final class Paths {
         public static final String API = "/api";
     }
@@ -41,6 +43,8 @@ public class ApiServlet extends HttpServlet {
         public static final Pattern USERS = Pattern.compile("/users/?");
 
         public static final Pattern USER_UNITS = Pattern.compile("/users/(%s)/units/?".formatted(UUID.pattern()));
+
+        public static final Pattern USER_AVATAR = Pattern.compile("/users/(%s)/avatar".formatted(UUID.pattern()));
     }
 
     private final Jsonb jsonb = JsonbBuilder.create();
@@ -58,6 +62,7 @@ public class ApiServlet extends HttpServlet {
     public void init() throws ServletException {
         super.init();
         userController = (UserController) getServletContext().getAttribute("userController");
+        avatarPath = (String) getServletContext().getAttribute("avatars-upload");
     }
 
     @SuppressWarnings("RedundantThrows")
@@ -92,6 +97,17 @@ public class ApiServlet extends HttpServlet {
                     response.sendError(HttpServletResponse.SC_NOT_FOUND);
                 }
                 return;
+            } else if (path.matches(Patterns.USER_AVATAR.pattern())) {
+                response.setContentType("image/png");
+                UUID uuid = extractUuid(Patterns.USER_AVATAR, path);
+                try {
+                    byte[] avatar = userController.getUserAvatar(uuid);
+                    response.setContentLength(avatar.length);
+                    response.getOutputStream().write(avatar);
+                } catch (NotFoundException ex) {
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                }
+                return;
             }
         }
         response.sendError(HttpServletResponse.SC_BAD_REQUEST);
@@ -112,6 +128,15 @@ public class ApiServlet extends HttpServlet {
                     response.sendError(HttpServletResponse.SC_BAD_REQUEST);
                 }
 
+                return;
+            } else if (path.matches(Patterns.USER_AVATAR.pattern())) {
+                response.setContentType("image/png");
+                UUID uuid = extractUuid(Patterns.USER_AVATAR, path);
+                try {
+                    userController.putUserAvatar(uuid, request.getPart("avatar").getInputStream(), avatarPath);
+                } catch (NotFoundException ex) {
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                }
                 return;
             }
         }
