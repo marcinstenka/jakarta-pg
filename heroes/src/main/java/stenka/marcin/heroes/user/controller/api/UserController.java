@@ -19,7 +19,7 @@ public interface UserController {
 
     void deleteUser(UUID id);
 
-    byte[] getUserAvatar(UUID id);
+    byte[] getUserAvatar(UUID id, String pathToAvatars);
 
     void putUserAvatar(UUID id, InputStream avatar, String pathToAvatars);
 }

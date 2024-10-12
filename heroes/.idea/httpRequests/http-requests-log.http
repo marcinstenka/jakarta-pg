@@ -1,0 +1,452 @@
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-12T160800.200.png
+
+###
+
+PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
+Content-Type: multipart/form-data; boundary=boundary
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 4124
+
+--boundary
+Content-Disposition: form-data; name="avatar"; filename="sandro.png'
+
+< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\crag-hack.png
+--boundary--
+
+###
+
+PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
+Content-Type: multipart/form-data; boundary=boundary
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 4124
+
+--boundary
+Content-Disposition: form-data; name="avatar"; filename="sandro.png'
+
+< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\crag-hack.png
+--boundary--
+
+###
+
+PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
+Content-Type: multipart/form-data; boundary=boundary
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 4124
+
+--boundary
+Content-Disposition: form-data; name="avatar"; filename="sandro.png'
+
+< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\crag-hack.png
+--boundary--
+
+###
+
+PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d311/avatar
+Content-Type: multipart/form-data; boundary=boundary
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 4122
+
+--boundary
+Content-Disposition: form-data; name="avatar"; filename="sandro.png'
+
+< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\crag-hack.png
+--boundary--
+
+###
+
+PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
+Content-Type: multipart/form-data; boundary=boundary
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 3263
+
+--boundary
+Content-Disposition: form-data; name="avatar"; filename="sandro.png'
+
+< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\sandro.png
+--boundary--
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-12T155747.200.png
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-12T155730.500.html
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-12T155519.500.html
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-12T155340.500.html
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-12T155314.500.html
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-12T155258-1.500.html
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-12T155258.500.html
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-12T155257.500.html
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-12T155256.500.html
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-12T155255.500.html
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-12T155252.500.html
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-12T155150.500.html
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-12T155133.500.html
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-12T155055.500.html
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-12T155001.500.html
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-12T154926.500.html
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-12T154913.500.html
+
+###
+
+PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
+Content-Type: multipart/form-data; boundary=boundary
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 3263
+
+--boundary
+Content-Disposition: form-data; name="avatar"; filename="sandro.png'
+
+< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\sandro.png
+--boundary--
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d315
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-12T154823.404.html
+
+###
+
+PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d11/avatar
+Content-Type: multipart/form-data; boundary=boundary
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 3263
+
+--boundary
+Content-Disposition: form-data; name="avatar"; filename="sandro.png'
+
+< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\sandro.png
+--boundary--
+
+<> 2024-10-12T154807.400.html
+
+###
+
+PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d11/avatar
+Content-Type: multipart/form-data; boundary=boundary
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 3263
+
+--boundary
+Content-Disposition: form-data; name="avatar"; filename="sandro.png'
+
+< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\sandro.png
+--boundary--
+
+<> 2024-10-12T154751.400.html
+
+###
+
+PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d11/avatar
+Content-Type: multipart/form-data; boundary=boundary
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 3263
+
+--boundary
+Content-Disposition: form-data; name="avatar"; filename="sandro.png'
+
+< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\sandro.png
+--boundary--
+
+<> 2024-10-12T154712.400.html
+
+###
+
+PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d11/avatar
+Content-Type: multipart/form-data; boundary=boundary
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 3263
+
+--boundary
+Content-Disposition: form-data; name="avatar"; filename="sandro.png'
+
+< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\sandro.png
+--boundary--
+
+<> 2024-10-12T154711.400.html
+
+###
+
+PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d11/avatar
+Content-Type: multipart/form-data; boundary=boundary
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 3261
+
+--boundary
+Content-Disposition: form-data; name="avatar"; filename="sandro.png'
+
+< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\sandro.png
+--boundary--
+
+<> 2024-10-12T154707.400.html
+
+###
+
+PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d11/avatar
+Content-Type: multipart/form-data; boundary=boundary
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 3263
+
+--boundary
+Content-Disposition: form-data; name="avatar"; filename="sandro.png'
+
+< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\sandro.png
+--boundary--
+
+<> 2024-10-12T154641.400.html
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d11/avatar
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-12T154247.400.html
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d11/avatar
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-12T154246.400.html
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d10/avatar
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-12T154224.400.html
+
+###
+
+GET http://localhost:9080/heroes/api/users
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 322
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310
+
+# Get single user. Not existing, created later.
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d315
+
+# Get single user avatar
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d10/avatar
+
+<> 2024-10-12T154147.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/users
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 322
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310
+
+# Get single user. Not existing, created later.
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d315
+
+# Get single user avatar
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d10/avatar
+
+<> 2024-10-12T154135.200.json
+
+###
+

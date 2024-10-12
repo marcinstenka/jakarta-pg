@@ -18,8 +18,6 @@ public class DataStore {
 
     private final Set<Unit> units = new HashSet<>();
 
-    private final Set<Avatar> avatars = new HashSet<>();
-
     private final CloningUtility cloningUtility;
 
     public DataStore(CloningUtility cloningUtility) {

@@ -1,0 +1,36 @@
+# Get all users
+
+GET http://localhost:9080/heroes/api/users
+
+###
+
+# Get single user
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310
+
+###
+
+# Get single user. Not existing, created later.
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d315
+
+###
+
+# Get single user avatar
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
+
+###
+
+# Create character portrait.
+
+PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="avatar"; filename="sandro.png'
+
+< src/main/resources/stenka/marcin/heroes/configuration/avatar/crag-hack.png
+--boundary--
+
+###

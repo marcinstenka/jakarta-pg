@@ -62,7 +62,8 @@ public class ApiServlet extends HttpServlet {
     public void init() throws ServletException {
         super.init();
         userController = (UserController) getServletContext().getAttribute("userController");
-        avatarPath = (String) getServletContext().getAttribute("avatars-upload");
+        avatarPath = (String) getServletContext().getInitParameter("avatars-upload");
+        System.out.println(avatarPath);
     }
 
     @SuppressWarnings("RedundantThrows")
@@ -101,7 +102,7 @@ public class ApiServlet extends HttpServlet {
                 response.setContentType("image/png");
                 UUID uuid = extractUuid(Patterns.USER_AVATAR, path);
                 try {
-                    byte[] avatar = userController.getUserAvatar(uuid);
+                    byte[] avatar = userController.getUserAvatar(uuid, avatarPath);
                     response.setContentLength(avatar.length);
                     response.getOutputStream().write(avatar);
                 } catch (NotFoundException ex) {

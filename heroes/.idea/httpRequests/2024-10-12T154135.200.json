@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "id": "d9f823f4-f057-4f18-aeb7-b6654bc3d310",
+      "name": "Marcin"
+    },
+    {
+      "id": "d9f823f4-f057-4f18-aeb7-b6654bc3d312",
+      "name": "Lukasz"
+    },
+    {
+      "id": "d9f823f4-f057-4f18-aeb7-b6654bc3d311",
+      "name": "Oskar"
+    },
+    {
+      "id": "d9f823f4-f057-4f18-aeb7-b6654bc3d313",
+      "name": "Piotrek"
+    }
+  ]
+}

@@ -70,8 +70,8 @@ public class UserSimpleController implements UserController {
     }
 
     @Override
-    public byte[] getUserAvatar(UUID id) {
-        Path pathToAvatar = Paths.get(userService.find(id).map(User::getAvatarPath).orElseThrow(NotFoundException::new));
+    public byte[] getUserAvatar(UUID id, String pathToAvatars) {
+        Path pathToAvatar = Paths.get(pathToAvatars, userService.find(id).map(user -> user.getId().toString()).orElseThrow(NotFoundException::new) + ".png");
         try {
             return Files.readAllBytes(pathToAvatar);
         } catch (IOException e) {
@@ -82,7 +82,7 @@ public class UserSimpleController implements UserController {
     @Override
     public void putUserAvatar(UUID id, InputStream avatar, String pathToAvatars) {
         userService.find(id).ifPresentOrElse(
-                entity -> ,// Tutaj zrobic zabawę na plikach
+                user -> userService.updateAvatar(id, avatar, pathToAvatars),
                 () -> {
                     throw new NotFoundException();
                 }
