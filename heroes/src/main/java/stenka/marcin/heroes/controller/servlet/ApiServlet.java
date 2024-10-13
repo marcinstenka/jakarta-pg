@@ -107,7 +107,7 @@ public class ApiServlet extends HttpServlet {
                     response.setContentLength(avatar.length);
                     response.getOutputStream().write(avatar);
                 } catch (NotFoundException ex) {
-                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND, ex.getMessage());
                 }
                 return;
             }
@@ -140,7 +140,7 @@ public class ApiServlet extends HttpServlet {
                 } catch (AlreadyExistsException ex) {
                     response.sendError(HttpServletResponse.SC_CONFLICT, ex.getMessage());
                 } catch (NotFoundException ex) {
-                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND, ex.getMessage());
                 }
                 return;
             }
@@ -158,6 +158,7 @@ public class ApiServlet extends HttpServlet {
                 UUID uuid = extractUuid(Patterns.USER, path);
                 try {
                     userController.deleteUser(uuid);
+                    response.setStatus(HttpServletResponse.SC_NO_CONTENT);
                 } catch (NotFoundException ex) {
                     response.sendError(HttpServletResponse.SC_NOT_FOUND);
                 }
@@ -166,8 +167,9 @@ public class ApiServlet extends HttpServlet {
                 UUID uuid = extractUuid(Patterns.USER_AVATAR, path);
                 try {
                     userController.deleteUserAvatar(uuid, avatarPath);
+                    response.setStatus(HttpServletResponse.SC_NO_CONTENT);
                 } catch (NotFoundException ex) {
-                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND, ex.getMessage());
                 }
                 return;
             }
@@ -196,7 +198,7 @@ public class ApiServlet extends HttpServlet {
                     userController.patchUserAvatar(uuid, request.getPart("avatar").getInputStream(), avatarPath);
                     response.setStatus(HttpServletResponse.SC_NO_CONTENT);
                 } catch (NotFoundException ex) {
-                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND, ex.getMessage());
                 }
                 return;
             }

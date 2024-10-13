@@ -73,10 +73,16 @@ public class UserSimpleController implements UserController {
 
     @Override
     public byte[] getUserAvatar(UUID id, String pathToAvatars) {
-        Path pathToAvatar = Paths.get(pathToAvatars, userService.find(id).map(user -> user.getId().toString()).orElseThrow(NotFoundException::new) + ".png");
+        Path pathToAvatar = Paths.get(
+                pathToAvatars,
+                userService.find(id)
+                        .map(user -> user.getId().toString())
+                        .orElseThrow(() -> new NotFoundException("User does not exist"))
+                        + ".png"
+        );
         try {
             if (!Files.exists(pathToAvatar)) {
-                throw new NotFoundException();
+                throw new NotFoundException("User avatar does not exist");
             }
             return Files.readAllBytes(pathToAvatar);
         } catch (IOException e) {
@@ -103,7 +109,7 @@ public class UserSimpleController implements UserController {
                     try {
                         Path avatarPath = Paths.get(pathToAvatars, user.getId().toString() + ".png");
                         if (!Files.exists(avatarPath)) {
-                            throw new NotFoundException();
+                            throw new NotFoundException("User avatar does not exist");
                         }
                         Files.delete(avatarPath);
                     } catch (IOException e) {
@@ -111,7 +117,7 @@ public class UserSimpleController implements UserController {
                     }
                 },
                 () -> {
-                    throw new NotFoundException();
+                    throw new NotFoundException("User does not exist");
                 }
         );
     }
@@ -121,7 +127,7 @@ public class UserSimpleController implements UserController {
         userService.find(id).ifPresentOrElse(
                 user -> userService.updateAvatar(id, avatar, pathToAvatars),
                 () -> {
-                    throw new NotFoundException();
+                    throw new NotFoundException("User does not exist");
                 }
         );
     }

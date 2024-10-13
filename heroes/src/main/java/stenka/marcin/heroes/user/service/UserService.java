@@ -42,7 +42,7 @@ public class UserService {
     }
 
     public void delete(UUID id) {
-        userRepository.delete(userRepository.find(id).orElseThrow());
+        userRepository.delete(userRepository.find(id).orElseThrow(NotFoundException::new));
     }
 
     public void createAvatar(UUID id, InputStream avatar, String pathToAvatars) throws AlreadyExistsException {
@@ -67,7 +67,7 @@ public class UserService {
                 if (Files.exists(existingPath)) {
                     Files.copy(avatar, existingPath, StandardCopyOption.REPLACE_EXISTING);
                 } else {
-                    throw new NotFoundException();
+                    throw new NotFoundException("User avatar not found, to create avatar use PUT method");
                 }
             } catch (IOException ex) {
                 throw new IllegalStateException(ex);
