@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import stenka.marcin.heroes.controller.servlet.exception.AlreadyExistsException;
 import stenka.marcin.heroes.controller.servlet.exception.BadRequestException;
 import stenka.marcin.heroes.controller.servlet.exception.NotFoundException;
 import stenka.marcin.heroes.unit.controller.api.UnitController;
@@ -99,8 +100,8 @@ public class ApiServlet extends HttpServlet {
                 }
                 return;
             } else if (path.matches(Patterns.USER_AVATAR.pattern())) {
-                response.setContentType("image/png");
                 UUID uuid = extractUuid(Patterns.USER_AVATAR, path);
+                response.setContentType("image/png");
                 try {
                     byte[] avatar = userController.getUserAvatar(uuid, avatarPath);
                     response.setContentLength(avatar.length);
@@ -125,16 +126,19 @@ public class ApiServlet extends HttpServlet {
                 try {
                     userController.putUser(uuid, jsonb.fromJson(request.getReader(), PutUserRequest.class));
                     response.addHeader("Location", createUrl(request, Paths.API, "users", uuid.toString()));
+                    response.setStatus(HttpServletResponse.SC_CREATED);
                 } catch (BadRequestException ex) {
                     response.sendError(HttpServletResponse.SC_BAD_REQUEST);
                 }
-
                 return;
             } else if (path.matches(Patterns.USER_AVATAR.pattern())) {
                 response.setContentType("image/png");
                 UUID uuid = extractUuid(Patterns.USER_AVATAR, path);
                 try {
                     userController.putUserAvatar(uuid, request.getPart("avatar").getInputStream(), avatarPath);
+                    response.setStatus(HttpServletResponse.SC_CREATED);
+                } catch (AlreadyExistsException ex) {
+                    response.sendError(HttpServletResponse.SC_CONFLICT, ex.getMessage());
                 } catch (NotFoundException ex) {
                     response.sendError(HttpServletResponse.SC_NOT_FOUND);
                 }
@@ -158,6 +162,14 @@ public class ApiServlet extends HttpServlet {
                     response.sendError(HttpServletResponse.SC_NOT_FOUND);
                 }
                 return;
+            } else if (path.matches(Patterns.USER_AVATAR.pattern())) {
+                UUID uuid = extractUuid(Patterns.USER_AVATAR, path);
+                try {
+                    userController.deleteUserAvatar(uuid, avatarPath);
+                } catch (NotFoundException ex) {
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                }
+                return;
             }
         }
         response.sendError(HttpServletResponse.SC_BAD_REQUEST);
@@ -172,6 +184,17 @@ public class ApiServlet extends HttpServlet {
                 UUID uuid = extractUuid(Patterns.USER, path);
                 try {
                     userController.patchUser(uuid, jsonb.fromJson(request.getReader(), PatchUserRequest.class));
+                    response.setStatus(HttpServletResponse.SC_NO_CONTENT);
+                } catch (NotFoundException ex) {
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                }
+                return;
+            } else if (path.matches(Patterns.USER_AVATAR.pattern())) {
+                response.setContentType("image/png");
+                UUID uuid = extractUuid(Patterns.USER_AVATAR, path);
+                try {
+                    userController.patchUserAvatar(uuid, request.getPart("avatar").getInputStream(), avatarPath);
+                    response.setStatus(HttpServletResponse.SC_NO_CONTENT);
                 } catch (NotFoundException ex) {
                     response.sendError(HttpServletResponse.SC_NOT_FOUND);
                 }

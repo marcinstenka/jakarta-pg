@@ -30,6 +30,4 @@ public class User implements Serializable {
     private List<Unit> units;
 
     private LocalDate accountCreation;
-
-    private String avatarPath;
 }

@@ -1,5 +1,7 @@
 package stenka.marcin.heroes.user.service;
 
+import stenka.marcin.heroes.controller.servlet.exception.AlreadyExistsException;
+import stenka.marcin.heroes.controller.servlet.exception.NotFoundException;
 import stenka.marcin.heroes.user.entity.User;
 import stenka.marcin.heroes.user.repository.api.UserRepository;
 
@@ -43,15 +45,33 @@ public class UserService {
         userRepository.delete(userRepository.find(id).orElseThrow());
     }
 
-    public void updateAvatar(UUID id, InputStream avatar, String pathToAvatars) {
+    public void createAvatar(UUID id, InputStream avatar, String pathToAvatars) throws AlreadyExistsException {
         userRepository.find(id).ifPresent(user -> {
             try {
-                Path destinationPath = Path.of(pathToAvatars, id.toString()+ ".png");
-                Files.copy(avatar, destinationPath, StandardCopyOption.REPLACE_EXISTING);
+                Path destinationPath = Path.of(pathToAvatars, id.toString() + ".png");
+                if (Files.exists(destinationPath)) {
+                    throw new AlreadyExistsException("Avatar already exists, to update avatar use PATCH method");
+                }
+                Files.copy(avatar, destinationPath);
             } catch (IOException ex) {
                 throw new IllegalStateException(ex);
             }
+        });
 
+    }
+
+    public void updateAvatar(UUID id, InputStream avatar, String pathToAvatars) {
+        userRepository.find(id).ifPresent(user -> {
+            try {
+                Path existingPath = Path.of(pathToAvatars, id.toString() + ".png");
+                if (Files.exists(existingPath)) {
+                    Files.copy(avatar, existingPath, StandardCopyOption.REPLACE_EXISTING);
+                } else {
+                    throw new NotFoundException();
+                }
+            } catch (IOException ex) {
+                throw new IllegalStateException(ex);
+            }
         });
 
     }

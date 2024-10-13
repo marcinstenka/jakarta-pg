@@ -22,15 +22,34 @@ GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/
 
 ###
 
-# Create character portrait.
+# Create user avatar.
 
 PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
 Content-Type: multipart/form-data; boundary=boundary
 
 --boundary
-Content-Disposition: form-data; name="avatar"; filename="sandro.png'
+Content-Disposition: form-data; name="avatar"; filename="crag-hack.png"
 
 < src/main/resources/stenka/marcin/heroes/configuration/avatar/crag-hack.png
+--boundary--
+
+###
+
+# Delete user avatar
+
+DELETE http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
+
+###
+
+# Update user avatar.
+
+PATCH http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="avatar"; filename="solmyr.png"
+
+< src/main/resources/stenka/marcin/heroes/configuration/avatar/solmyr.png
 --boundary--
 
 ###

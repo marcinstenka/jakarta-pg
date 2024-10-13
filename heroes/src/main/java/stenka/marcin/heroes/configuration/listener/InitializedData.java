@@ -49,9 +49,8 @@ public class InitializedData implements ServletContextListener {
                 .id(UUID.fromString("d9f823f4-f057-4f18-aeb7-b6654bc3d310"))
                 .name("Marcin")
                 .accountCreation(LocalDate.of(2020, Month.JANUARY, 8))
-                .avatarPath("E:\\XXX\\Studia\\SEMESTR_VII\\NiAJEE\\heroes\\avatars\\crag-hack.png")
                 .build();
-        //"heroes/src/main/resources/stenka/marcin/heroes/configuration/avatar/crag-hack.png"
+
         User oskar = User.builder()
                 .id(UUID.fromString("d9f823f4-f057-4f18-aeb7-b6654bc3d311"))
                 .name("Oskar")

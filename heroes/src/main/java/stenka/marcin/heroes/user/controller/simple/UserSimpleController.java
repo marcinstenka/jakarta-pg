@@ -1,6 +1,7 @@
 package stenka.marcin.heroes.user.controller.simple;
 
 import stenka.marcin.heroes.component.DtoFunctionFactory;
+import stenka.marcin.heroes.controller.servlet.exception.AlreadyExistsException;
 import stenka.marcin.heroes.controller.servlet.exception.BadRequestException;
 import stenka.marcin.heroes.user.controller.api.UserController;
 import stenka.marcin.heroes.user.dto.GetUserResponse;
@@ -11,6 +12,7 @@ import stenka.marcin.heroes.user.entity.User;
 import stenka.marcin.heroes.user.service.UserService;
 import stenka.marcin.heroes.controller.servlet.exception.NotFoundException;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -73,6 +75,9 @@ public class UserSimpleController implements UserController {
     public byte[] getUserAvatar(UUID id, String pathToAvatars) {
         Path pathToAvatar = Paths.get(pathToAvatars, userService.find(id).map(user -> user.getId().toString()).orElseThrow(NotFoundException::new) + ".png");
         try {
+            if (!Files.exists(pathToAvatar)) {
+                throw new NotFoundException();
+            }
             return Files.readAllBytes(pathToAvatar);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -82,11 +87,43 @@ public class UserSimpleController implements UserController {
     @Override
     public void putUserAvatar(UUID id, InputStream avatar, String pathToAvatars) {
         userService.find(id).ifPresentOrElse(
+                user -> {
+                    userService.createAvatar(id, avatar, pathToAvatars);
+                },
+                () -> {
+                    throw new NotFoundException();
+                }
+        );
+    }
+
+    @Override
+    public void deleteUserAvatar(UUID id, String pathToAvatars) {
+        userService.find(id).ifPresentOrElse(
+                user -> {
+                    try {
+                        Path avatarPath = Paths.get(pathToAvatars, user.getId().toString() + ".png");
+                        if (!Files.exists(avatarPath)) {
+                            throw new NotFoundException();
+                        }
+                        Files.delete(avatarPath);
+                    } catch (IOException e) {
+                        throw new NotFoundException(e);
+                    }
+                },
+                () -> {
+                    throw new NotFoundException();
+                }
+        );
+    }
+
+    @Override
+    public void patchUserAvatar(UUID id, InputStream avatar, String pathToAvatars) {
+        userService.find(id).ifPresentOrElse(
                 user -> userService.updateAvatar(id, avatar, pathToAvatars),
                 () -> {
                     throw new NotFoundException();
                 }
         );
-
     }
+
 }

@@ -22,4 +22,8 @@ public interface UserController {
     byte[] getUserAvatar(UUID id, String pathToAvatars);
 
     void putUserAvatar(UUID id, InputStream avatar, String pathToAvatars);
+
+    void deleteUserAvatar(UUID id, String pathToAvatars);
+
+    void patchUserAvatar(UUID id, InputStream avatar, String pathToAvatars);
 }
