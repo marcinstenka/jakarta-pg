@@ -9,5 +9,4 @@ public interface UnitController {
 
     GetUnitsResponse getUnits();
 
-    GetUnit
 }

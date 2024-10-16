@@ -7,7 +7,7 @@ import stenka.marcin.heroes.user.entity.User;
 import java.util.List;
 import java.util.UUID;
 
-public interface UnitRepository extends Repository<Character, UUID> {
+public interface UnitRepository extends Repository<Unit, UUID> {
 
     List<Unit> findAllByUser(User user);
 }

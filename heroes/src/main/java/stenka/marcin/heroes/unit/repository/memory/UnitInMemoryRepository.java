@@ -18,35 +18,36 @@ public class UnitInMemoryRepository implements UnitRepository {
         this.store = store;
     }
 
+
+    @Override
+    public Optional<Unit> find(UUID id) {
+        return store.findAllUnits().stream().filter(unit -> id.equals(unit.getId())).findFirst();
+    }
+
+    @Override
+    public List<Unit> findAll() {
+        return store.findAllUnits();
+    }
+
+    @Override
+    public void create(Unit entity) {
+        store.createUnit(entity);
+    }
+
+    @Override
+    public void delete(Unit entity) {
+        store.deleteUnit(entity.getId());
+    }
+
+    @Override
+    public void update(Unit entity) {
+        store.updateUnit(entity);
+    }
+
     @Override
     public List<Unit> findAllByUser(User user) {
         return store.findAllUnits().stream()
                 .filter(unit -> user.equals(unit.getUser()))
                 .collect(Collectors.toList());
-    }
-
-    @Override
-    public Optional<Character> find(UUID id) {
-        return Optional.empty();
-    }
-
-    @Override
-    public List<Character> findAll() {
-        return List.of();
-    }
-
-    @Override
-    public void create(Character entity) {
-
-    }
-
-    @Override
-    public void delete(Character entity) {
-
-    }
-
-    @Override
-    public void update(Character entity) {
-
     }
 }
