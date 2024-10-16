@@ -1,4 +1,4 @@
-package stenka.marcin.heroes.fraction.entity;
+package stenka.marcin.heroes.unit.dto;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -9,9 +9,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import stenka.marcin.heroes.unit.entity.Unit;
-
-import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -21,14 +18,12 @@ import java.util.UUID;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @ToString
 @EqualsAndHashCode
-
-public class Fraction {
-    private UUID id;
-
+public class PutUnitRequest {
     private String name;
 
-    private FractionType fractionType;
+    private int quantity;
 
-    private List<Unit> units;
+    private UUID user;
 
+    private UUID fraction;
 }
