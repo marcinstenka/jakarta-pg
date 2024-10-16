@@ -24,14 +24,9 @@ public class DataStore {
         this.cloningUtility = cloningUtility;
     }
 
+    // User entity
     public synchronized List<User> findAllUsers() {
         return users.stream()
-                .map(cloningUtility::clone)
-                .collect(Collectors.toList());
-    }
-
-    public synchronized List<Unit> findAllUnits() {
-        return units.stream()
                 .map(cloningUtility::clone)
                 .collect(Collectors.toList());
     }
@@ -57,5 +52,31 @@ public class DataStore {
         }
     }
 
+    //Unit entity
+    public synchronized List<Unit> findAllUnits() {
+        return units.stream()
+                .map(cloningUtility::clone)
+                .collect(Collectors.toList());
+    }
 
+    public synchronized void createUnit(Unit value) throws IllegalArgumentException {
+        if (units.stream().anyMatch(unit -> unit.getId().equals(value.getId()))) {
+            throw new IllegalArgumentException("The unit id \"%s\" is not unique".formatted(value.getId()));
+        }
+        units.add(cloningUtility.clone(value));
+    }
+
+    public synchronized void updateUnit(Unit value) throws IllegalArgumentException {
+        if (units.removeIf(unit -> unit.getId().equals(value.getId()))) {
+            units.add(cloningUtility.clone(value));
+        } else {
+            throw new IllegalArgumentException("The unit with id \"%s\" does not exist".formatted(value.getId()));
+        }
+    }
+
+    public synchronized void deleteUnit(UUID id) throws IllegalArgumentException {
+        if (!units.removeIf(unit -> unit.getId().equals(id))) {
+            throw new IllegalArgumentException("The unit with id \"%s\" does not exist".formatted(id));
+        }
+    }
 }
