@@ -12,6 +12,8 @@ import stenka.marcin.heroes.controller.servlet.exception.AlreadyExistsException;
 import stenka.marcin.heroes.controller.servlet.exception.BadRequestException;
 import stenka.marcin.heroes.controller.servlet.exception.NotFoundException;
 import stenka.marcin.heroes.unit.controller.api.UnitController;
+import stenka.marcin.heroes.unit.dto.PatchUnitRequest;
+import stenka.marcin.heroes.unit.dto.PutUnitRequest;
 import stenka.marcin.heroes.user.controller.api.UserController;
 import stenka.marcin.heroes.user.dto.PatchUserRequest;
 import stenka.marcin.heroes.user.dto.PutUserRequest;
@@ -43,6 +45,10 @@ public class ApiServlet extends HttpServlet {
 
         public static final Pattern USERS = Pattern.compile("/users/?");
 
+        public static final Pattern UNIT = Pattern.compile("/units/(%s)".formatted(UUID.pattern()));
+
+        public static final Pattern UNITS = Pattern.compile("/units/?");
+
         public static final Pattern USER_UNITS = Pattern.compile("/users/(%s)/units/?".formatted(UUID.pattern()));
 
         public static final Pattern USER_AVATAR = Pattern.compile("/users/(%s)/avatar".formatted(UUID.pattern()));
@@ -63,8 +69,8 @@ public class ApiServlet extends HttpServlet {
     public void init() throws ServletException {
         super.init();
         userController = (UserController) getServletContext().getAttribute("userController");
+        unitController = (UnitController) getServletContext().getAttribute("unitController");
         avatarPath = (String) getServletContext().getInitParameter("avatars-upload");
-        System.out.println(avatarPath);
     }
 
     @SuppressWarnings("RedundantThrows")
@@ -110,6 +116,23 @@ public class ApiServlet extends HttpServlet {
                     response.sendError(HttpServletResponse.SC_NOT_FOUND, ex.getMessage());
                 }
                 return;
+            } else if (path.matches(Patterns.UNITS.pattern())) {
+                response.setContentType("application/json");
+                try {
+                    response.getWriter().write(jsonb.toJson(unitController.getUnits()));
+                } catch (NotFoundException ex) {
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                }
+                return;
+            } else if (path.matches(Patterns.UNIT.pattern())) {
+                response.setContentType("application/json");
+                UUID uuid = extractUuid(Patterns.UNIT, path);
+                try {
+                    response.getWriter().write(jsonb.toJson(unitController.getUnit(uuid)));
+                } catch (NotFoundException ex) {
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                }
+                return;
             }
         }
         response.sendError(HttpServletResponse.SC_BAD_REQUEST);
@@ -143,6 +166,16 @@ public class ApiServlet extends HttpServlet {
                     response.sendError(HttpServletResponse.SC_NOT_FOUND, ex.getMessage());
                 }
                 return;
+            } else if (path.matches(Patterns.UNIT.pattern())) {
+                UUID uuid = extractUuid(Patterns.UNIT, path);
+                try {
+                    unitController.putUnit(uuid, jsonb.fromJson(request.getReader(), PutUnitRequest.class));
+                    response.addHeader("Location", createUrl(request, Paths.API, "units", uuid.toString()));
+                    response.setStatus(HttpServletResponse.SC_CREATED);
+                } catch (BadRequestException ex) {
+                    response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+                }
+                return;
             }
         }
         response.sendError(HttpServletResponse.SC_BAD_REQUEST);
@@ -172,6 +205,15 @@ public class ApiServlet extends HttpServlet {
                     response.sendError(HttpServletResponse.SC_NOT_FOUND, ex.getMessage());
                 }
                 return;
+            } else if (path.matches(Patterns.UNIT.pattern())) {
+                UUID uuid = extractUuid(Patterns.UNIT, path);
+                try {
+                    unitController.deleteUnit(uuid);
+                    response.setStatus(HttpServletResponse.SC_NO_CONTENT);
+                } catch (NotFoundException ex) {
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                }
+                return;
             }
         }
         response.sendError(HttpServletResponse.SC_BAD_REQUEST);
@@ -199,6 +241,15 @@ public class ApiServlet extends HttpServlet {
                     response.setStatus(HttpServletResponse.SC_NO_CONTENT);
                 } catch (NotFoundException ex) {
                     response.sendError(HttpServletResponse.SC_NOT_FOUND, ex.getMessage());
+                }
+                return;
+            } else if (path.matches(Patterns.UNIT.pattern())) {
+                UUID uuid = extractUuid(Patterns.UNIT, path);
+                try {
+                    unitController.patchUnit(uuid, jsonb.fromJson(request.getReader(), PatchUnitRequest.class));
+                    response.setStatus(HttpServletResponse.SC_NO_CONTENT);
+                } catch (NotFoundException ex) {
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
                 }
                 return;
             }

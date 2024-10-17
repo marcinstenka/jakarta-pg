@@ -1,5 +1,6 @@
 package stenka.marcin.heroes.unit.controller.api;
 
+import stenka.marcin.heroes.unit.dto.GetUnitResponse;
 import stenka.marcin.heroes.unit.dto.GetUnitsResponse;
 import stenka.marcin.heroes.unit.dto.PatchUnitRequest;
 import stenka.marcin.heroes.unit.dto.PutUnitRequest;
@@ -10,6 +11,8 @@ public interface UnitController {
     GetUnitsResponse getUserUnits(UUID id);
 
     GetUnitsResponse getUnits();
+
+    GetUnitResponse getUnit(UUID id);
 
     void putUnit(UUID id, PutUnitRequest request);
 

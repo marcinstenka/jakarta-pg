@@ -67,10 +67,18 @@ public class InitializedData implements ServletContextListener {
                 .accountCreation(LocalDate.of(2024, Month.SEPTEMBER, 14))
                 .build();
 
+        dragon.setUser(marcin);
+        archer.setUser(marcin);
+        cavalry.setUser(oskar);
+
         userService.create(marcin);
         userService.create(oskar);
         userService.create(lukasz);
         userService.create(piotrek);
+
+        unitService.create(dragon);
+        unitService.create(archer);
+        unitService.create(cavalry);
 
     }
 

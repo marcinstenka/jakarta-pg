@@ -4,6 +4,7 @@ import stenka.marcin.heroes.component.DtoFunctionFactory;
 import stenka.marcin.heroes.controller.servlet.exception.BadRequestException;
 import stenka.marcin.heroes.controller.servlet.exception.NotFoundException;
 import stenka.marcin.heroes.unit.controller.api.UnitController;
+import stenka.marcin.heroes.unit.dto.GetUnitResponse;
 import stenka.marcin.heroes.unit.dto.GetUnitsResponse;
 import stenka.marcin.heroes.unit.dto.PatchUnitRequest;
 import stenka.marcin.heroes.unit.dto.PutUnitRequest;
@@ -32,6 +33,13 @@ public class UnitSimpleController implements UnitController {
     @Override
     public GetUnitsResponse getUnits() {
         return factory.unitsToResponse().apply(unitService.findAll());
+    }
+
+    @Override
+    public GetUnitResponse getUnit(UUID id) {
+        return unitService.find(id)
+                .map(factory.unitToResponse())
+                .orElseThrow(NotFoundException::new);
     }
 
     @Override

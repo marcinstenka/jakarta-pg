@@ -53,3 +53,21 @@ Content-Disposition: form-data; name="avatar"; filename="solmyr.png"
 --boundary--
 
 ###
+
+# Get all units
+
+GET http://localhost:9080/heroes/api/units
+
+###
+
+# Get single unit
+
+GET http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d320
+
+###
+
+# Get user units
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/units/
+
+###

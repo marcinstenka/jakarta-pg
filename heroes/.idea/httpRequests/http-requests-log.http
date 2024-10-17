@@ -1,3 +1,393 @@
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/units/
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T221517.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d320
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T220913.500.html
+
+###
+
+GET http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d320
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T220744.500.html
+
+###
+
+GET http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d320
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T220638.500.html
+
+###
+
+GET http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d320
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T220637.500.html
+
+###
+
+GET http://localhost:9080/heroes/api/unit/d9f823f4-f057-4f18-aeb7-b6654bc3d320
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T220630.400.html
+
+###
+
+GET http://localhost:9080/heroes/api/unit/d9f823f4-f057-4f18-aeb7-b6654bc3d320
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T220628.400.html
+
+###
+
+GET http://localhost:9080/heroes/api/units
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T220626.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/unit/d9f823f4-f057-4f18-aeb7-b6654bc3d320
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T220625.400.html
+
+###
+
+GET http://localhost:9080/heroes/api/unit/d9f823f4-f057-4f18-aeb7-b6654bc3d320
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T220624.400.html
+
+###
+
+GET http://localhost:9080/heroes/api/unit/d9f823f4-f057-4f18-aeb7-b6654bc3d320
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T220623.400.html
+
+###
+
+GET http://localhost:9080/heroes/api/unit/d9f823f4-f057-4f18-aeb7-b6654bc3d320
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T220622.400.html
+
+###
+
+GET http://localhost:9080/heroes/api/unit/d9f823f4-f057-4f18-aeb7-b6654bc3d320
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T215752.400.html
+
+###
+
+GET http://localhost:9080/heroes/api/units
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T215727.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/users
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T215434.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/users/
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T215430.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/users/'
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T215428.400.html
+
+###
+
+GET http://localhost:9080/heroes/api/users/
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T215426.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/users
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T215421.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/users
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T215420.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/users/,
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T215404.400.html
+
+###
+
+GET http://localhost:9080/heroes/api/users/;
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T215359.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/users/a
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T215355.400.html
+
+###
+
+GET http://localhost:9080/heroes/api/users///
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T215352.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/users//
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T215350.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/users/
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T215346.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/users
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T215342.400.html
+
+###
+
+GET http://localhost:9080/heroes/api/users
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T215334-1.400.html
+
+###
+
+GET http://localhost:9080/heroes/api/users
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T215334.400.html
+
+###
+
+GET http://localhost:9080/heroes/api/users
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T215330.400.html
+
+###
+
+GET http://localhost:9080/heroes/api/users
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T215328.400.html
+
+###
+
+GET http://localhost:9080/heroes/api/users
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T215327.400.html
+
+###
+
+GET http://localhost:9080/heroes/api/users
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T215326.400.html
+
+###
+
+GET http://localhost:9080/heroes/api/users
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T215325.400.html
+
+###
+
+GET http://localhost:9080/heroes/api/users
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T215324.400.html
+
+###
+
+GET http://localhost:9080/heroes/api/users
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T215310.400.html
+
+###
+
+GET http://localhost:9080/heroes/api/users/
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T215307.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/users
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T215252.400.html
+
+###
+
+GET http://localhost:9080/heroes/api/users
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-17T215250.400.html
+
+###
+
 PATCH http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d311/avatar
 Content-Type: multipart/form-data; boundary=boundary
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
@@ -178,516 +568,6 @@ Content-Disposition: form-data; name="avatar"; filename="solmyr.png"
 --boundary--
 
 <> 2024-10-13T144004.404.html
-
-###
-
-PATCH http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-Content-Type: multipart/form-data; boundary=boundary
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 8878
-
---boundary
-Content-Disposition: form-data; name="avatar"; filename="solmyr.png"
-
-< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\solmyr.png
---boundary--
-
-<> 2024-10-13T143850.404.html
-
-###
-
-DELETE http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d315/avatar
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-13T143838.404.html
-
-###
-
-DELETE http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-13T143834.404.html
-
-###
-
-DELETE http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-13T143806.404.html
-
-###
-
-DELETE http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d315/avatar
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-13T143800.404.html
-
-###
-
-DELETE http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d315/avatar
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-13T143756.404.html
-
-###
-
-DELETE http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d315/avatar
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-13T143626.404.html
-
-###
-
-DELETE http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-13T143620.404.html
-
-###
-
-DELETE http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-###
-
-PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-Content-Type: multipart/form-data; boundary=boundary
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 4125
-
---boundary
-Content-Disposition: form-data; name="avatar"; filename="crag-hack.png"
-
-< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\crag-hack.png
---boundary--
-
-###
-
-DELETE http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-13T143510.404.html
-
-###
-
-DELETE http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-13T143509.404.html
-
-###
-
-DELETE http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-13T143506.404.html
-
-###
-
-DELETE http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-###
-
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d312/avatar
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-13T143334.404.html
-
-###
-
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d315/avatar
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-13T143331.404.html
-
-###
-
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d315/avatar
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-13T143033.404.html
-
-###
-
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-13T143015.200.png
-
-###
-
-PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-Content-Type: multipart/form-data; boundary=boundary
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 4125
-
---boundary
-Content-Disposition: form-data; name="avatar"; filename="crag-hack.png"
-
-< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\crag-hack.png
---boundary--
-
-###
-
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-13T143005.404.html
-
-###
-
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d315
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-13T142955.404.html
-
-###
-
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-13T142950.200.json
-
-###
-
-GET http://localhost:9080/heroes/api/users
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-13T142948.200.json
-
-###
-
-PATCH http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-Content-Type: multipart/form-data; boundary=boundary
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 8878
-
---boundary
-Content-Disposition: form-data; name="avatar"; filename="solmyr.png"
-
-< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\solmyr.png
---boundary--
-
-<> 2024-10-13T142841-1.404.html
-
-###
-
-DELETE http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-###
-
-PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-Content-Type: multipart/form-data; boundary=boundary
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 4125
-
---boundary
-Content-Disposition: form-data; name="avatar"; filename="crag-hack.png"
-
-< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\crag-hack.png
---boundary--
-
-<> 2024-10-13T142841.409.html
-
-###
-
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-13T142841.200.png
-
-###
-
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d315
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-13T142841.404.html
-
-###
-
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-13T142840-1.200.json
-
-###
-
-GET http://localhost:9080/heroes/api/users
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-13T142840.200.json
-
-###
-
-PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-Content-Type: multipart/form-data; boundary=boundary
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 4125
-
---boundary
-Content-Disposition: form-data; name="avatar"; filename="crag-hack.png"
-
-< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\crag-hack.png
---boundary--
-
-###
-
-PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-Content-Type: multipart/form-data; boundary=boundary
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 4125
-
---boundary
-Content-Disposition: form-data; name="avatar"; filename="crag-hack.png"
-
-< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\crag-hack.png
---boundary--
-
-<> 2024-10-13T123930.409.html
-
-###
-
-PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 4131
-
-------WebKitFormBoundary7MA4YWxkTrZu0gW
-Content-Disposition: form-data; name="avatar"; filename="crag-hack.png"
-Content-Type: image/png
-
-< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\crag-hack.png
-------WebKitFormBoundary7MA4YWxkTrZu0gW--
-
-###
-
-PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 4131
-
-------WebKitFormBoundary7MA4YWxkTrZu0gW
-Content-Disposition: form-data; name="avatar"; filename="crag-hack.png"
-Content-Type: image/png
-
-< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\crag-hack.png
-------WebKitFormBoundary7MA4YWxkTrZu0gW--
-
-###
-
-PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 4131
-
-------WebKitFormBoundary7MA4YWxkTrZu0gW
-Content-Disposition: form-data; name="avatar"; filename="crag-hack.png"
-Content-Type: image/png
-
-< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\crag-hack.png
-------WebKitFormBoundary7MA4YWxkTrZu0gW--
-
-<> 2024-10-13T123845.409.html
-
-###
-
-PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-Content-Type: multipart/form-data; boundary=boundary
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 6975
-
---boundary
-Content-Disposition: form-data; name="avatar";
-
-�PNG
-
-   
-IHDR   :   @   |ܔ�   	pHYs  �  ��o�d  �PLTE�������������������������ӵ����������ǭ�ý޾�־�ƺ����β����ή�ƪ�������Ʀ������������{�����s�����s�����s�����{�����k�����s�����������s��c�����������Z�����{��{�}Z�}�����}��y{�uZ�y��y{{y��us�qR�mc�mJ�qs{q��Yc{qs�iB{mk�UJ{iskm�{ik�iR{ic�]J{ecsekke{sec�]JkesseR�]9{]csackac�YJs]Z�YBc]ssYZ�UBkYZcYc�Q1�E)sUBsQJ{Q1RYscYBcURsMBZUZcQR{I9sM9cMRkM9sEJ{E)sI)ZMJZIZJMk�<)�8!ZIBs<BcE1s<)BIcs<!JEZ�4REBc<1Z<BJARc<)c8){,!R<9c8!B<RJ8BR8)k,!1<ZB89Z0!J8!s$B81B4BR4�k(18RR,1c(Z(!{k R(!B,1R(R$)Z$J(1,BJ )kZR R1$1B 1$)RB!cB !$BB9!1)B9ZRB191!)B9R B 9119 !!91!1 !)B  1!!9  1 ) ) ! !)  ! !              �t]  QIDATx��{��a�����3�3��}��w>���'64&�T�)m��j��j����?U���PU�R��iSTBH	�(1�Ǝ�.��Ͼ�{����{vvfgwf~�|�����۫uV��%5"º��0ᙣ��.�Q �P�h]�m �*@f{@���=�����N�����Q
-Ў�[:�A�o����'ʤ'z��"]? Է������O�Ժ-�ڳ�:�j@ғ�/K�oH`�����\�%�蓝9��=>�qeoD��_-Xq����Ѵ�lvH��˩Hv�A!� D�A<�8���,#7zcv����DZ�&ZQ\�	w�I�|Җ��4?M�{V� ��X�}v����ڍ6�ڦ��ެu�sm �����.��I����_K�K& ���3����^�������g��Ƹ��J:�fuߗ_-Q��g^{�kV'�;i������5I�+gkh���Z,�a�j�j��~���!/���I��
-�s>�t�ٛ��HxP���v^�N�~j��J�g�uDW���[	�=��m ��]���3���yX1�Pc�:����Ɠ[��;VqǸ��/��b~O�#��^<������G�$��}^w�=raC��C�K�Y���^��A�<xjV]V�ZO����?��롨�a75s'��}x�
-s���gqŁ�(�3h���Q�|�Xt����{��&�j��
-G���d�7Jr�'Go�dSxr_ѹ)M���/�3�s�Dz�(Sg��3V�8��_]�㳖}x� &���j�����4�8�YT�Rl�7sse�x�WW��l�����?�4�"�/�<�!������ƣ�+�^���/Os�6���nw%� ���/���z\z��9
-[wiK`�9/rjl{��i��xw�݉~�/��'Q�E���Bc7��Es�ߗdҐ��?~�Q���Hf�~��0�I���]�{����S/��a����0f���p�"�u�Nb��s��[j�����ҭ#�WO�o!0N?�oW	�Y{sǵG.�s�����'ؗ�&7�[���ode�}Q�j�����Mfw5$wn����*����[*�Ͽ��^�(J�P��U��L���k����o�r�����SR��G�~�3��z懽r.�//IR�[N�y�����9�̶����_��8�g��>����&ԫ���{�2��������y3Z�g0޽F�}na��M��0O�ju����>ڇk�a&㨏�+�),5�O��[���_����Ȍ�U��[���膍���C9�iw�z.B�#p�_]�o/Q�1s�i�j��G�D7?Ɍ�F�eY����=*��V�z�ImI������S�1ٸ{�:�0�j"f7�03>i����͊�u.�:ӷ;\~��E�-w|z%��\���;�9>�T��#��Z��E�"�:	��p8@�t�F�����φ^�A����yᛏ���� ǂ���N]� V4CD�x�ݛR�����9J�D��z`��;u�c���8J��2(LP�����P,m�j\i��9(�G��*����G�10�Ё�������#ϛ�:R�dӗ���7g)��a�
-�5������@u�'MÍww�_�=��.�8e �ם|�8H�E�^f�����[�>)^����|�?u��%QC7��4r�y��Q#e"z<��ۿ9��8-ln���s/\1��vD\�1 �/\|��\�$�%n�������_=!�Q�,a�g�㏄~�θs�I�_yg����6�ĕ	��,W� ��m+3�j�� Ǥ�Zr�3y�  -~+Y(�m"oʰN�;���0�j�G��-'�a�Q�i�^�Z�b���ʷ�ފ]�Y�����@pw(^L��c�'T{���5s9�!h	�b�, ��K�;��s�@��=��ag���<v ��,&e���z����ѩ�Nr��6?���1��ʭ�ܭ� ��` �'�G#@s�9�o����//�qx�tZ},�=Is���#���҃f����e�\H3�nk��¥r��!_X͙|�썝�����3���^kew2閎�.9ʙ
-~�6�tS?��&[�fbn,��8��{��*K'�2)岑5bV臝~"=���|V�\�ǆ�uO�*��L,6Y��9��$��-K�aA�IT�ȝ+�ɞi�n��*�o��h�95�M4���MH8��̎� }�:����-Z�5��M��	�����d%Sެ=T#lƮ(�	 T�b��і#�B ��R�?K��Ҁ01��}G���O��3�q��x�,
-�d��b���D��*ئ�� e����ek���K�I�2�5�9����^�캮����|p�7 ��U����ۗ�1�A�c�dQ�b4>,��$$9��mV�D(�=m(�B�����y�� ���k9F�?����VL���!��B� L���
-�x�4>����;�l|t(L /P�VU�( � ����$B"������R*"�<�������� !K �h������J� �����[b��q%���ƶ����y E!"�QC�,��$5��]����p�׬�f��s`9�� ���,a�?��]
- ��U��?�
-ݪd�$p���h�0"(��l�h&E�co�~v���<8߆<��p�؁�Op�S�+��0 B�*��?��]X{�[��ݮ&��fmZ�h)Q6�Ѭ^�2��(e������A�/��^9��*��Z�pJs�{�d���1̵��٧I G�k�w�ͽ�	�����~�{,����ݰ����z^6�^dX�3�<���"X�4W�?^q�/��Sb���շ/g��Nv0���E�te���q�����l�m�k�t0q�I�؜>k���Z5M�������||��A�v����(�
-�Hz�k�EA��vL�~t��gG�dC�v��v�����C0�p;@%�i���!�׉j'�5�n�n��Wc*[�[6���a⵮�#&�u��#�d�,��9VKV� .�=5,��r�f�R�����r�u��D
-�:�PXB�  �U�F�H�  <&!���t9.���o�`ǎ�W@��̾��e��;����ƉGd    IEND�B`�
---boundary--
-
-###
-
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-13T123320.200.png
-
-###
-
-PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-Content-Type: multipart/form-data; boundary=boundary
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 6975
-
---boundary
-Content-Disposition: form-data; name="avatar";
-
-�PNG
-
-   
-IHDR   :   @   |ܔ�   	pHYs  �  ��o�d  �PLTE�������������������������ӵ����������ǭ�ý޾�־�ƺ����β����ή�ƪ�������Ʀ������������{�����s�����s�����s�����{�����k�����s�����������s��c�����������Z�����{��{�}Z�}�����}��y{�uZ�y��y{{y��us�qR�mc�mJ�qs{q��Yc{qs�iB{mk�UJ{iskm�{ik�iR{ic�]J{ecsekke{sec�]JkesseR�]9{]csackac�YJs]Z�YBc]ssYZ�UBkYZcYc�Q1�E)sUBsQJ{Q1RYscYBcURsMBZUZcQR{I9sM9cMRkM9sEJ{E)sI)ZMJZIZJMk�<)�8!ZIBs<BcE1s<)BIcs<!JEZ�4REBc<1Z<BJARc<)c8){,!R<9c8!B<RJ8BR8)k,!1<ZB89Z0!J8!s$B81B4BR4�k(18RR,1c(Z(!{k R(!B,1R(R$)Z$J(1,BJ )kZR R1$1B 1$)RB!cB !$BB9!1)B9ZRB191!)B9R B 9119 !!91!1 !)B  1!!9  1 ) ) ! !)  ! !              �t]  QIDATx��{��a�����3�3��}��w>���'64&�T�)m��j��j����?U���PU�R��iSTBH	�(1�Ǝ�.��Ͼ�{����{vvfgwf~�|�����۫uV��%5"º��0ᙣ��.�Q �P�h]�m �*@f{@���=�����N�����Q
-Ў�[:�A�o����'ʤ'z��"]? Է������O�Ժ-�ڳ�:�j@ғ�/K�oH`�����\�%�蓝9��=>�qeoD��_-Xq����Ѵ�lvH��˩Hv�A!� D�A<�8���,#7zcv����DZ�&ZQ\�	w�I�|Җ��4?M�{V� ��X�}v����ڍ6�ڦ��ެu�sm �����.��I����_K�K& ���3����^�������g��Ƹ��J:�fuߗ_-Q��g^{�kV'�;i������5I�+gkh���Z,�a�j�j��~���!/���I��
-�s>�t�ٛ��HxP���v^�N�~j��J�g�uDW���[	�=��m ��]���3���yX1�Pc�:����Ɠ[��;VqǸ��/��b~O�#��^<������G�$��}^w�=raC��C�K�Y���^��A�<xjV]V�ZO����?��롨�a75s'��}x�
-s���gqŁ�(�3h���Q�|�Xt����{��&�j��
-G���d�7Jr�'Go�dSxr_ѹ)M���/�3�s�Dz�(Sg��3V�8��_]�㳖}x� &���j�����4�8�YT�Rl�7sse�x�WW��l�����?�4�"�/�<�!������ƣ�+�^���/Os�6���nw%� ���/���z\z��9
-[wiK`�9/rjl{��i��xw�݉~�/��'Q�E���Bc7��Es�ߗdҐ��?~�Q���Hf�~��0�I���]�{����S/��a����0f���p�"�u�Nb��s��[j�����ҭ#�WO�o!0N?�oW	�Y{sǵG.�s�����'ؗ�&7�[���ode�}Q�j�����Mfw5$wn����*����[*�Ͽ��^�(J�P��U��L���k����o�r�����SR��G�~�3��z懽r.�//IR�[N�y�����9�̶����_��8�g��>����&ԫ���{�2��������y3Z�g0޽F�}na��M��0O�ju����>ڇk�a&㨏�+�),5�O��[���_����Ȍ�U��[���膍���C9�iw�z.B�#p�_]�o/Q�1s�i�j��G�D7?Ɍ�F�eY����=*��V�z�ImI������S�1ٸ{�:�0�j"f7�03>i����͊�u.�:ӷ;\~��E�-w|z%��\���;�9>�T��#��Z��E�"�:	��p8@�t�F�����φ^�A����yᛏ���� ǂ���N]� V4CD�x�ݛR�����9J�D��z`��;u�c���8J��2(LP�����P,m�j\i��9(�G��*����G�10�Ё�������#ϛ�:R�dӗ���7g)��a�
-�5������@u�'MÍww�_�=��.�8e �ם|�8H�E�^f�����[�>)^����|�?u��%QC7��4r�y��Q#e"z<��ۿ9��8-ln���s/\1��vD\�1 �/\|��\�$�%n�������_=!�Q�,a�g�㏄~�θs�I�_yg����6�ĕ	��,W� ��m+3�j�� Ǥ�Zr�3y�  -~+Y(�m"oʰN�;���0�j�G��-'�a�Q�i�^�Z�b���ʷ�ފ]�Y�����@pw(^L��c�'T{���5s9�!h	�b�, ��K�;��s�@��=��ag���<v ��,&e���z����ѩ�Nr��6?���1��ʭ�ܭ� ��` �'�G#@s�9�o����//�qx�tZ},�=Is���#���҃f����e�\H3�nk��¥r��!_X͙|�썝�����3���^kew2閎�.9ʙ
-~�6�tS?��&[�fbn,��8��{��*K'�2)岑5bV臝~"=���|V�\�ǆ�uO�*��L,6Y��9��$��-K�aA�IT�ȝ+�ɞi�n��*�o��h�95�M4���MH8��̎� }�:����-Z�5��M��	�����d%Sެ=T#lƮ(�	 T�b��і#�B ��R�?K��Ҁ01��}G���O��3�q��x�,
-�d��b���D��*ئ�� e����ek���K�I�2�5�9����^�캮����|p�7 ��U����ۗ�1�A�c�dQ�b4>,��$$9��mV�D(�=m(�B�����y�� ���k9F�?����VL���!��B� L���
-�x�4>����;�l|t(L /P�VU�( � ����$B"������R*"�<�������� !K �h������J� �����[b��q%���ƶ����y E!"�QC�,��$5��]����p�׬�f��s`9�� ���,a�?��]
- ��U��?�
-ݪd�$p���h�0"(��l�h&E�co�~v���<8߆<��p�؁�Op�S�+��0 B�*��?��]X{�[��ݮ&��fmZ�h)Q6�Ѭ^�2��(e������A�/��^9��*��Z�pJs�{�d���1̵��٧I G�k�w�ͽ�	�����~�{,����ݰ����z^6�^dX�3�<���"X�4W�?^q�/��Sb���շ/g��Nv0���E�te���q�����l�m�k�t0q�I�؜>k���Z5M�������||��A�v����(�
-�Hz�k�EA��vL�~t��gG�dC�v��v�����C0�p;@%�i���!�׉j'�5�n�n��Wc*[�[6���a⵮�#&�u��#�d�,��9VKV� .�=5,��r�f�R�����r�u��D
-�:�PXB�  �U�F�H�  <&!���t9.���o�`ǎ�W@��̾��e��;����ƉGd    IEND�B`�
---boundary--
-
-###
-
-PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-Content-Type: multipart/form-data; boundary=boundary
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 6975
-
---boundary
-Content-Disposition: form-data; name="avatar";
-
-�PNG
-
-   
-IHDR   :   @   |ܔ�   	pHYs  �  ��o�d  �PLTE�������������������������ӵ����������ǭ�ý޾�־�ƺ����β����ή�ƪ�������Ʀ������������{�����s�����s�����s�����{�����k�����s�����������s��c�����������Z�����{��{�}Z�}�����}��y{�uZ�y��y{{y��us�qR�mc�mJ�qs{q��Yc{qs�iB{mk�UJ{iskm�{ik�iR{ic�]J{ecsekke{sec�]JkesseR�]9{]csackac�YJs]Z�YBc]ssYZ�UBkYZcYc�Q1�E)sUBsQJ{Q1RYscYBcURsMBZUZcQR{I9sM9cMRkM9sEJ{E)sI)ZMJZIZJMk�<)�8!ZIBs<BcE1s<)BIcs<!JEZ�4REBc<1Z<BJARc<)c8){,!R<9c8!B<RJ8BR8)k,!1<ZB89Z0!J8!s$B81B4BR4�k(18RR,1c(Z(!{k R(!B,1R(R$)Z$J(1,BJ )kZR R1$1B 1$)RB!cB !$BB9!1)B9ZRB191!)B9R B 9119 !!91!1 !)B  1!!9  1 ) ) ! !)  ! !              �t]  QIDATx��{��a�����3�3��}��w>���'64&�T�)m��j��j����?U���PU�R��iSTBH	�(1�Ǝ�.��Ͼ�{����{vvfgwf~�|�����۫uV��%5"º��0ᙣ��.�Q �P�h]�m �*@f{@���=�����N�����Q
-Ў�[:�A�o����'ʤ'z��"]? Է������O�Ժ-�ڳ�:�j@ғ�/K�oH`�����\�%�蓝9��=>�qeoD��_-Xq����Ѵ�lvH��˩Hv�A!� D�A<�8���,#7zcv����DZ�&ZQ\�	w�I�|Җ��4?M�{V� ��X�}v����ڍ6�ڦ��ެu�sm �����.��I����_K�K& ���3����^�������g��Ƹ��J:�fuߗ_-Q��g^{�kV'�;i������5I�+gkh���Z,�a�j�j��~���!/���I��
-�s>�t�ٛ��HxP���v^�N�~j��J�g�uDW���[	�=��m ��]���3���yX1�Pc�:����Ɠ[��;VqǸ��/��b~O�#��^<������G�$��}^w�=raC��C�K�Y���^��A�<xjV]V�ZO����?��롨�a75s'��}x�
-s���gqŁ�(�3h���Q�|�Xt����{��&�j��
-G���d�7Jr�'Go�dSxr_ѹ)M���/�3�s�Dz�(Sg��3V�8��_]�㳖}x� &���j�����4�8�YT�Rl�7sse�x�WW��l�����?�4�"�/�<�!������ƣ�+�^���/Os�6���nw%� ���/���z\z��9
-[wiK`�9/rjl{��i��xw�݉~�/��'Q�E���Bc7��Es�ߗdҐ��?~�Q���Hf�~��0�I���]�{����S/��a����0f���p�"�u�Nb��s��[j�����ҭ#�WO�o!0N?�oW	�Y{sǵG.�s�����'ؗ�&7�[���ode�}Q�j�����Mfw5$wn����*����[*�Ͽ��^�(J�P��U��L���k����o�r�����SR��G�~�3��z懽r.�//IR�[N�y�����9�̶����_��8�g��>����&ԫ���{�2��������y3Z�g0޽F�}na��M��0O�ju����>ڇk�a&㨏�+�),5�O��[���_����Ȍ�U��[���膍���C9�iw�z.B�#p�_]�o/Q�1s�i�j��G�D7?Ɍ�F�eY����=*��V�z�ImI������S�1ٸ{�:�0�j"f7�03>i����͊�u.�:ӷ;\~��E�-w|z%��\���;�9>�T��#��Z��E�"�:	��p8@�t�F�����φ^�A����yᛏ���� ǂ���N]� V4CD�x�ݛR�����9J�D��z`��;u�c���8J��2(LP�����P,m�j\i��9(�G��*����G�10�Ё�������#ϛ�:R�dӗ���7g)��a�
-�5������@u�'MÍww�_�=��.�8e �ם|�8H�E�^f�����[�>)^����|�?u��%QC7��4r�y��Q#e"z<��ۿ9��8-ln���s/\1��vD\�1 �/\|��\�$�%n�������_=!�Q�,a�g�㏄~�θs�I�_yg����6�ĕ	��,W� ��m+3�j�� Ǥ�Zr�3y�  -~+Y(�m"oʰN�;���0�j�G��-'�a�Q�i�^�Z�b���ʷ�ފ]�Y�����@pw(^L��c�'T{���5s9�!h	�b�, ��K�;��s�@��=��ag���<v ��,&e���z����ѩ�Nr��6?���1��ʭ�ܭ� ��` �'�G#@s�9�o����//�qx�tZ},�=Is���#���҃f����e�\H3�nk��¥r��!_X͙|�썝�����3���^kew2閎�.9ʙ
-~�6�tS?��&[�fbn,��8��{��*K'�2)岑5bV臝~"=���|V�\�ǆ�uO�*��L,6Y��9��$��-K�aA�IT�ȝ+�ɞi�n��*�o��h�95�M4���MH8��̎� }�:����-Z�5��M��	�����d%Sެ=T#lƮ(�	 T�b��і#�B ��R�?K��Ҁ01��}G���O��3�q��x�,
-�d��b���D��*ئ�� e����ek���K�I�2�5�9����^�캮����|p�7 ��U����ۗ�1�A�c�dQ�b4>,��$$9��mV�D(�=m(�B�����y�� ���k9F�?����VL���!��B� L���
-�x�4>����;�l|t(L /P�VU�( � ����$B"������R*"�<�������� !K �h������J� �����[b��q%���ƶ����y E!"�QC�,��$5��]����p�׬�f��s`9�� ���,a�?��]
- ��U��?�
-ݪd�$p���h�0"(��l�h&E�co�~v���<8߆<��p�؁�Op�S�+��0 B�*��?��]X{�[��ݮ&��fmZ�h)Q6�Ѭ^�2��(e������A�/��^9��*��Z�pJs�{�d���1̵��٧I G�k�w�ͽ�	�����~�{,����ݰ����z^6�^dX�3�<���"X�4W�?^q�/��Sb���շ/g��Nv0���E�te���q�����l�m�k�t0q�I�؜>k���Z5M�������||��A�v����(�
-�Hz�k�EA��vL�~t��gG�dC�v��v�����C0�p;@%�i���!�׉j'�5�n�n��Wc*[�[6���a⵮�#&�u��#�d�,��9VKV� .�=5,��r�f�R�����r�u��D
-�:�PXB�  �U�F�H�  <&!���t9.���o�`ǎ�W@��̾��e��;����ƉGd    IEND�B`�
---boundary--
 
 ###
 
