@@ -24,6 +24,10 @@ public class UnitService {
         return unitRepository.find(id);
     }
 
+    public List<Unit> findAll() {
+        return unitRepository.findAll();
+    }
+
     public void create(Unit unit) {
         unitRepository.create(unit);
     }

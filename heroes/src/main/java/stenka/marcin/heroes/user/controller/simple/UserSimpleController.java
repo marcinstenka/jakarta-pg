@@ -50,7 +50,6 @@ public class UserSimpleController implements UserController {
         } catch (IllegalArgumentException ex) {
             throw new BadRequestException(ex);
         }
-
     }
 
     @Override
