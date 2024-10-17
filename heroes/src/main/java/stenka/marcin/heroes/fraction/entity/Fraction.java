@@ -11,6 +11,7 @@ import lombok.ToString;
 
 import stenka.marcin.heroes.unit.entity.Unit;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
 
@@ -22,7 +23,7 @@ import java.util.UUID;
 @ToString
 @EqualsAndHashCode
 
-public class Fraction {
+public class Fraction implements Serializable {
     private UUID id;
 
     private String name;
@@ -30,5 +31,4 @@ public class Fraction {
     private FractionType fractionType;
 
     private List<Unit> units;
-
 }

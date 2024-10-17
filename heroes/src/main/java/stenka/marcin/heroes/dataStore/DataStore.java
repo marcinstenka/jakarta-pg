@@ -1,6 +1,7 @@
 package stenka.marcin.heroes.dataStore;
 
 import lombok.extern.java.Log;
+import stenka.marcin.heroes.fraction.entity.Fraction;
 import stenka.marcin.heroes.serialization.CloningUtility;
 import stenka.marcin.heroes.user.entity.User;
 import stenka.marcin.heroes.unit.entity.Unit;
@@ -17,6 +18,8 @@ public class DataStore {
     private final Set<User> users = new HashSet<>();
 
     private final Set<Unit> units = new HashSet<>();
+
+    private final Set<Fraction> fractions = new HashSet<>();
 
     private final CloningUtility cloningUtility;
 
@@ -77,6 +80,34 @@ public class DataStore {
     public synchronized void deleteUnit(UUID id) throws IllegalArgumentException {
         if (!units.removeIf(unit -> unit.getId().equals(id))) {
             throw new IllegalArgumentException("The unit with id \"%s\" does not exist".formatted(id));
+        }
+    }
+
+    //Fraction entity
+    public synchronized List<Fraction> findAllFractions() {
+        return fractions.stream()
+                .map(cloningUtility::clone)
+                .collect(Collectors.toList());
+    }
+
+    public synchronized void createFraction(Fraction value) throws IllegalArgumentException {
+        if (fractions.stream().anyMatch(fraction -> fraction.getId().equals(value.getId()))) {
+            throw new IllegalArgumentException("The fraction id \"%s\" is not unique".formatted(value.getId()));
+        }
+        fractions.add(cloningUtility.clone(value));
+    }
+
+    public synchronized void updateFraction(Fraction value) throws IllegalArgumentException {
+        if (fractions.removeIf(fraction -> fraction.getId().equals(value.getId()))) {
+            fractions.add(cloningUtility.clone(value));
+        } else {
+            throw new IllegalArgumentException("The fraction with id \"%s\" does not exist".formatted(value.getId()));
+        }
+    }
+
+    public synchronized void deleteFraction(UUID id) throws IllegalArgumentException {
+        if (!fractions.removeIf(fraction -> fraction.getId().equals(id))) {
+            throw new IllegalArgumentException("The fraction with id \"%s\" does not exist".formatted(id));
         }
     }
 }
