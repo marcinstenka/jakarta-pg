@@ -20,8 +20,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @ToString(callSuper = true)
-@EqualsAndHashCode()
-
+@EqualsAndHashCode(exclude = "fraction")
 public class Unit implements Serializable {
     private UUID id;
 
@@ -29,7 +28,9 @@ public class Unit implements Serializable {
 
     private int quantity;
 
+    @ToString.Exclude
     private Fraction fraction;
 
+    @ToString.Exclude
     private User user;
 }

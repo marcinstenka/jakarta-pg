@@ -38,6 +38,7 @@ public class GetFractionResponse {
         private String name;
     }
 
+    @Singular
     private List<Unit> units;
 
 }

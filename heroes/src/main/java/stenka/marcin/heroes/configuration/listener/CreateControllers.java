@@ -29,6 +29,7 @@ public class CreateControllers implements ServletContextListener {
                 unitService,
                 new DtoFunctionFactory()
         ));
+
         event.getServletContext().setAttribute("fractionController", new FractionSimpleController(
                 fractionService,
                 new DtoFunctionFactory()

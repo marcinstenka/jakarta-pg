@@ -1,3 +1,181 @@
+GET http://localhost:9080/heroes/api/units
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-19T002319.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d320
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-19T002313.200.json
+
+###
+
+DELETE http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
+GET http://localhost:9080/heroes/api/units
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-19T002244.200.json
+
+###
+
+PATCH http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
+Content-Type: application/json
+Content-Length: 41
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "Griffin",
+  "quantity": 20
+}
+
+###
+
+GET http://localhost:9080/heroes/api/units
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-19T002119.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/units/
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-19T002115.200.json
+
+###
+
+PUT http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
+Content-Type: application/json
+Content-Length: 145
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "Griffin",
+  "quantity": 15,
+  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d310",
+  "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d330"
+}
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/units/
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-19T001833.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d320
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-19T001829.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d320
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-19T001711.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d320
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-19T001705.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/units
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-19T001701.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-19T001657.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/users
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-19T001655.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-19T000332.404.html
+
+###
+
+GET http://localhost:9080/heroes/api/users
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-19T000327.404.html
+
+###
+
 GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/units/
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
 Accept-Encoding: br, deflate, gzip, x-gzip
@@ -325,249 +503,6 @@ Accept: */*
 content-length: 0
 
 <> 2024-10-17T215326.400.html
-
-###
-
-GET http://localhost:9080/heroes/api/users
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-17T215325.400.html
-
-###
-
-GET http://localhost:9080/heroes/api/users
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-17T215324.400.html
-
-###
-
-GET http://localhost:9080/heroes/api/users
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-17T215310.400.html
-
-###
-
-GET http://localhost:9080/heroes/api/users/
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-17T215307.200.json
-
-###
-
-GET http://localhost:9080/heroes/api/users
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-17T215252.400.html
-
-###
-
-GET http://localhost:9080/heroes/api/users
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-17T215250.400.html
-
-###
-
-PATCH http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d311/avatar
-Content-Type: multipart/form-data; boundary=boundary
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 8878
-
---boundary
-Content-Disposition: form-data; name="avatar"; filename="solmyr.png"
-
-< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\solmyr.png
---boundary--
-
-<> 2024-10-13T144527.404.html
-
-###
-
-PATCH http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-Content-Type: multipart/form-data; boundary=boundary
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 8876
-
---boundary
-Content-Disposition: form-data; name="avatar"; filename="solmyr.png"
-
-< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\solmyr.png
---boundary--
-
-###
-
-PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-Content-Type: multipart/form-data; boundary=boundary
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 4125
-
---boundary
-Content-Disposition: form-data; name="avatar"; filename="crag-hack.png"
-
-< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\crag-hack.png
---boundary--
-
-###
-
-PATCH http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d315/avatar
-Content-Type: multipart/form-data; boundary=boundary
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 8878
-
---boundary
-Content-Disposition: form-data; name="avatar"; filename="solmyr.png"
-
-< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\solmyr.png
---boundary--
-
-<> 2024-10-13T144455.404.html
-
-###
-
-PATCH http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d315/avatar
-Content-Type: multipart/form-data; boundary=boundary
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 8878
-
---boundary
-Content-Disposition: form-data; name="avatar"; filename="solmyr.png"
-
-< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\solmyr.png
---boundary--
-
-<> 2024-10-13T144436.404.html
-
-###
-
-PATCH http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d315/avatar
-Content-Type: multipart/form-data; boundary=boundary
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 8878
-
---boundary
-Content-Disposition: form-data; name="avatar"; filename="solmyr.png"
-
-< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\solmyr.png
---boundary--
-
-<> 2024-10-13T144431.404.html
-
-###
-
-PATCH http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d315/avatar
-Content-Type: multipart/form-data; boundary=boundary
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 8878
-
---boundary
-Content-Disposition: form-data; name="avatar"; filename="solmyr.png"
-
-< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\solmyr.png
---boundary--
-
-<> 2024-10-13T144423.404.html
-
-###
-
-PATCH http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d315/avatar
-Content-Type: multipart/form-data; boundary=boundary
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 8878
-
---boundary
-Content-Disposition: form-data; name="avatar"; filename="solmyr.png"
-
-< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\solmyr.png
---boundary--
-
-<> 2024-10-13T144316.404.html
-
-###
-
-PATCH http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-Content-Type: multipart/form-data; boundary=boundary
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 8876
-
---boundary
-Content-Disposition: form-data; name="avatar"; filename="solmyr.png"
-
-< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\solmyr.png
---boundary--
-
-<> 2024-10-13T144313.404.html
-
-###
-
-PATCH http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-Content-Type: multipart/form-data; boundary=boundary
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 8878
-
---boundary
-Content-Disposition: form-data; name="avatar"; filename="solmyr.png"
-
-< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\solmyr.png
---boundary--
-
-<> 2024-10-13T144310.404.html
-
-###
-
-PATCH http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/avatar
-Content-Type: multipart/form-data; boundary=boundary
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 8878
-
---boundary
-Content-Disposition: form-data; name="avatar"; filename="solmyr.png"
-
-< E:\XXX\Studia\SEMESTR_VII\NiAJEE\heroes\src\main\resources\stenka\marcin\heroes\configuration\avatar\solmyr.png
---boundary--
-
-<> 2024-10-13T144004.404.html
 
 ###
 

@@ -6,6 +6,7 @@ import jakarta.servlet.annotation.WebListener;
 import lombok.SneakyThrows;
 import stenka.marcin.heroes.fraction.entity.Fraction;
 import stenka.marcin.heroes.fraction.entity.FractionType;
+import stenka.marcin.heroes.fraction.service.FractionService;
 import stenka.marcin.heroes.unit.entity.Unit;
 import stenka.marcin.heroes.unit.service.UnitService;
 import stenka.marcin.heroes.user.entity.User;
@@ -23,9 +24,12 @@ public class InitializedData implements ServletContextListener {
 
     private UnitService unitService;
 
+    private FractionService fractionService;
+
     public void contextInitialized(ServletContextEvent event) {
         userService = (UserService) event.getServletContext().getAttribute("userService");
         unitService = (UnitService) event.getServletContext().getAttribute("unitService");
+        fractionService = (FractionService) event.getServletContext().getAttribute("fractionService");
         init();
     }
 
@@ -107,6 +111,8 @@ public class InitializedData implements ServletContextListener {
         unitService.create(archer);
         unitService.create(cavalry);
 
+        fractionService.create(castle);
+        fractionService.create(dungeon);
     }
 
 }
