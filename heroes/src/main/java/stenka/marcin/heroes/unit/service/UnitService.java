@@ -1,6 +1,7 @@
 package stenka.marcin.heroes.unit.service;
 
 import stenka.marcin.heroes.controller.servlet.exception.NotFoundException;
+import stenka.marcin.heroes.fraction.repository.api.FractionRepository;
 import stenka.marcin.heroes.unit.entity.Unit;
 import stenka.marcin.heroes.unit.repository.api.UnitRepository;
 import stenka.marcin.heroes.user.entity.User;
@@ -15,9 +16,12 @@ public class UnitService {
 
     private final UserRepository userRepository;
 
-    public UnitService(UnitRepository unitRepository, UserRepository userRepository) {
+    private final FractionRepository fractionRepository;
+
+    public UnitService(UnitRepository unitRepository, UserRepository userRepository, FractionRepository fractionRepository) {
         this.unitRepository = unitRepository;
         this.userRepository = userRepository;
+        this.fractionRepository = fractionRepository;
     }
 
     public Optional<Unit> find(UUID id) {

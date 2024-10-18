@@ -4,6 +4,8 @@ import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.annotation.WebListener;
 import lombok.SneakyThrows;
+import stenka.marcin.heroes.fraction.entity.Fraction;
+import stenka.marcin.heroes.fraction.entity.FractionType;
 import stenka.marcin.heroes.unit.entity.Unit;
 import stenka.marcin.heroes.unit.service.UnitService;
 import stenka.marcin.heroes.user.entity.User;
@@ -11,6 +13,7 @@ import stenka.marcin.heroes.user.service.UserService;
 
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.List;
 import java.util.UUID;
 
 @WebListener
@@ -28,9 +31,9 @@ public class InitializedData implements ServletContextListener {
 
     @SneakyThrows
     private void init() {
-        Unit dragon = Unit.builder()
+        Unit blackDragon = Unit.builder()
                 .id(UUID.fromString("d9f823f4-f057-4f18-aeb7-b6654bc3d320"))
-                .name("dragon")
+                .name("Black dragon")
                 .quantity(3)
                 .build();
         Unit archer = Unit.builder()
@@ -67,16 +70,40 @@ public class InitializedData implements ServletContextListener {
                 .accountCreation(LocalDate.of(2024, Month.SEPTEMBER, 14))
                 .build();
 
-        dragon.setUser(marcin);
+        Fraction castle = Fraction.builder()
+                .id(UUID.fromString("d9f823f4-f057-4f18-aeb7-b6654bc3d330"))
+                .name("Castle")
+                .fractionType(FractionType.GOOD)
+                .build();
+
+        Fraction dungeon = Fraction.builder()
+                .id(UUID.fromString("d9f823f4-f057-4f18-aeb7-b6654bc3d331"))
+                .name("Dungeon")
+                .fractionType(FractionType.EVIL)
+                .build();
+
+
+        blackDragon.setUser(marcin);
+        blackDragon.setFraction(dungeon);
+
         archer.setUser(marcin);
+        archer.setFraction(castle);
+
         cavalry.setUser(oskar);
+        cavalry.setFraction(castle);
+
+        marcin.setUnits(List.of(blackDragon, archer));
+        oskar.setUnits(List.of(cavalry));
+
+        castle.setUnits(List.of(archer, cavalry));
+        dungeon.setUnits(List.of(blackDragon));
 
         userService.create(marcin);
         userService.create(oskar);
         userService.create(lukasz);
         userService.create(piotrek);
 
-        unitService.create(dragon);
+        unitService.create(blackDragon);
         unitService.create(archer);
         unitService.create(cavalry);
 

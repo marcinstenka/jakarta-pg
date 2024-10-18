@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-
 @Getter
 @Setter
 @Builder
@@ -21,4 +20,5 @@ public class PatchUnitRequest {
     private String name;
 
     private int quantity;
+
 }
