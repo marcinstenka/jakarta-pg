@@ -11,6 +11,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import stenka.marcin.heroes.controller.servlet.exception.AlreadyExistsException;
 import stenka.marcin.heroes.controller.servlet.exception.BadRequestException;
 import stenka.marcin.heroes.controller.servlet.exception.NotFoundException;
+import stenka.marcin.heroes.fraction.controller.api.FractionController;
+import stenka.marcin.heroes.fraction.dto.PatchFractionRequest;
+import stenka.marcin.heroes.fraction.dto.PutFractionRequest;
 import stenka.marcin.heroes.unit.controller.api.UnitController;
 import stenka.marcin.heroes.unit.dto.PatchUnitRequest;
 import stenka.marcin.heroes.unit.dto.PutUnitRequest;
@@ -32,6 +35,8 @@ public class ApiServlet extends HttpServlet {
 
     private UnitController unitController;
 
+    private FractionController fractionController;
+
     private String avatarPath;
 
     public static final class Paths {
@@ -48,6 +53,10 @@ public class ApiServlet extends HttpServlet {
         public static final Pattern UNIT = Pattern.compile("/units/(%s)".formatted(UUID.pattern()));
 
         public static final Pattern UNITS = Pattern.compile("/units/?");
+
+        public static final Pattern FRACTION = Pattern.compile("/fractions/(%s)".formatted(UUID.pattern()));
+
+        public static final Pattern FRACTIONS = Pattern.compile("/units/?");
 
         public static final Pattern USER_UNITS = Pattern.compile("/users/(%s)/units/?".formatted(UUID.pattern()));
 
@@ -70,6 +79,7 @@ public class ApiServlet extends HttpServlet {
         super.init();
         userController = (UserController) getServletContext().getAttribute("userController");
         unitController = (UnitController) getServletContext().getAttribute("unitController");
+        fractionController = (FractionController) getServletContext().getAttribute("fractionController");
         avatarPath = (String) getServletContext().getInitParameter("avatars-upload");
     }
 
@@ -133,6 +143,23 @@ public class ApiServlet extends HttpServlet {
                     response.sendError(HttpServletResponse.SC_NOT_FOUND);
                 }
                 return;
+            } else if (path.matches(Patterns.FRACTIONS.pattern())) {
+                response.setContentType("application/json");
+                try {
+                    response.getWriter().write(jsonb.toJson(fractionController.getFractions()));
+                } catch (NotFoundException ex) {
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                }
+                return;
+            } else if (path.matches(Patterns.FRACTION.pattern())) {
+                response.setContentType("application/json");
+                UUID uuid = extractUuid(Patterns.FRACTION, path);
+                try {
+                    response.getWriter().write(jsonb.toJson(fractionController.getFraction(uuid)));
+                } catch (NotFoundException ex) {
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                }
+                return;
             }
         }
         response.sendError(HttpServletResponse.SC_BAD_REQUEST);
@@ -176,6 +203,16 @@ public class ApiServlet extends HttpServlet {
                     response.sendError(HttpServletResponse.SC_BAD_REQUEST);
                 }
                 return;
+            } else if (path.matches(Patterns.FRACTION.pattern())) {
+                UUID uuid = extractUuid(Patterns.FRACTION, path);
+                try {
+                    fractionController.putFraction(uuid, jsonb.fromJson(request.getReader(), PutFractionRequest.class));
+                    response.addHeader("Location", createUrl(request, Paths.API, "fractions", uuid.toString()));
+                    response.setStatus(HttpServletResponse.SC_CREATED);
+                } catch (BadRequestException ex) {
+                    response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+                }
+                return;
             }
         }
         response.sendError(HttpServletResponse.SC_BAD_REQUEST);
@@ -214,6 +251,15 @@ public class ApiServlet extends HttpServlet {
                     response.sendError(HttpServletResponse.SC_NOT_FOUND);
                 }
                 return;
+            } else if (path.matches(Patterns.FRACTION.pattern())) {
+                UUID uuid = extractUuid(Patterns.FRACTION, path);
+                try {
+                    fractionController.deleteFraction(uuid);
+                    response.setStatus(HttpServletResponse.SC_NO_CONTENT);
+                } catch (NotFoundException ex) {
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                }
+                return;
             }
         }
         response.sendError(HttpServletResponse.SC_BAD_REQUEST);
@@ -247,6 +293,15 @@ public class ApiServlet extends HttpServlet {
                 UUID uuid = extractUuid(Patterns.UNIT, path);
                 try {
                     unitController.patchUnit(uuid, jsonb.fromJson(request.getReader(), PatchUnitRequest.class));
+                    response.setStatus(HttpServletResponse.SC_NO_CONTENT);
+                } catch (NotFoundException ex) {
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                }
+                return;
+            } else if (path.matches(Patterns.FRACTION.pattern())) {
+                UUID uuid = extractUuid(Patterns.FRACTION, path);
+                try {
+                    fractionController.patchFraction(uuid, jsonb.fromJson(request.getReader(), PatchFractionRequest.class));
                     response.setStatus(HttpServletResponse.SC_NO_CONTENT);
                 } catch (NotFoundException ex) {
                     response.sendError(HttpServletResponse.SC_NOT_FOUND);
