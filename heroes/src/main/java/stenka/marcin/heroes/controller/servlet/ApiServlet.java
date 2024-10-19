@@ -56,7 +56,7 @@ public class ApiServlet extends HttpServlet {
 
         public static final Pattern FRACTION = Pattern.compile("/fractions/(%s)".formatted(UUID.pattern()));
 
-        public static final Pattern FRACTIONS = Pattern.compile("/units/?");
+        public static final Pattern FRACTIONS = Pattern.compile("/fractions/?");
 
         public static final Pattern FRACTION_UNITS = Pattern.compile("/fractions/(%s)/units/?".formatted(UUID.pattern()));
 
@@ -93,11 +93,7 @@ public class ApiServlet extends HttpServlet {
         if (Paths.API.equals(servletPath)) {
             if (path.matches(Patterns.USERS.pattern())) {
                 response.setContentType("application/json");
-                try {
-                    response.getWriter().write(jsonb.toJson(userController.getUsers()));
-                } catch (NotFoundException ex) {
-                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
-                }
+                response.getWriter().write(jsonb.toJson(userController.getUsers()));
                 return;
             } else if (path.matches(Patterns.USER.pattern())) {
                 response.setContentType("application/json");
@@ -105,7 +101,7 @@ public class ApiServlet extends HttpServlet {
                 try {
                     response.getWriter().write(jsonb.toJson(userController.getUser(uuid)));
                 } catch (NotFoundException ex) {
-                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND, ex.getMessage());
                 }
                 return;
             } else if (path.matches(Patterns.USER_UNITS.pattern())) {
@@ -114,7 +110,7 @@ public class ApiServlet extends HttpServlet {
                 try {
                     response.getWriter().write(jsonb.toJson(unitController.getUserUnits(uuid)));
                 } catch (NotFoundException ex) {
-                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND, ex.getMessage());
                 }
                 return;
             } else if (path.matches(Patterns.USER_AVATAR.pattern())) {
@@ -130,11 +126,7 @@ public class ApiServlet extends HttpServlet {
                 return;
             } else if (path.matches(Patterns.UNITS.pattern())) {
                 response.setContentType("application/json");
-                try {
-                    response.getWriter().write(jsonb.toJson(unitController.getUnits()));
-                } catch (NotFoundException ex) {
-                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
-                }
+                response.getWriter().write(jsonb.toJson(unitController.getUnits()));
                 return;
             } else if (path.matches(Patterns.UNIT.pattern())) {
                 response.setContentType("application/json");
@@ -142,16 +134,12 @@ public class ApiServlet extends HttpServlet {
                 try {
                     response.getWriter().write(jsonb.toJson(unitController.getUnit(uuid)));
                 } catch (NotFoundException ex) {
-                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND, ex.getMessage());
                 }
                 return;
             } else if (path.matches(Patterns.FRACTIONS.pattern())) {
                 response.setContentType("application/json");
-                try {
-                    response.getWriter().write(jsonb.toJson(fractionController.getFractions()));
-                } catch (NotFoundException ex) {
-                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
-                }
+                response.getWriter().write(jsonb.toJson(fractionController.getFractions()));
                 return;
             } else if (path.matches(Patterns.FRACTION.pattern())) {
                 response.setContentType("application/json");
@@ -159,7 +147,7 @@ public class ApiServlet extends HttpServlet {
                 try {
                     response.getWriter().write(jsonb.toJson(fractionController.getFraction(uuid)));
                 } catch (NotFoundException ex) {
-                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND, ex.getMessage());
                 }
                 return;
             } else if (path.matches(Patterns.FRACTION_UNITS.pattern())) {
@@ -168,12 +156,12 @@ public class ApiServlet extends HttpServlet {
                 try {
                     response.getWriter().write(jsonb.toJson(unitController.getFractionUnits(uuid)));
                 } catch (NotFoundException ex) {
-                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND, ex.getMessage());
                 }
                 return;
             }
         }
-        response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+        response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Get method bad request");
     }
 
     @SuppressWarnings("RedundantThrows")
@@ -188,8 +176,8 @@ public class ApiServlet extends HttpServlet {
                     userController.putUser(uuid, jsonb.fromJson(request.getReader(), PutUserRequest.class));
                     response.addHeader("Location", createUrl(request, Paths.API, "users", uuid.toString()));
                     response.setStatus(HttpServletResponse.SC_CREATED);
-                } catch (BadRequestException ex) {
-                    response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+                } catch (AlreadyExistsException ex) {
+                    response.sendError(HttpServletResponse.SC_CONFLICT, ex.getMessage());
                 }
                 return;
             } else if (path.matches(Patterns.USER_AVATAR.pattern())) {
@@ -287,7 +275,7 @@ public class ApiServlet extends HttpServlet {
                     userController.patchUser(uuid, jsonb.fromJson(request.getReader(), PatchUserRequest.class));
                     response.setStatus(HttpServletResponse.SC_NO_CONTENT);
                 } catch (NotFoundException ex) {
-                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND, ex.getMessage());
                 }
                 return;
             } else if (path.matches(Patterns.USER_AVATAR.pattern())) {

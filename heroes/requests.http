@@ -6,13 +6,37 @@ GET http://localhost:9080/heroes/api/users
 
 # Get single user
 
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
 
 ###
 
 # Get single user. Not existing.
 
 GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d315
+
+###
+
+# Put user
+
+PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
+Content-Type: application/json
+
+{
+  "name": "Blazej",
+  "accountCreation": "2012-04-23"
+}
+
+###
+
+# patch user
+
+PATCH http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
+Content-Type: application/json
+
+{
+  "name": "Blazej2",
+  "accountCreation": "2010-01-11"
+}
 
 ###
 
@@ -104,19 +128,19 @@ DELETE http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d3
 
 # Get all fractions
 
-GET http://localhost:9080/heroes/api/fractions
+GET http://localhost:9080/heroes/api/fractions/
 
 ###
 
 # Get single fraction
 
-GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d332
 
 ###
 
 # Get fraction units
 
-GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d332/units
 
 ###
 

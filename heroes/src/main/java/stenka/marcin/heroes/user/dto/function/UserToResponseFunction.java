@@ -14,12 +14,6 @@ public class UserToResponseFunction implements Function<User, GetUserResponse> {
                 .id(user.getId())
                 .name(user.getName())
                 .accountCreation(user.getAccountCreation())
-                .units(user.getUnits().stream()
-                        .map(unit -> GetUserResponse.Unit.builder()
-                                .id(unit.getId())
-                                .name(unit.getName())
-                                .build())
-                        .toList())
                 .build();
     }
 }

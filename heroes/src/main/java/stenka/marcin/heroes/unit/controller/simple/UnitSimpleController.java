@@ -27,14 +27,14 @@ public class UnitSimpleController implements UnitController {
     public GetUnitsResponse getUserUnits(UUID id) {
         return unitService.findAllByUser(id)
                 .map(factory.unitsToResponse())
-                .orElseThrow(NotFoundException::new);
+                .orElseThrow(() -> new NotFoundException("User not found"));
     }
 
     @Override
     public GetUnitsResponse getFractionUnits(UUID id) {
         return unitService.findAllByFraction(id)
                 .map(factory.unitsToResponse())
-                .orElseThrow(NotFoundException::new);
+                .orElseThrow(() -> new NotFoundException("Fraction not found"));
     }
 
     @Override
@@ -46,7 +46,7 @@ public class UnitSimpleController implements UnitController {
     public GetUnitResponse getUnit(UUID id) {
         return unitService.find(id)
                 .map(factory.unitToResponse())
-                .orElseThrow(NotFoundException::new);
+                .orElseThrow(() -> new NotFoundException("Unit not found"));
     }
 
     @Override

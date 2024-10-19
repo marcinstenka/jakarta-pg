@@ -26,7 +26,7 @@ public class FractionSimpleController implements FractionController {
     public GetFractionResponse getFraction(UUID id) {
         return fractionService.find(id)
                 .map(factory.fractionToResponse())
-                .orElseThrow(NotFoundException::new);
+                .orElseThrow(() -> new NotFoundException("Fraction not found"));
     }
 
     @Override

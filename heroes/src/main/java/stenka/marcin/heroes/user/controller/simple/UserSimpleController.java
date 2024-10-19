@@ -8,11 +8,9 @@ import stenka.marcin.heroes.user.dto.GetUserResponse;
 import stenka.marcin.heroes.user.dto.GetUsersResponse;
 import stenka.marcin.heroes.user.dto.PatchUserRequest;
 import stenka.marcin.heroes.user.dto.PutUserRequest;
-import stenka.marcin.heroes.user.entity.User;
 import stenka.marcin.heroes.user.service.UserService;
 import stenka.marcin.heroes.controller.servlet.exception.NotFoundException;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -35,7 +33,7 @@ public class UserSimpleController implements UserController {
     public GetUserResponse getUser(UUID id) {
         return userService.find(id)
                 .map(factory.userToResponse())
-                .orElseThrow(NotFoundException::new);
+                .orElseThrow(() -> new NotFoundException("User not found"));
     }
 
     @Override
@@ -48,14 +46,14 @@ public class UserSimpleController implements UserController {
         try {
             userService.create(factory.requestToUser().apply(id, request));
         } catch (IllegalArgumentException ex) {
-            throw new BadRequestException(ex);
+            throw new AlreadyExistsException("User already exists, to update user use PATCH method");
         }
     }
 
     @Override
     public void patchUser(UUID id, PatchUserRequest request) {
         userService.find(id).ifPresentOrElse(entity -> userService.update(factory.updateUser().apply(entity, request)), () -> {
-            throw new NotFoundException();
+            throw new NotFoundException("User not found, to create user use PUT method");
         });
 
     }

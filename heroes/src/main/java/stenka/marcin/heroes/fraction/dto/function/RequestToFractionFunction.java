@@ -6,6 +6,8 @@ import stenka.marcin.heroes.unit.dto.PutUnitRequest;
 import stenka.marcin.heroes.unit.entity.Unit;
 import stenka.marcin.heroes.user.entity.User;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.UUID;
 import java.util.function.BiFunction;
 
@@ -16,6 +18,7 @@ public class RequestToFractionFunction implements BiFunction<UUID, PutFractionRe
                 .id(uuid)
                 .name(request.getName())
                 .fractionType(request.getFractionType())
+                .units(Collections.emptyList())
                 .build();
     }
 }

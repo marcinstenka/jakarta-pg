@@ -23,19 +23,4 @@ public class GetUserResponse {
 
     private LocalDate accountCreation;
 
-    @Getter
-    @Setter
-    @Builder
-    @NoArgsConstructor
-    @AllArgsConstructor(access = AccessLevel.PRIVATE)
-    @ToString
-    @EqualsAndHashCode
-    public static class Unit {
-        private UUID id;
-
-        private String name;
-    }
-
-    @Singular
-    private List<Unit> units;
 }
