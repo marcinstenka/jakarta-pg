@@ -48,4 +48,9 @@ public class UnitService {
         return userRepository.find(id)
                 .map(unitRepository::findAllByUser);
     }
+
+    public Optional<List<Unit>> findAllByFraction(UUID id) {
+        return fractionRepository.find(id)
+                .map(unitRepository::findAllByFraction);
+    }
 }

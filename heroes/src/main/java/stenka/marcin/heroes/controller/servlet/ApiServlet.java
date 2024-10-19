@@ -58,6 +58,8 @@ public class ApiServlet extends HttpServlet {
 
         public static final Pattern FRACTIONS = Pattern.compile("/units/?");
 
+        public static final Pattern FRACTION_UNITS = Pattern.compile("/fractions/(%s)/units/?".formatted(UUID.pattern()));
+
         public static final Pattern USER_UNITS = Pattern.compile("/users/(%s)/units/?".formatted(UUID.pattern()));
 
         public static final Pattern USER_AVATAR = Pattern.compile("/users/(%s)/avatar".formatted(UUID.pattern()));
@@ -156,6 +158,15 @@ public class ApiServlet extends HttpServlet {
                 UUID uuid = extractUuid(Patterns.FRACTION, path);
                 try {
                     response.getWriter().write(jsonb.toJson(fractionController.getFraction(uuid)));
+                } catch (NotFoundException ex) {
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                }
+                return;
+            } else if (path.matches(Patterns.FRACTION_UNITS.pattern())) {
+                response.setContentType("application/json");
+                UUID uuid = extractUuid(Patterns.FRACTION_UNITS, path);
+                try {
+                    response.getWriter().write(jsonb.toJson(unitController.getFractionUnits(uuid)));
                 } catch (NotFoundException ex) {
                     response.sendError(HttpServletResponse.SC_NOT_FOUND);
                 }

@@ -10,6 +10,8 @@ import java.util.UUID;
 public interface UnitController {
     GetUnitsResponse getUserUnits(UUID id);
 
+    GetUnitsResponse getFractionUnits(UUID id);
+
     GetUnitsResponse getUnits();
 
     GetUnitResponse getUnit(UUID id);

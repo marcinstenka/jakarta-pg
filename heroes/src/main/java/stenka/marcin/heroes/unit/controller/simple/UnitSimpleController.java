@@ -31,6 +31,13 @@ public class UnitSimpleController implements UnitController {
     }
 
     @Override
+    public GetUnitsResponse getFractionUnits(UUID id) {
+        return unitService.findAllByFraction(id)
+                .map(factory.unitsToResponse())
+                .orElseThrow(NotFoundException::new);
+    }
+
+    @Override
     public GetUnitsResponse getUnits() {
         return factory.unitsToResponse().apply(unitService.findAll());
     }

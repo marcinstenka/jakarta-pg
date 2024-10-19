@@ -1,6 +1,7 @@
 package stenka.marcin.heroes.unit.repository.memory;
 
 import stenka.marcin.heroes.dataStore.DataStore;
+import stenka.marcin.heroes.fraction.entity.Fraction;
 import stenka.marcin.heroes.unit.entity.Unit;
 import stenka.marcin.heroes.unit.repository.api.UnitRepository;
 import stenka.marcin.heroes.user.entity.User;
@@ -48,6 +49,13 @@ public class UnitInMemoryRepository implements UnitRepository {
     public List<Unit> findAllByUser(User user) {
         return store.findAllUnits().stream()
                 .filter(unit -> user.equals(unit.getUser()))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Unit> findAllByFraction(Fraction fraction) {
+        return store.findAllUnits().stream()
+                .filter(unit -> fraction.equals(unit.getFraction()))
                 .collect(Collectors.toList());
     }
 }

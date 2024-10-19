@@ -101,3 +101,39 @@ Content-Type: application/json
 DELETE http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
 
 ###
+
+# Get all fractions
+
+GET http://localhost:9080/heroes/api/fractions
+
+###
+
+# Get single fraction
+
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330
+
+###
+
+# Get fraction units
+
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units
+
+###
+
+# Put fraction
+
+PUT http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d332
+Content-Type: application/json
+
+{
+  "name": "Stronghold",
+  "fractionType": "NEUTRAL"
+}
+
+###
+
+# Delete fraction
+
+DELETE http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d332
+
+###
