@@ -30,8 +30,6 @@ public class GetUnitResponse {
     @EqualsAndHashCode
     public static class User {
         private UUID id;
-
-        private String name;
     }
 
     @Getter
@@ -43,8 +41,6 @@ public class GetUnitResponse {
     @EqualsAndHashCode
     public static class Fraction {
         private UUID id;
-
-        private String name;
     }
 
     private UUID id;

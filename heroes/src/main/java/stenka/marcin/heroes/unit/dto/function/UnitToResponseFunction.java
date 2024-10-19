@@ -14,11 +14,9 @@ public class UnitToResponseFunction implements Function<Unit, GetUnitResponse> {
                 .quantity(unit.getQuantity())
                 .user(GetUnitResponse.User.builder()
                         .id(unit.getUser().getId())
-                        .name(unit.getUser().getName())
                         .build())
                 .fraction(GetUnitResponse.Fraction.builder()
                         .id(unit.getFraction().getId())
-                        .name(unit.getFraction().getName())
                         .build())
                 .build();
     }

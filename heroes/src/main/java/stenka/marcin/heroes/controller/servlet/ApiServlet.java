@@ -198,8 +198,8 @@ public class ApiServlet extends HttpServlet {
                     unitController.putUnit(uuid, jsonb.fromJson(request.getReader(), PutUnitRequest.class));
                     response.addHeader("Location", createUrl(request, Paths.API, "units", uuid.toString()));
                     response.setStatus(HttpServletResponse.SC_CREATED);
-                } catch (BadRequestException ex) {
-                    response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+                } catch (AlreadyExistsException ex) {
+                    response.sendError(HttpServletResponse.SC_CONFLICT, ex.getMessage());
                 }
                 return;
             } else if (path.matches(Patterns.FRACTION.pattern())) {
@@ -208,13 +208,13 @@ public class ApiServlet extends HttpServlet {
                     fractionController.putFraction(uuid, jsonb.fromJson(request.getReader(), PutFractionRequest.class));
                     response.addHeader("Location", createUrl(request, Paths.API, "fractions", uuid.toString()));
                     response.setStatus(HttpServletResponse.SC_CREATED);
-                } catch (BadRequestException ex) {
-                    response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+                } catch (AlreadyExistsException ex) {
+                    response.sendError(HttpServletResponse.SC_CONFLICT, ex.getMessage());
                 }
                 return;
             }
         }
-        response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+        response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Put method bad request");
     }
 
     @SuppressWarnings("RedundantThrows")
@@ -229,7 +229,7 @@ public class ApiServlet extends HttpServlet {
                     userController.deleteUser(uuid);
                     response.setStatus(HttpServletResponse.SC_NO_CONTENT);
                 } catch (NotFoundException ex) {
-                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND, ex.getMessage());
                 }
                 return;
             } else if (path.matches(Patterns.USER_AVATAR.pattern())) {
@@ -247,7 +247,7 @@ public class ApiServlet extends HttpServlet {
                     unitController.deleteUnit(uuid);
                     response.setStatus(HttpServletResponse.SC_NO_CONTENT);
                 } catch (NotFoundException ex) {
-                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND, ex.getMessage());
                 }
                 return;
             } else if (path.matches(Patterns.FRACTION.pattern())) {
@@ -256,12 +256,12 @@ public class ApiServlet extends HttpServlet {
                     fractionController.deleteFraction(uuid);
                     response.setStatus(HttpServletResponse.SC_NO_CONTENT);
                 } catch (NotFoundException ex) {
-                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND, ex.getMessage());
                 }
                 return;
             }
         }
-        response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+        response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Delete method bad request");
     }
 
     @SuppressWarnings("RedundantThrows")
@@ -294,7 +294,7 @@ public class ApiServlet extends HttpServlet {
                     unitController.patchUnit(uuid, jsonb.fromJson(request.getReader(), PatchUnitRequest.class));
                     response.setStatus(HttpServletResponse.SC_NO_CONTENT);
                 } catch (NotFoundException ex) {
-                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND, ex.getMessage());
                 }
                 return;
             } else if (path.matches(Patterns.FRACTION.pattern())) {
@@ -303,12 +303,12 @@ public class ApiServlet extends HttpServlet {
                     fractionController.patchFraction(uuid, jsonb.fromJson(request.getReader(), PatchFractionRequest.class));
                     response.setStatus(HttpServletResponse.SC_NO_CONTENT);
                 } catch (NotFoundException ex) {
-                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND, ex.getMessage());
                 }
                 return;
             }
         }
-        response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+        response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Patch method bad request");
     }
 
 

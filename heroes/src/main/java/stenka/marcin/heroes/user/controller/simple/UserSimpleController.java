@@ -63,7 +63,7 @@ public class UserSimpleController implements UserController {
         userService.find(id).ifPresentOrElse(
                 entity -> userService.delete(id),
                 () -> {
-                    throw new NotFoundException();
+                    throw new NotFoundException("User not found");
                 }
         );
     }

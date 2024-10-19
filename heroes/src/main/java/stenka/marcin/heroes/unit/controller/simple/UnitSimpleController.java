@@ -1,6 +1,7 @@
 package stenka.marcin.heroes.unit.controller.simple;
 
 import stenka.marcin.heroes.component.DtoFunctionFactory;
+import stenka.marcin.heroes.controller.servlet.exception.AlreadyExistsException;
 import stenka.marcin.heroes.controller.servlet.exception.BadRequestException;
 import stenka.marcin.heroes.controller.servlet.exception.NotFoundException;
 import stenka.marcin.heroes.unit.controller.api.UnitController;
@@ -54,21 +55,21 @@ public class UnitSimpleController implements UnitController {
         try {
             unitService.create(factory.requestToUnit().apply(id, request));
         } catch (IllegalArgumentException ex) {
-            throw new BadRequestException(ex);
+            throw new AlreadyExistsException("Unit already exists, to update unit use PATCH method");
         }
     }
 
     @Override
     public void patchUnit(UUID id, PatchUnitRequest request) {
         unitService.find(id).ifPresentOrElse(entity -> unitService.update(factory.updateUnit().apply(entity, request)), () -> {
-            throw new NotFoundException();
+            throw new NotFoundException("Unit not found");
         });
     }
 
     @Override
     public void deleteUnit(UUID id) {
         unitService.find(id).ifPresentOrElse(entity -> unitService.delete(id), () -> {
-            throw new NotFoundException();
+            throw new NotFoundException("Unit not found");
         });
     }
 
