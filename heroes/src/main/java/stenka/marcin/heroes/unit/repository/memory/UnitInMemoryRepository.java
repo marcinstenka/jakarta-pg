@@ -48,14 +48,18 @@ public class UnitInMemoryRepository implements UnitRepository {
     @Override
     public List<Unit> findAllByUser(User user) {
         return store.findAllUnits().stream()
-                .filter(unit -> user.equals(unit.getUser()))
+                .filter(unit ->
+                        user.getId().equals(unit.getUser().getId())
+                )
                 .collect(Collectors.toList());
     }
 
     @Override
     public List<Unit> findAllByFraction(Fraction fraction) {
         return store.findAllUnits().stream()
-                .filter(unit -> fraction.equals(unit.getFraction()))
+                .filter(unit ->
+                        fraction.getId().equals(unit.getFraction().getId())
+                )
                 .collect(Collectors.toList());
     }
 }

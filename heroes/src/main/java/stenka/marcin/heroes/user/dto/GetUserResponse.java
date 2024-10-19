@@ -2,6 +2,7 @@ package stenka.marcin.heroes.user.dto;
 
 
 import lombok.*;
+import stenka.marcin.heroes.fraction.dto.GetFractionResponse;
 
 
 import java.time.LocalDate;
@@ -23,4 +24,19 @@ public class GetUserResponse {
 
     private LocalDate accountCreation;
 
+    @Getter
+    @Setter
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor(access = AccessLevel.PRIVATE)
+    @ToString
+    @EqualsAndHashCode
+    public static class Unit {
+        private UUID id;
+
+        private String name;
+    }
+
+    @Singular
+    private List<GetFractionResponse.Unit> units;
 }

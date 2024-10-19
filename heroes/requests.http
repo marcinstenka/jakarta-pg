@@ -6,7 +6,7 @@ GET http://localhost:9080/heroes/api/users
 
 # Get single user
 
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310
 
 ###
 
@@ -86,7 +86,7 @@ GET http://localhost:9080/heroes/api/units
 
 # Get single unit
 
-GET http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d320
+GET http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
 
 ###
 
@@ -105,7 +105,7 @@ Content-Type: application/json
   "name": "Griffin",
   "quantity": 15,
   "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d310",
-  "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d330"
+  "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d332"
 }
 
 ###
@@ -134,13 +134,13 @@ GET http://localhost:9080/heroes/api/fractions/
 
 # Get single fraction
 
-GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d332
 
 ###
 
 # Get fraction units
 
-GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d331/units
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units
 
 ###
 

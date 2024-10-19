@@ -2,6 +2,7 @@ package stenka.marcin.heroes.user.service;
 
 import stenka.marcin.heroes.controller.servlet.exception.AlreadyExistsException;
 import stenka.marcin.heroes.controller.servlet.exception.NotFoundException;
+import stenka.marcin.heroes.unit.entity.Unit;
 import stenka.marcin.heroes.user.entity.User;
 import stenka.marcin.heroes.user.repository.api.UserRepository;
 
@@ -10,6 +11,7 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -43,6 +45,17 @@ public class UserService {
 
     public void delete(UUID id) {
         userRepository.delete(userRepository.find(id).orElseThrow(NotFoundException::new));
+    }
+
+    public void addUnitToList(UUID userId, Unit unit) {
+        userRepository.find(userId).ifPresentOrElse(
+                user -> {
+                    List<Unit> units = new ArrayList<>(user.getUnits());
+                    units.add(unit);
+                    user.setUnits(units);
+                    userRepository.update(user);
+                },
+                NotFoundException::new);
     }
 
     public void createAvatar(UUID id, InputStream avatar, String pathToAvatars) throws AlreadyExistsException {
