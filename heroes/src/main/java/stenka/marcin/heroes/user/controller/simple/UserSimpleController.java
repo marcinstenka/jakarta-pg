@@ -1,18 +1,17 @@
 package stenka.marcin.heroes.user.controller.simple;
 
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
 import stenka.marcin.heroes.component.DtoFunctionFactory;
 import stenka.marcin.heroes.controller.servlet.exception.AlreadyExistsException;
-import stenka.marcin.heroes.controller.servlet.exception.BadRequestException;
 import stenka.marcin.heroes.user.controller.api.UserController;
 import stenka.marcin.heroes.user.dto.GetUserResponse;
 import stenka.marcin.heroes.user.dto.GetUsersResponse;
 import stenka.marcin.heroes.user.dto.PatchUserRequest;
 import stenka.marcin.heroes.user.dto.PutUserRequest;
-import stenka.marcin.heroes.user.entity.User;
 import stenka.marcin.heroes.user.service.UserService;
 import stenka.marcin.heroes.controller.servlet.exception.NotFoundException;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -20,12 +19,14 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.UUID;
 
+@RequestScoped
 public class UserSimpleController implements UserController {
 
     private final UserService userService;
 
     private final DtoFunctionFactory factory;
 
+    @Inject
     public UserSimpleController(DtoFunctionFactory factory, UserService userService) {
         this.factory = factory;
         this.userService = userService;
@@ -35,7 +36,7 @@ public class UserSimpleController implements UserController {
     public GetUserResponse getUser(UUID id) {
         return userService.find(id)
                 .map(factory.userToResponse())
-                .orElseThrow(NotFoundException::new);
+                .orElseThrow(() -> new NotFoundException("User not found"));
     }
 
     @Override
@@ -48,15 +49,14 @@ public class UserSimpleController implements UserController {
         try {
             userService.create(factory.requestToUser().apply(id, request));
         } catch (IllegalArgumentException ex) {
-            throw new BadRequestException(ex);
+            throw new AlreadyExistsException("User already exists, to update user use PATCH method");
         }
-
     }
 
     @Override
     public void patchUser(UUID id, PatchUserRequest request) {
         userService.find(id).ifPresentOrElse(entity -> userService.update(factory.updateUser().apply(entity, request)), () -> {
-            throw new NotFoundException();
+            throw new NotFoundException("User not found, to create user use PUT method");
         });
 
     }
@@ -66,7 +66,7 @@ public class UserSimpleController implements UserController {
         userService.find(id).ifPresentOrElse(
                 entity -> userService.delete(id),
                 () -> {
-                    throw new NotFoundException();
+                    throw new NotFoundException("User not found");
                 }
         );
     }

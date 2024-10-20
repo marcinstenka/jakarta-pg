@@ -21,12 +21,13 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(exclude = "units")
 public class User implements Serializable {
     private UUID id;
 
     private String name;
 
+    @ToString.Exclude
     private List<Unit> units;
 
     private LocalDate accountCreation;

@@ -1,5 +1,7 @@
 package stenka.marcin.heroes.user.repository.memory;
 
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
 import stenka.marcin.heroes.dataStore.DataStore;
 import stenka.marcin.heroes.user.entity.User;
 import stenka.marcin.heroes.user.repository.api.UserRepository;
@@ -8,10 +10,12 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+@RequestScoped
 public class UserInMemoryRepository implements UserRepository {
 
     private final DataStore store;
 
+    @Inject
     public UserInMemoryRepository(DataStore store) {
         this.store = store;
     }

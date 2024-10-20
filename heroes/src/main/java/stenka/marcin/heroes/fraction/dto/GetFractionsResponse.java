@@ -1,13 +1,10 @@
-package stenka.marcin.heroes.user.dto;
-
+package stenka.marcin.heroes.fraction.dto;
 
 import lombok.*;
-import stenka.marcin.heroes.fraction.dto.GetFractionResponse;
 
-
-import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
+
 
 @Getter
 @Setter
@@ -17,12 +14,7 @@ import java.util.UUID;
 @ToString
 @EqualsAndHashCode
 
-public class GetUserResponse {
-    private UUID id;
-
-    private String name;
-
-    private LocalDate accountCreation;
+public class GetFractionsResponse {
 
     @Getter
     @Setter
@@ -31,12 +23,12 @@ public class GetUserResponse {
     @AllArgsConstructor(access = AccessLevel.PRIVATE)
     @ToString
     @EqualsAndHashCode
-    public static class Unit {
+    public static class Fraction {
         private UUID id;
 
         private String name;
     }
 
     @Singular
-    private List<GetFractionResponse.Unit> units;
+    private List<Fraction> fractions;
 }

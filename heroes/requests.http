@@ -6,13 +6,43 @@ GET http://localhost:9080/heroes/api/users
 
 # Get single user
 
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
 
 ###
 
 # Get single user. Not existing.
 
 GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d315
+
+###
+
+# Put user
+
+PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
+Content-Type: application/json
+
+{
+  "name": "Blazej",
+  "accountCreation": "2012-04-23"
+}
+
+###
+
+# Patch user
+
+PATCH http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
+Content-Type: application/json
+
+{
+  "name": "Blazej2",
+  "accountCreation": "2010-01-11"
+}
+
+###
+
+# Delete user
+
+DELETE http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310
 
 ###
 
@@ -51,5 +81,91 @@ Content-Disposition: form-data; name="avatar"; filename="solmyr.png"
 
 < src/main/resources/stenka/marcin/heroes/configuration/avatar/solmyr.png
 --boundary--
+
+###
+
+# Get all units
+
+GET http://localhost:9080/heroes/api/units
+
+###
+
+# Get single unit
+
+GET http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
+
+###
+
+# Get user units
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d311/units/
+
+###
+
+# Put unit
+
+PUT http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
+Content-Type: application/json
+
+{
+  "name": "Behemoth",
+  "quantity": 1,
+  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d311",
+  "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d330"
+}
+
+###
+
+# Update user avatar.
+
+PATCH http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
+Content-Type: application/json
+
+{
+  "name": "Griffin",
+  "quantity": 20
+}
+
+###
+
+# Delete unit
+
+DELETE http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
+
+###
+
+# Get all fractions
+
+GET http://localhost:9080/heroes/api/fractions/
+
+###
+
+# Get single fraction
+
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330
+
+###
+
+# Get fraction units
+
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units
+
+###
+
+# Put fraction
+
+PUT http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d332
+Content-Type: application/json
+
+{
+  "name": "Stronghold",
+  "fractionType": "NEUTRAL"
+}
+
+###
+
+# Delete fraction
+
+DELETE http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330
 
 ###
