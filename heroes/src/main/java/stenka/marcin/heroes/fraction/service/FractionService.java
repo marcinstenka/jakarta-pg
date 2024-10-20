@@ -52,16 +52,4 @@ public class FractionService {
             unitService.delete(unit.getId());
         }));
     }
-
-    public void addUnitToFraction(UUID fractionId, Unit unit) {
-        fractionRepository.find(fractionId).ifPresentOrElse(
-                fraction -> {
-                    List<Unit> units = new ArrayList<>(fraction.getUnits());
-                    units.add(unit);
-                    fraction.setUnits(units);
-                    fractionRepository.update(fraction);
-                },
-                NotFoundException::new);
-    }
-
 }

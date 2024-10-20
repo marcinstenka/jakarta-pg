@@ -199,6 +199,8 @@ public class ApiServlet extends HttpServlet {
                     response.setStatus(HttpServletResponse.SC_CREATED);
                 } catch (AlreadyExistsException ex) {
                     response.sendError(HttpServletResponse.SC_CONFLICT, ex.getMessage());
+                } catch (NotFoundException ex) {
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND, ex.getMessage());
                 }
                 return;
             } else if (path.matches(Patterns.FRACTION.pattern())) {

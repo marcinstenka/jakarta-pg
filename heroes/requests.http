@@ -42,7 +42,7 @@ Content-Type: application/json
 
 # Delete user
 
-DELETE http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310
+DELETE http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
 
 ###
 
@@ -108,9 +108,9 @@ PUT http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
 Content-Type: application/json
 
 {
-  "name": "Griffin",
-  "quantity": 15,
-  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d310",
+  "name": "Behemoth",
+  "quantity": 1,
+  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d314",
   "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d332"
 }
 

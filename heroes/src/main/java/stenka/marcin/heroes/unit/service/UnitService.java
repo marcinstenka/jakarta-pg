@@ -4,12 +4,14 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import lombok.NoArgsConstructor;
 import stenka.marcin.heroes.controller.servlet.exception.NotFoundException;
+import stenka.marcin.heroes.fraction.entity.Fraction;
 import stenka.marcin.heroes.fraction.repository.api.FractionRepository;
 import stenka.marcin.heroes.unit.entity.Unit;
 import stenka.marcin.heroes.unit.repository.api.UnitRepository;
 import stenka.marcin.heroes.user.entity.User;
 import stenka.marcin.heroes.user.repository.api.UserRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -38,8 +40,24 @@ public class UnitService {
         return unitRepository.findAll();
     }
 
-    public void create(Unit unit) {
+    public void create(Unit unit, UUID userId, UUID fractionId) {
+        User user = userRepository.find(userId)
+                .orElseThrow(() -> new NotFoundException("User not found: " + userId));
+
+        Fraction fraction = fractionRepository.find(fractionId)
+                .orElseThrow(() -> new NotFoundException("Fraction not found: " + fractionId));
+
         unitRepository.create(unit);
+
+        List<Unit> userUnits = new ArrayList<>(user.getUnits());
+        userUnits.add(unit);
+        user.setUnits(userUnits);
+        userRepository.update(user);
+
+        List<Unit> fractionUnits = new ArrayList<>(fraction.getUnits());
+        fractionUnits.add(unit);
+        fraction.setUnits(fractionUnits);
+        fractionRepository.update(fraction);
     }
 
     public void update(Unit unit) {

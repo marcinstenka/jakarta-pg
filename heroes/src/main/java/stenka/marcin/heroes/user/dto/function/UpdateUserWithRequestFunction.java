@@ -13,6 +13,7 @@ public class UpdateUserWithRequestFunction implements BiFunction<User, PatchUser
                 .id(entity.getId())
                 .name(request.getName())
                 .accountCreation(request.getAccountCreation())
+                .units(entity.getUnits())
                 .build();
     }
 
