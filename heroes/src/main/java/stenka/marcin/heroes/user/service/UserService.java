@@ -1,5 +1,7 @@
 package stenka.marcin.heroes.user.service;
 
+import jakarta.inject.Inject;
+import lombok.NoArgsConstructor;
 import stenka.marcin.heroes.controller.servlet.exception.AlreadyExistsException;
 import stenka.marcin.heroes.controller.servlet.exception.NotFoundException;
 import stenka.marcin.heroes.unit.entity.Unit;
@@ -17,11 +19,16 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+import jakarta.enterprise.context.ApplicationScoped;
+
+@ApplicationScoped
+@NoArgsConstructor(force = true)
 public class UserService {
     private final UserRepository userRepository;
 
     private final UnitService unitService;
 
+    @Inject
     public UserService(UserRepository repository, UnitService unitService) {
         this.userRepository = repository;
         this.unitService = unitService;

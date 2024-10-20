@@ -1,5 +1,7 @@
 package stenka.marcin.heroes.unit.repository.memory;
 
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
 import stenka.marcin.heroes.dataStore.DataStore;
 import stenka.marcin.heroes.fraction.entity.Fraction;
 import stenka.marcin.heroes.unit.entity.Unit;
@@ -11,10 +13,12 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+@RequestScoped
 public class UnitInMemoryRepository implements UnitRepository {
 
     private final DataStore store;
 
+    @Inject
     public UnitInMemoryRepository(DataStore store) {
         this.store = store;
     }

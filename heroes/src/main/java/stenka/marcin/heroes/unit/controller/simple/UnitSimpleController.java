@@ -1,5 +1,7 @@
 package stenka.marcin.heroes.unit.controller.simple;
 
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
 import stenka.marcin.heroes.component.DtoFunctionFactory;
 import stenka.marcin.heroes.controller.servlet.exception.AlreadyExistsException;
 import stenka.marcin.heroes.controller.servlet.exception.BadRequestException;
@@ -16,6 +18,7 @@ import stenka.marcin.heroes.user.service.UserService;
 
 import java.util.UUID;
 
+@RequestScoped
 public class UnitSimpleController implements UnitController {
 
     private final UnitService unitService;
@@ -26,6 +29,7 @@ public class UnitSimpleController implements UnitController {
 
     private final DtoFunctionFactory factory;
 
+    @Inject
     public UnitSimpleController(UnitService unitService, UserService userService, FractionService fractionService, DtoFunctionFactory factory) {
         this.factory = factory;
         this.unitService = unitService;

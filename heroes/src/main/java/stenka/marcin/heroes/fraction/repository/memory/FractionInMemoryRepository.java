@@ -1,5 +1,7 @@
 package stenka.marcin.heroes.fraction.repository.memory;
 
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
 import stenka.marcin.heroes.dataStore.DataStore;
 import stenka.marcin.heroes.fraction.entity.Fraction;
 import stenka.marcin.heroes.fraction.repository.api.FractionRepository;
@@ -8,10 +10,12 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+@RequestScoped
 public class FractionInMemoryRepository implements FractionRepository {
 
     private final DataStore store;
 
+    @Inject
     public FractionInMemoryRepository(DataStore store) {
         this.store = store;
     }

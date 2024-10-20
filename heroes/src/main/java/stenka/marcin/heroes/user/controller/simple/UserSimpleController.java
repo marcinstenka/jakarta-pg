@@ -1,5 +1,7 @@
 package stenka.marcin.heroes.user.controller.simple;
 
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
 import stenka.marcin.heroes.component.DtoFunctionFactory;
 import stenka.marcin.heroes.controller.servlet.exception.AlreadyExistsException;
 import stenka.marcin.heroes.user.controller.api.UserController;
@@ -17,12 +19,14 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.UUID;
 
+@RequestScoped
 public class UserSimpleController implements UserController {
 
     private final UserService userService;
 
     private final DtoFunctionFactory factory;
 
+    @Inject
     public UserSimpleController(DtoFunctionFactory factory, UserService userService) {
         this.factory = factory;
         this.userService = userService;

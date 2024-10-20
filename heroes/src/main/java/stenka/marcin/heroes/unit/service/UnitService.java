@@ -1,5 +1,8 @@
 package stenka.marcin.heroes.unit.service;
 
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import lombok.NoArgsConstructor;
 import stenka.marcin.heroes.controller.servlet.exception.NotFoundException;
 import stenka.marcin.heroes.fraction.repository.api.FractionRepository;
 import stenka.marcin.heroes.unit.entity.Unit;
@@ -11,6 +14,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+@ApplicationScoped
+@NoArgsConstructor(force = true)
 public class UnitService {
     private final UnitRepository unitRepository;
 
@@ -18,6 +23,7 @@ public class UnitService {
 
     private final FractionRepository fractionRepository;
 
+    @Inject
     public UnitService(UnitRepository unitRepository, UserRepository userRepository, FractionRepository fractionRepository) {
         this.unitRepository = unitRepository;
         this.userRepository = userRepository;

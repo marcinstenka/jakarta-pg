@@ -1,8 +1,9 @@
 package stenka.marcin.heroes.fraction.controller.simple;
 
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
 import stenka.marcin.heroes.component.DtoFunctionFactory;
 import stenka.marcin.heroes.controller.servlet.exception.AlreadyExistsException;
-import stenka.marcin.heroes.controller.servlet.exception.BadRequestException;
 import stenka.marcin.heroes.controller.servlet.exception.NotFoundException;
 import stenka.marcin.heroes.fraction.controller.api.FractionController;
 import stenka.marcin.heroes.fraction.dto.GetFractionResponse;
@@ -13,11 +14,13 @@ import stenka.marcin.heroes.fraction.service.FractionService;
 
 import java.util.UUID;
 
+@RequestScoped
 public class FractionSimpleController implements FractionController {
     private final FractionService fractionService;
 
     private final DtoFunctionFactory factory;
 
+    @Inject
     public FractionSimpleController(final FractionService fractionService, final DtoFunctionFactory factory) {
         this.factory = factory;
         this.fractionService = fractionService;

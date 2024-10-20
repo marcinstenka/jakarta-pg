@@ -1,5 +1,6 @@
 package stenka.marcin.heroes.component;
 
+import jakarta.enterprise.context.ApplicationScoped;
 import stenka.marcin.heroes.fraction.dto.function.FractionToResponseFunction;
 import stenka.marcin.heroes.fraction.dto.function.FractionsToResponseFunction;
 import stenka.marcin.heroes.fraction.dto.function.RequestToFractionFunction;
@@ -13,6 +14,7 @@ import stenka.marcin.heroes.user.dto.function.UpdateUserWithRequestFunction;
 import stenka.marcin.heroes.user.dto.function.UserToResponseFunction;
 import stenka.marcin.heroes.user.dto.function.UsersToResponseFunction;
 
+@ApplicationScoped
 public class DtoFunctionFactory {
 
     // User entity

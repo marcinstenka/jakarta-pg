@@ -1,5 +1,6 @@
 package stenka.marcin.heroes.controller.servlet;
 
+import jakarta.inject.Inject;
 import jakarta.json.bind.Jsonb;
 import jakarta.json.bind.JsonbBuilder;
 import jakarta.servlet.ServletException;
@@ -31,11 +32,11 @@ import java.util.regex.Pattern;
 })
 @MultipartConfig(maxFileSize = 200 * 1024)
 public class ApiServlet extends HttpServlet {
-    private UserController userController;
+    private final UserController userController;
 
-    private UnitController unitController;
+    private final UnitController unitController;
 
-    private FractionController fractionController;
+    private final FractionController fractionController;
 
     private String avatarPath;
 
@@ -67,6 +68,13 @@ public class ApiServlet extends HttpServlet {
 
     private final Jsonb jsonb = JsonbBuilder.create();
 
+    @Inject
+    public ApiServlet(UserController userController, UnitController unitController, FractionController fractionController) {
+        this.userController = userController;
+        this.unitController = unitController;
+        this.fractionController = fractionController;
+    }
+
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getMethod().equals("PATCH")) {
@@ -74,15 +82,6 @@ public class ApiServlet extends HttpServlet {
         } else {
             super.service(request, response);
         }
-    }
-
-    @Override
-    public void init() throws ServletException {
-        super.init();
-        userController = (UserController) getServletContext().getAttribute("userController");
-        unitController = (UnitController) getServletContext().getAttribute("unitController");
-        fractionController = (FractionController) getServletContext().getAttribute("fractionController");
-        avatarPath = (String) getServletContext().getInitParameter("avatars-upload");
     }
 
     @SuppressWarnings("RedundantThrows")

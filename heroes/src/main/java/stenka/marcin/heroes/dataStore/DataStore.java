@@ -1,5 +1,7 @@
 package stenka.marcin.heroes.dataStore;
 
+import jakarta.inject.Inject;
+import lombok.NoArgsConstructor;
 import lombok.extern.java.Log;
 import stenka.marcin.heroes.fraction.entity.Fraction;
 import stenka.marcin.heroes.serialization.CloningUtility;
@@ -12,7 +14,11 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+import jakarta.enterprise.context.ApplicationScoped;
+
 @Log
+@ApplicationScoped
+@NoArgsConstructor(force = true)
 public class DataStore {
 
     private final Set<User> users = new HashSet<>();
@@ -23,6 +29,7 @@ public class DataStore {
 
     private final CloningUtility cloningUtility;
 
+    @Inject
     public DataStore(CloningUtility cloningUtility) {
         this.cloningUtility = cloningUtility;
     }

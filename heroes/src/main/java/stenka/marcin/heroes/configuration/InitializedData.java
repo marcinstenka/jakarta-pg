@@ -1,8 +1,10 @@
-package stenka.marcin.heroes.configuration.listener;
+package stenka.marcin.heroes.configuration;
 
-import jakarta.servlet.ServletContextEvent;
-import jakarta.servlet.ServletContextListener;
-import jakarta.servlet.annotation.WebListener;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.Initialized;
+import jakarta.enterprise.context.control.RequestContextController;
+import jakarta.enterprise.event.Observes;
+import jakarta.inject.Inject;
 import lombok.SneakyThrows;
 import stenka.marcin.heroes.fraction.entity.Fraction;
 import stenka.marcin.heroes.fraction.entity.FractionType;
@@ -17,8 +19,8 @@ import java.time.Month;
 import java.util.List;
 import java.util.UUID;
 
-@WebListener
-public class InitializedData implements ServletContextListener {
+@ApplicationScoped
+public class InitializedData {
 
     private UserService userService;
 
@@ -26,15 +28,31 @@ public class InitializedData implements ServletContextListener {
 
     private FractionService fractionService;
 
-    public void contextInitialized(ServletContextEvent event) {
-        userService = (UserService) event.getServletContext().getAttribute("userService");
-        unitService = (UnitService) event.getServletContext().getAttribute("unitService");
-        fractionService = (FractionService) event.getServletContext().getAttribute("fractionService");
+    private final RequestContextController requestContextController;
+
+    @Inject
+    public InitializedData(
+            UserService userService,
+            UnitService unitService,
+            FractionService fractionService,
+            RequestContextController requestContextController
+    ) {
+        this.userService = userService;
+        this.unitService = unitService;
+        this.fractionService = fractionService;
+        this.requestContextController = requestContextController;
+    }
+
+
+    public void contextInitialized(@Observes @Initialized(ApplicationScoped.class) Object init) {
         init();
     }
 
+
     @SneakyThrows
     private void init() {
+        requestContextController.activate();
+
         Unit blackDragon = Unit.builder()
                 .id(UUID.fromString("d9f823f4-f057-4f18-aeb7-b6654bc3d320"))
                 .name("Black dragon")
@@ -113,6 +131,8 @@ public class InitializedData implements ServletContextListener {
 
         fractionService.create(castle);
         fractionService.create(dungeon);
+
+        requestContextController.deactivate();
     }
 
 }
