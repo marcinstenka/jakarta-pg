@@ -3,6 +3,7 @@ package stenka.marcin.heroes.user.service;
 import stenka.marcin.heroes.controller.servlet.exception.AlreadyExistsException;
 import stenka.marcin.heroes.controller.servlet.exception.NotFoundException;
 import stenka.marcin.heroes.unit.entity.Unit;
+import stenka.marcin.heroes.unit.service.UnitService;
 import stenka.marcin.heroes.user.entity.User;
 import stenka.marcin.heroes.user.repository.api.UserRepository;
 
@@ -19,8 +20,11 @@ import java.util.UUID;
 public class UserService {
     private final UserRepository userRepository;
 
-    public UserService(UserRepository repository) {
+    private final UnitService unitService;
+
+    public UserService(UserRepository repository, UnitService unitService) {
         this.userRepository = repository;
+        this.unitService = unitService;
     }
 
     public Optional<User> find(UUID id) {
@@ -45,6 +49,11 @@ public class UserService {
 
     public void delete(UUID id) {
         userRepository.delete(userRepository.find(id).orElseThrow(NotFoundException::new));
+
+        Optional<List<Unit>> unitsToDelete = unitService.findAllByUser(id);
+        unitsToDelete.ifPresent(units -> units.forEach(unit -> {
+            unitService.delete(unit.getId());
+        }));
     }
 
     public void addUnitToList(UUID userId, Unit unit) {

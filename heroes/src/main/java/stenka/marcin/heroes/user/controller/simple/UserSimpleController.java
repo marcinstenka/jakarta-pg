@@ -2,7 +2,6 @@ package stenka.marcin.heroes.user.controller.simple;
 
 import stenka.marcin.heroes.component.DtoFunctionFactory;
 import stenka.marcin.heroes.controller.servlet.exception.AlreadyExistsException;
-import stenka.marcin.heroes.controller.servlet.exception.BadRequestException;
 import stenka.marcin.heroes.user.controller.api.UserController;
 import stenka.marcin.heroes.user.dto.GetUserResponse;
 import stenka.marcin.heroes.user.dto.GetUsersResponse;

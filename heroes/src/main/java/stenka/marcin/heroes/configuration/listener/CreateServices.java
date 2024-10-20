@@ -25,9 +25,11 @@ public class CreateServices implements ServletContextListener {
         UnitRepository unitRepository = new UnitInMemoryRepository(dataSource);
         FractionRepository fractionRepository = new FractionInMemoryRepository(dataSource);
 
-        event.getServletContext().setAttribute("userService", new UserService(userRepository));
+        UnitService unitService = (UnitService) event.getServletContext().getAttribute("unitService");
+
+        event.getServletContext().setAttribute("userService", new UserService(userRepository, unitService));
         event.getServletContext().setAttribute("unitService", new UnitService(unitRepository, userRepository, fractionRepository));
-        event.getServletContext().setAttribute("fractionService", new FractionService(fractionRepository));
+        event.getServletContext().setAttribute("fractionService", new FractionService(fractionRepository, unitService));
     }
 
 }

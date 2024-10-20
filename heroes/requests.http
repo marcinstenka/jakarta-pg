@@ -28,7 +28,7 @@ Content-Type: application/json
 
 ###
 
-# patch user
+# Patch user
 
 PATCH http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
 Content-Type: application/json
@@ -37,6 +37,12 @@ Content-Type: application/json
   "name": "Blazej2",
   "accountCreation": "2010-01-11"
 }
+
+###
+
+# Delete user
+
+DELETE http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310
 
 ###
 
