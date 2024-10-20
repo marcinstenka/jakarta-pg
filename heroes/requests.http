@@ -6,7 +6,7 @@ GET http://localhost:9080/heroes/api/users
 
 # Get single user
 
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
 
 ###
 
@@ -42,7 +42,7 @@ Content-Type: application/json
 
 # Delete user
 
-DELETE http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
+DELETE http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310
 
 ###
 
@@ -98,7 +98,7 @@ GET http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
 
 # Get user units
 
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/units/
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d311/units/
 
 ###
 
@@ -110,8 +110,8 @@ Content-Type: application/json
 {
   "name": "Behemoth",
   "quantity": 1,
-  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d314",
-  "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d332"
+  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d311",
+  "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d330"
 }
 
 ###
@@ -128,6 +128,8 @@ Content-Type: application/json
 
 ###
 
+# Delete unit
+
 DELETE http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
 
 ###
@@ -140,7 +142,7 @@ GET http://localhost:9080/heroes/api/fractions/
 
 # Get single fraction
 
-GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d332
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330
 
 ###
 
@@ -164,6 +166,6 @@ Content-Type: application/json
 
 # Delete fraction
 
-DELETE http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d332
+DELETE http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330
 
 ###

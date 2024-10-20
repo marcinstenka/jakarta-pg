@@ -1,7 +1,6 @@
 package stenka.marcin.heroes.user.service;
 
 import jakarta.inject.Inject;
-import lombok.NoArgsConstructor;
 import stenka.marcin.heroes.controller.servlet.exception.AlreadyExistsException;
 import stenka.marcin.heroes.controller.servlet.exception.NotFoundException;
 import stenka.marcin.heroes.unit.entity.Unit;
@@ -14,7 +13,6 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -22,7 +20,6 @@ import java.util.UUID;
 import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
-@NoArgsConstructor(force = true)
 public class UserService {
     private final UserRepository userRepository;
 
@@ -32,6 +29,11 @@ public class UserService {
     public UserService(UserRepository repository, UnitService unitService) {
         this.userRepository = repository;
         this.unitService = unitService;
+    }
+
+    public UserService() {
+        this.userRepository = null;
+        this.unitService = null;
     }
 
     public Optional<User> find(UUID id) {
@@ -55,12 +57,13 @@ public class UserService {
     }
 
     public void delete(UUID id) {
-        userRepository.delete(userRepository.find(id).orElseThrow(NotFoundException::new));
-
+        User user = userRepository.find(id).orElseThrow(NotFoundException::new);
         Optional<List<Unit>> unitsToDelete = unitService.findAllByUser(id);
         unitsToDelete.ifPresent(units -> units.forEach(unit -> {
             unitService.delete(unit.getId());
         }));
+        userRepository.delete(user);
+
     }
 
     public void createAvatar(UUID id, InputStream avatar, String pathToAvatars) throws AlreadyExistsException {

@@ -1,3 +1,393 @@
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-20T224941.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-20T224100.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/fractions/
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-20T224052.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d311/units/
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-20T224049.200.json
+
+###
+
+DELETE http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d311/units/
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-20T224043.200.json
+
+###
+
+PUT http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
+Content-Type: application/json
+Content-Length: 145
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "Behemoth",
+  "quantity": 1,
+  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d311",
+  "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d330"
+}
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d311/units/
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-20T223913.200.json
+
+###
+
+DELETE http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d311/units/
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-20T223904.200.json
+
+###
+
+PUT http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
+Content-Type: application/json
+Content-Length: 145
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "Behemoth",
+  "quantity": 1,
+  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d311",
+  "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d330"
+}
+
+###
+
+PUT http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
+Content-Type: application/json
+Content-Length: 145
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "Behemoth",
+  "quantity": 1,
+  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d314",
+  "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d330"
+}
+
+<> 2024-10-20T223852.404.html
+
+###
+
+GET http://localhost:9080/heroes/api/units
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-20T223254.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-20T223248.404.html
+
+###
+
+DELETE http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
+GET http://localhost:9080/heroes/api/units
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-20T223232.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-20T223208.404.html
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314/units/
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-20T223206.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/units
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-20T223203.200.json
+
+###
+
+DELETE http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
+DELETE http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d324
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-20T223138.404.html
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314/units/
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-20T223121.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310/units/
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-20T223115.404.html
+
+###
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-20T223103.200.json
+
+###
+
+PUT http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
+Content-Type: application/json
+Content-Length: 145
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "Behemoth",
+  "quantity": 1,
+  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d314",
+  "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d330"
+}
+
+###
+
+PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
+Content-Type: application/json
+Content-Length: 57
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "Blazej",
+  "accountCreation": "2012-04-23"
+}
+
+###
+
+GET http://localhost:9080/heroes/api/units
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-20T223028.200.json
+
+###
+
+DELETE http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-20T113226.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/units
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-20T113217.200.json
+
+###
+
+DELETE http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
+DELETE http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-20T113201.404.html
+
+###
+
+GET http://localhost:9080/heroes/api/units
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-20T112832.200.json
+
+###
+
+DELETE http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
+DELETE http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
+GET http://localhost:9080/heroes/api/units
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-20T112732.200.json
+
+###
+
+DELETE http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
+DELETE http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
 GET http://localhost:9080/heroes/api/units
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
 Accept-Encoding: br, deflate, gzip, x-gzip
@@ -133,446 +523,6 @@ Accept: */*
 content-length: 0
 
 <> 2024-10-20T111740.404.html
-
-###
-
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T111738.404.html
-
-###
-
-GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d331
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T111713.200.json
-
-###
-
-GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T111708.200.json
-
-###
-
-GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T111613.200.json
-
-###
-
-GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T111409.200.json
-
-###
-
-GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T111355.200.json
-
-###
-
-GET http://localhost:9080/heroes/api/fractions/
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T111344.200.json
-
-###
-
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T111333.200.json
-
-###
-
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T111329.404.html
-
-###
-
-GET http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T111315.200.json
-
-###
-
-GET http://localhost:9080/heroes/api/units
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T111309.200.json
-
-###
-
-PUT http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
-Content-Type: application/json
-Content-Length: 145
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "name": "Griffin",
-  "quantity": 15,
-  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d310",
-  "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d330"
-}
-
-###
-
-PUT http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
-Content-Type: application/json
-Content-Length: 145
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "name": "Griffin",
-  "quantity": 15,
-  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d310",
-  "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d334"
-}
-
-<> 2024-10-20T111259.404.html
-
-###
-
-GET http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T111159.200.json
-
-###
-
-GET http://localhost:9080/heroes/api/units
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T111153.200.json
-
-###
-
-PUT http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
-Content-Type: application/json
-Content-Length: 145
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "name": "Griffin",
-  "quantity": 15,
-  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d310",
-  "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d330"
-}
-
-<> 2024-10-20T111051.409.html
-
-###
-
-PUT http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
-Content-Type: application/json
-Content-Length: 145
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "name": "Griffin",
-  "quantity": 15,
-  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d310",
-  "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d334"
-}
-
-<> 2024-10-20T111044.404.html
-
-###
-
-PUT http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
-Content-Type: application/json
-Content-Length: 145
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "name": "Griffin",
-  "quantity": 15,
-  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d310",
-  "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d334"
-}
-
-<> 2024-10-20T110929.500.html
-
-###
-
-GET http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d321
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T110925.200.json
-
-###
-
-GET http://localhost:9080/heroes/api/units
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T110922.200.json
-
-###
-
-GET http://localhost:9080/heroes/api/users
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T110919.200.json
-
-###
-
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T110917.404.html
-
-###
-
-DELETE http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-###
-
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d315
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T110910.404.html
-
-###
-
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T110907.200.json
-
-###
-
-GET http://localhost:9080/heroes/api/users
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T110904.200.json
-
-###
-
-PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
-Content-Type: application/json
-Content-Length: 57
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "name": "Blazej",
-  "accountCreation": "2012-04-23"
-}
-
-###
-
-GET http://localhost:9080/heroes/api/users
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T104745.200.json
-
-###
-
-PUT http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
-Content-Type: application/json
-Content-Length: 145
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "name": "Griffin",
-  "quantity": 15,
-  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d310",
-  "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d334"
-}
-
-<> 2024-10-20T104718.500.html
-
-###
-
-PUT http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
-Content-Type: application/json
-Content-Length: 145
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "name": "Griffin",
-  "quantity": 15,
-  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d310",
-  "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d334"
-}
-
-###
-
-GET http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d321
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T103440.200.json
-
-###
-
-GET http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T103436.404.html
-
-###
-
-GET http://localhost:9080/heroes/api/units
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T103434.200.json
-
-###
-
-DELETE http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-###
-
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T103415.200.json
-
-###
-
-PATCH http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
-Content-Type: application/json
-Content-Length: 58
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "name": "Blazej2",
-  "accountCreation": "2010-01-11"
-}
-
-###
-
-PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
-Content-Type: application/json
-Content-Length: 57
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "name": "Blazej",
-  "accountCreation": "2012-04-23"
-}
-
-###
-
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T103253.500.html
 
 ###
 

@@ -1,14 +1,12 @@
 package stenka.marcin.heroes.fraction.service;
 
 import jakarta.inject.Inject;
-import lombok.NoArgsConstructor;
 import stenka.marcin.heroes.controller.servlet.exception.NotFoundException;
 import stenka.marcin.heroes.fraction.entity.Fraction;
 import stenka.marcin.heroes.fraction.repository.api.FractionRepository;
 import stenka.marcin.heroes.unit.entity.Unit;
 import stenka.marcin.heroes.unit.service.UnitService;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -17,7 +15,6 @@ import jakarta.enterprise.context.ApplicationScoped;
 
 
 @ApplicationScoped
-@NoArgsConstructor(force = true)
 public class FractionService {
     private final FractionRepository fractionRepository;
 
@@ -27,6 +24,11 @@ public class FractionService {
     public FractionService(FractionRepository fractionRepository, UnitService unitService) {
         this.fractionRepository = fractionRepository;
         this.unitService = unitService;
+    }
+
+    public FractionService() {
+        this.fractionRepository = null;
+        this.unitService = null;
     }
 
     public Optional<Fraction> find(UUID id) {
@@ -46,10 +48,16 @@ public class FractionService {
     }
 
     public void delete(UUID id) {
-        fractionRepository.delete(fractionRepository.find(id).orElseThrow(NotFoundException::new));
-        Optional<List<Unit>> unitsToDelete = unitService.findAllByUser(id);
+        Fraction fraction = fractionRepository.find(id).orElseThrow(NotFoundException::new);
+        Optional<List<Unit>> unitsToDelete = unitService.findAllByFraction(id);
         unitsToDelete.ifPresent(units -> units.forEach(unit -> {
             unitService.delete(unit.getId());
         }));
+
+        unitsToDelete.ifPresent(units -> {
+
+        });
+
+        fractionRepository.delete(fraction);
     }
 }
