@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:f="jakarta.faces.core">
+<f:view>
+    <h:head>
+        <meta charset="UTF-8"/>
+        <meta name="description" content="Heroes game"/>
+        <meta name="author" content="Marcin Stenka"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Heroes</title>
+    </h:head>
+
+    <h:body>
+        <div>
+            <header>
+                <h1>Heroes</h1>
+            </header>
+
+            <nav>
+                <div>
+                    <ul>
+                        <li>
+                            <h:link outcome="/index.xhtml">Home</h:link>
+                        </li>
+                        <li>
+                            <h:link outcome="/character/character_list.xhtml">Characters</h:link>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main>
+                <ui:insert name="content"/>
+            </main>
+
+            <footer>
+                <div>
+                    Copyright &#169; 2024 Marcin Stenka
+                </div>
+            </footer>
+        </div>
+    </h:body>
+</f:view>
+</html>
