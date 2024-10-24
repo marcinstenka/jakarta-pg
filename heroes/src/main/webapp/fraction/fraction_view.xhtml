@@ -11,21 +11,25 @@
     </f:metadata>
 
     <ui:define name="content">
-        <article>
-            <header>
-                <h2>
-                    <h:outputText value="#{fractionView.fraction.name}"/>
-                </h2>
-            </header>
-            <main>
-                <div>
-                    Fraction type
-                </div>
-                <div>
-                    <h:outputText value="#{fractionView.fraction.fractionType}"/>
-                </div>
-            </main>
-        </article>
+        <header>
+            <h2>
+                <h:outputText value="#{fractionView.fraction.name}"/>
+            </h2>
+        </header>
+        <main>
+            <div>
+                Fraction type:
+                <h:outputText value="#{fractionView.fraction.fractionType}"/>
+            </div>
+            <div>Units:</div>
+            <ui:repeat layout="unorderedList" value="#{fractionView.fraction.units}" var="unit">
+                <li>
+                    <h:link outcome="/unit/unit_view.xhtml">
+                        <h:outputText value="#{unit.name}"/>
+                        <f:param name="id" value="#{unit.id}"/>
+                    </h:link>
+                </li>
+            </ui:repeat>
+        </main>
     </ui:define>
-
 </ui:composition>

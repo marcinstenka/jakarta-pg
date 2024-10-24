@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    background-color: #262626;
+    color: aliceblue;
+}
+
+a {
+    color: aliceblue;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container {
+    width: 150px;
+}
+
+.logo-container img {
+    width: 100%;
+}
+
+.main {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h2 {
+    margin: 0 0 5px 0;
+}

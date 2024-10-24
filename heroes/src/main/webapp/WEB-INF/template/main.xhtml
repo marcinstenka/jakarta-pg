@@ -12,33 +12,34 @@
         <meta name="author" content="Marcin Stenka"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Heroes</title>
+        <h:outputStylesheet library="css" name="index.css"/>
     </h:head>
-
     <h:body>
         <div>
             <header>
-                <h1>Heroes</h1>
+                <h1 style="text-align: center">Heroes</h1>
             </header>
 
-            <nav>
-                <div>
-                    <ul>
-                        <li>
-                            <h:link outcome="/index.xhtml">Home</h:link>
-                        </li>
-                        <li>
-                            <h:link outcome="/fraction/fraction_list.xhtml">Fractions</h:link>
-                        </li>
-                    </ul>
+            <nav class="nav">
+                <div class="logo-container">
+                    <h:graphicImage name="img/logo.png" alt="Logo"/>
                 </div>
+                <ul>
+                    <li>
+                        <h:link outcome="/index.xhtml">Home</h:link>
+                    </li>
+                    <li>
+                        <h:link outcome="/fraction/fraction_list.xhtml">Fractions</h:link>
+                    </li>
+                </ul>
             </nav>
 
-            <main>
+            <main class="main">
                 <ui:insert name="content"/>
             </main>
 
             <footer>
-                <div>
+                <div style="text-align: center">
                     Copyright &#169; 2024 Marcin Stenka
                 </div>
             </footer>
