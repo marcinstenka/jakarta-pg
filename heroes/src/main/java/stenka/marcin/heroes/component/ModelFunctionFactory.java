@@ -5,6 +5,7 @@ import stenka.marcin.heroes.fraction.model.function.FractionToEditModelFunction;
 import stenka.marcin.heroes.fraction.model.function.FractionToModelFunction;
 import stenka.marcin.heroes.fraction.model.function.FractionsToModelFunction;
 import stenka.marcin.heroes.fraction.model.function.ModelToFractionFunction;
+import stenka.marcin.heroes.unit.dto.function.UpdateUnitWithModelFunction;
 import stenka.marcin.heroes.unit.model.function.ModelToUnitFunction;
 import stenka.marcin.heroes.unit.model.function.UnitToEditModelFunction;
 import stenka.marcin.heroes.unit.model.function.UnitToModelFunction;
@@ -38,5 +39,9 @@ public class ModelFunctionFactory {
 
     public ModelToUnitFunction modelToUnit() {
         return new ModelToUnitFunction();
+    }
+
+    public UpdateUnitWithModelFunction updateUnit() {
+        return new UpdateUnitWithModelFunction();
     }
 }

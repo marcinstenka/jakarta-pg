@@ -1,5 +1,7 @@
 package stenka.marcin.heroes.unit.model.function;
 
+import stenka.marcin.heroes.fraction.entity.Fraction;
+import stenka.marcin.heroes.fraction.model.FractionModel;
 import stenka.marcin.heroes.unit.entity.Unit;
 import stenka.marcin.heroes.unit.model.UnitEditModel;
 
@@ -13,6 +15,13 @@ public class UnitToEditModelFunction implements Function<Unit, UnitEditModel>, S
         return UnitEditModel.builder()
                 .name(unit.getName())
                 .quantity(unit.getQuantity())
+                .user(unit.getUser())
+                .fraction(FractionModel.builder()
+                        .id(unit.getFraction().getId())
+                        .name(unit.getFraction().getName())
+                        .fractionType(unit.getFraction().getFractionType())
+                        .units(unit.getFraction().getUnits())
+                        .build())
                 .build();
     }
 }

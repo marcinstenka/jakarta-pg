@@ -1,6 +1,8 @@
 package stenka.marcin.heroes.unit.model;
 
 import lombok.*;
+import stenka.marcin.heroes.fraction.model.FractionModel;
+import stenka.marcin.heroes.user.entity.User;
 
 @Getter
 @Setter
@@ -13,4 +15,8 @@ public class UnitEditModel {
     private String name;
 
     private int quantity;
+
+    private User user;
+
+    private FractionModel fraction;
 }

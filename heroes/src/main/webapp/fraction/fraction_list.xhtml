@@ -15,8 +15,13 @@
                         <f:param name="id" value="#{fraction.id}"/>
                     </h:link>
                 </h:column>
+                <h:column>
+                    <h:form>
+                        <h:commandButton class="button" value="Delete"
+                                         action="#{fractionList.deleteAction(fraction)}"/>
+                    </h:form>
+                </h:column>
             </h:dataTable>
         </article>
     </ui:define>
-
 </ui:composition>

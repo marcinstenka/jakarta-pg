@@ -8,13 +8,12 @@ import jakarta.inject.Inject;
 import stenka.marcin.heroes.component.ModelFunctionFactory;
 import stenka.marcin.heroes.fraction.entity.Fraction;
 import stenka.marcin.heroes.fraction.model.FractionModel;
-import stenka.marcin.heroes.fraction.model.FractionsModel;
 import stenka.marcin.heroes.fraction.service.FractionService;
 
 import java.util.Optional;
 import java.util.UUID;
 
-@FacesConverter(forClass = FractionsModel.class, managed = true)
+@FacesConverter(forClass = FractionModel.class, managed = true)
 public class FractionModelConverter implements Converter<FractionModel> {
     private final FractionService fractionService;
 

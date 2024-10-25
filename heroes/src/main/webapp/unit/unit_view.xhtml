@@ -21,6 +21,14 @@
                 Quantity:
                 <h:outputText value="#{unitView.unit.quantity}"/>
             </div>
+
+            <h:column>
+                <f:facet name="header">Edit</f:facet>
+                <h:link outcome="/unit/unit_edit.xhtml" value="Edit">
+                    <f:param name="id" value="#{unitView.unit.id}"/>
+                </h:link>
+            </h:column>
+
         </main>
     </ui:define>
 </ui:composition>
