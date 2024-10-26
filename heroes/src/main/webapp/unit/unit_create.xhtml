@@ -21,12 +21,12 @@
 
                 <div>
                     <h:outputLabel for="quantity" value="Quantity:"/>
-                    <h:inputText id="quantity" value="#{unitCreate.unit.quantity}"/>
+                    <h:inputText id="quantity" value="#{unitCreate.unit.quantity}" type="number"/>
 
                 </div>
 
                 <div>
-                    <h3 style="margin: 5px 0">Choose fraction:</h3>
+                    <p style="margin: 5px 0">Choose fraction:</p>
                     <ui:repeat value="#{unitCreate.fractions}" var="fraction">
                         <div class="form-check">
                             <h:selectOneRadio id="radioId" group="fraction"

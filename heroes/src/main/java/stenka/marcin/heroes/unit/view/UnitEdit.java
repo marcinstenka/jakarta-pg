@@ -65,6 +65,9 @@ public class UnitEdit implements Serializable {
     }
 
     public String saveAction() {
+        if (unit.getFraction() == null || unit.getName() == null) {
+            return null;
+        }
         unitService.update(factory.updateUnit().apply(unitService.find(id).orElseThrow(), unit), initialFraction);
         String viewId = FacesContext.getCurrentInstance().getViewRoot().getViewId();
         return viewId + "?faces-redirect=true&includeViewParams=true";

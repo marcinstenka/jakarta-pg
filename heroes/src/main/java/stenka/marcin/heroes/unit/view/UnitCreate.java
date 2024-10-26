@@ -63,6 +63,9 @@ public class UnitCreate implements Serializable {
     }
 
     public String saveAction() {
+        if (unit.getFraction() == null || unit.getName() == null) {
+            return null;
+        }
         unitService.create(factory.modelToUnit().apply(unit), TEMP_USER_ID, unit.getFraction().getId());
         return "/fraction/fraction_view.xhtml?faces-redirect=true&id=" + unit.getFraction().getId();
 
