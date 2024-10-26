@@ -45,7 +45,9 @@ public class UnitService {
     }
 
     public void create(Unit unit, UUID userId, UUID fractionId) {
+
         User user = userService.find(userId).orElseThrow(() -> new NotFoundException("User not found: " + userId));
+
         Fraction fraction = fractionService.find(fractionId).orElseThrow(() -> new NotFoundException("Fraction not found: " + fractionId));
 
         unitRepository.create(unit);
@@ -61,7 +63,33 @@ public class UnitService {
         fractionService.update(fraction);
     }
 
-    public void update(Unit unit) {
+    public void update(Unit unit, UUID initialFraction) {
+        User user = userService.find(unit.getUser().getId())
+                .orElseThrow(() -> new NotFoundException("User not found: " + unit.getUser().getId()));
+
+        Fraction newFraction = fractionService.find(unit.getFraction().getId())
+                .orElseThrow(() -> new NotFoundException("Fraction not found: " + unit.getFraction().getId()));
+
+        if (!initialFraction.equals(newFraction.getId())) {
+            Fraction oldFraction = fractionService.find(initialFraction)
+                    .orElseThrow(() -> new NotFoundException("Initial fraction not found: " + initialFraction));
+
+            oldFraction.getUnits().removeIf(oldFractionUnit -> oldFractionUnit.getId().equals(unit.getId()));
+            fractionService.update(oldFraction);
+        }
+
+        boolean userUnitUpdated = user.getUnits().removeIf(userUnit -> userUnit.getId().equals(unit.getId()));
+        if (userUnitUpdated) {
+            user.getUnits().add(unit);
+        } else {
+            throw new NotFoundException("Unit not found in user's units: " + unit.getId());
+        }
+
+        newFraction.getUnits().removeIf(fractionUnit -> fractionUnit.getId().equals(unit.getId()));
+        newFraction.getUnits().add(unit);
+
+        userService.update(user);
+        fractionService.update(newFraction);
         unitRepository.update(unit);
     }
 

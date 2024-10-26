@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="jakarta.faces.html"
+                xmlns:ui="jakarta.faces.facelets"
+                xmlns:f="jakarta.faces.core"
+                template="/WEB-INF/template/main.xhtml">
+
+    <f:metadata>
+        <f:viewParam name="id" value="#{fractionView.id}" required="true"/>
+        <f:viewAction action="#{fractionView.init()}"/>
+    </f:metadata>
+
+    <ui:define name="content">
+        <header>
+            <h2>
+                <h:outputText value="#{fractionView.fraction.name}"/>
+            </h2>
+        </header>
+        <main>
+            <div>
+                Fraction type:
+                <h:outputText value="#{fractionView.fraction.fractionType}"/>
+            </div>
+            <div>Units:</div>
+            <ui:repeat layout="unorderedList" value="#{fractionView.fraction.units}" var="unit">
+                <li style="display: flex">
+                    <h:link outcome="/unit/unit_view.xhtml">
+                        <h:outputText value="#{unit.name}"/>
+                        <f:param name="id" value="#{unit.id}"/>
+                    </h:link>
+                    <h:form>
+                        <h:commandButton class="button" value="Delete unit" action="#{fractionView.deleteUnit(unit.id)}"/>
+                    </h:form>
+                </li>
+            </ui:repeat>
+        </main>
+    </ui:define>
+</ui:composition>

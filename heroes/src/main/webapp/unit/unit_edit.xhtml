@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="jakarta.faces.html"
+                xmlns:ui="jakarta.faces.facelets"
+                xmlns:f="jakarta.faces.core"
+                template="/WEB-INF/template/main.xhtml">
+
+    <f:metadata>
+        <f:viewParam name="id" value="#{unitEdit.id}" required="true"/>
+        <f:viewAction action="#{unitEdit.init()}"/>
+    </f:metadata>
+
+    <ui:define name="content">
+        <article>
+            <header><h2>Edit unit</h2></header>
+            <h:form onreset="onReset()" enctype="multipart/form-data">
+                <div>
+                    <div>
+                        <h:outputLabel for="name" value="Name:" styleClass="form-label"/>
+                        <h:inputText id="name" value="#{unitEdit.unit.name}"/>
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <h:outputLabel for="quantity" value="Quantity:"/>
+                        <h:inputText id="quantity" value="#{unitEdit.unit.quantity}" type="number"/>
+                    </div>
+                </div>
+                <ui:repeat value="#{unitEdit.fractions}" var="fraction">
+                    <div class="form-check">
+                        <h:selectOneRadio id="radioId" group="fraction"
+                                          value="#{unitEdit.unit.fraction}">
+                            <f:selectItem itemValue="#{fraction}" itemLabel="#{fraction.name}"/>
+                        </h:selectOneRadio>
+                    </div>
+                </ui:repeat>
+                <div class="button-container">
+                        <h:commandButton class="button" value="Update"
+                                         action="#{unitEdit.saveAction()}"/>
+                        <h:commandButton class="button" type="reset" value="Reset"/>
+                </div>
+            </h:form>
+        </article>
+    </ui:define>
+
+</ui:composition>

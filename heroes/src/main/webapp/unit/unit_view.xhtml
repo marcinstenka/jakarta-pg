@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="jakarta.faces.html"
+                xmlns:ui="jakarta.faces.facelets"
+                xmlns:f="jakarta.faces.core"
+                template="/WEB-INF/template/main.xhtml">
+
+    <f:metadata>
+        <f:viewParam name="id" value="#{unitView.id}" required="true"/>
+        <f:viewAction action="#{unitView.init()}"/>
+    </f:metadata>
+
+    <ui:define name="content">
+        <header>
+            <h2>
+                <h:outputText value="#{unitView.unit.name}"/>
+            </h2>
+        </header>
+        <main>
+            <div>
+                Quantity:
+                <h:outputText value="#{unitView.unit.quantity}"/>
+            </div>
+
+            <h:column>
+                <f:facet name="header">Edit</f:facet>
+                <h:link outcome="/unit/unit_edit.xhtml" value="Edit">
+                    <f:param name="id" value="#{unitView.unit.id}"/>
+                </h:link>
+            </h:column>
+
+        </main>
+    </ui:define>
+</ui:composition>
