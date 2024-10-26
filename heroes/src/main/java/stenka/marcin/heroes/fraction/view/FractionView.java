@@ -11,6 +11,7 @@ import stenka.marcin.heroes.component.ModelFunctionFactory;
 import stenka.marcin.heroes.fraction.entity.Fraction;
 import stenka.marcin.heroes.fraction.model.FractionModel;
 import stenka.marcin.heroes.fraction.service.FractionService;
+import stenka.marcin.heroes.unit.service.UnitService;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -24,6 +25,8 @@ public class FractionView implements Serializable {
 
     private final ModelFunctionFactory factory;
 
+    private final UnitService unitService;
+
     @Setter
     @Getter
     private UUID id;
@@ -32,9 +35,10 @@ public class FractionView implements Serializable {
     private FractionModel fraction;
 
     @Inject
-    public FractionView(FractionService fractionService, ModelFunctionFactory factory) {
+    public FractionView(FractionService fractionService, ModelFunctionFactory factory, UnitService unitService) {
         this.fractionService = fractionService;
         this.factory = factory;
+        this.unitService = unitService;
     }
 
     public void init() throws IOException {
@@ -46,5 +50,10 @@ public class FractionView implements Serializable {
         }
     }
 
+    public String deleteUnit(UUID userId) {
+        unitService.delete(userId);
+        String viewId = FacesContext.getCurrentInstance().getViewRoot().getViewId();
+        return viewId + "?faces-redirect=true&includeViewParams=true";
+    }
 
 }

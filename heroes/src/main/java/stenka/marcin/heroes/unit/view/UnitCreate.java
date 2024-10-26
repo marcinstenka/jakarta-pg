@@ -64,8 +64,8 @@ public class UnitCreate implements Serializable {
 
     public String saveAction() {
         unitService.create(factory.modelToUnit().apply(unit), TEMP_USER_ID, unit.getFraction().getId());
-        String viewId = FacesContext.getCurrentInstance().getViewRoot().getViewId();
-        return viewId + "?faces-redirect=true&includeViewParams=true";
+        return "/fraction/fraction_view.xhtml?faces-redirect=true&id=" + unit.getFraction().getId();
+
     }
 
 }

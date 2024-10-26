@@ -23,11 +23,14 @@
             </div>
             <div>Units:</div>
             <ui:repeat layout="unorderedList" value="#{fractionView.fraction.units}" var="unit">
-                <li>
+                <li style="display: flex">
                     <h:link outcome="/unit/unit_view.xhtml">
                         <h:outputText value="#{unit.name}"/>
                         <f:param name="id" value="#{unit.id}"/>
                     </h:link>
+                    <h:form>
+                        <h:commandButton class="button" value="DeleteUnit" action="#{fractionView.deleteUnit(unit.id)}"/>
+                    </h:form>
                 </li>
             </ui:repeat>
         </main>

@@ -69,7 +69,7 @@ public class UnitSimpleController implements UnitController {
 
     @Override
     public void patchUnit(UUID id, PatchUnitRequest request) {
-        unitService.find(id).ifPresentOrElse(entity -> unitService.update(factory.updateUnit().apply(entity, request)), () -> {
+        unitService.find(id).ifPresentOrElse(entity -> unitService.update(factory.updateUnit().apply(entity, request), entity.getFraction().getId()), () -> {
             throw new NotFoundException("Unit not found");
         });
     }
