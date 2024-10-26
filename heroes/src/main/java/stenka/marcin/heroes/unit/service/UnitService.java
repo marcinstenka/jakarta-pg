@@ -45,7 +45,9 @@ public class UnitService {
     }
 
     public void create(Unit unit, UUID userId, UUID fractionId) {
+
         User user = userService.find(userId).orElseThrow(() -> new NotFoundException("User not found: " + userId));
+
         Fraction fraction = fractionService.find(fractionId).orElseThrow(() -> new NotFoundException("Fraction not found: " + fractionId));
 
         unitRepository.create(unit);

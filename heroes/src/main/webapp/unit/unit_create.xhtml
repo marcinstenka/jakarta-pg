@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="jakarta.faces.html"
+                xmlns:ui="jakarta.faces.facelets"
+                xmlns:f="jakarta.faces.core"
+                template="/WEB-INF/template/main.xhtml">
+
+    <f:metadata>
+        <f:viewAction action="#{unitCreate.init()}"/>
+    </f:metadata>
+
+    <ui:define name="content">
+        <article>
+            <header><h2>Create unit</h2></header>
+            <h:form styleClass="container" onreset="onReset()" enctype="multipart/form-data">
+
+                <div>
+                    <h:outputLabel for="name" value="Name:" styleClass="form-label"/>
+                    <h:inputText id="name" value="#{unitCreate.unit.name}" styleClass="form-control"/>
+                </div>
+
+                <div>
+                    <h:outputLabel for="quantity" value="Quantity:"/>
+                    <h:inputText id="quantity" value="#{unitCreate.unit.quantity}"/>
+
+                </div>
+
+                <div>
+                    <h3 style="margin: 5px 0">Choose fraction:</h3>
+                    <ui:repeat value="#{unitCreate.fractions}" var="fraction">
+                        <div class="form-check">
+                            <h:selectOneRadio id="radioId" group="fraction"
+                                              value="#{unitCreate.unit.fraction}">
+                                <f:selectItem itemValue="#{fraction}" itemLabel="#{fraction.name}"/>
+                            </h:selectOneRadio>
+                        </div>
+                    </ui:repeat>
+                </div>
+
+
+                <div class="button-container">
+                    <h:commandButton class="button" value="Create"
+                                     action="#{unitCreate.saveAction()}"/>
+                    <h:commandButton class="button" type="reset" value="Reset"/>
+                </div>
+            </h:form>
+        </article>
+    </ui:define>
+
+</ui:composition>

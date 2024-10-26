@@ -1,7 +1,7 @@
 package stenka.marcin.heroes.unit.model;
 
 import lombok.*;
-import stenka.marcin.heroes.fraction.entity.Fraction;
+import stenka.marcin.heroes.fraction.model.FractionModel;
 import stenka.marcin.heroes.user.entity.User;
 
 import java.util.UUID;
@@ -22,5 +22,5 @@ public class UnitCreateModel {
 
     private User user;
 
-    private Fraction fraction;
+    private FractionModel fraction;
 }

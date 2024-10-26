@@ -1,5 +1,6 @@
 package stenka.marcin.heroes.unit.model.function;
 
+import stenka.marcin.heroes.fraction.entity.Fraction;
 import stenka.marcin.heroes.unit.entity.Unit;
 import stenka.marcin.heroes.unit.model.UnitCreateModel;
 
@@ -14,7 +15,12 @@ public class ModelToUnitFunction implements Function<UnitCreateModel, Unit>, Ser
                 .name(model.getName())
                 .quantity(model.getQuantity())
                 .user(model.getUser())
-                .fraction(model.getFraction())
+                .fraction(Fraction.builder()
+                        .id(model.getFraction().getId())
+                        .name(model.getFraction().getName())
+                        .fractionType(model.getFraction().getFractionType())
+                        .units(model.getFraction().getUnits())
+                        .build())
                 .build();
     }
 }

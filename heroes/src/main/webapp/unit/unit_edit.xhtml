@@ -27,14 +27,6 @@
                         <h:inputText id="quantity" value="#{unitEdit.unit.quantity}"/>
                     </div>
                 </div>
-<!--                <div>-->
-<!--                    <div>-->
-<!--                        <h:outputLabel for="fraction" value="Fraction:"/>-->
-<!--                        <h:selectOneMenu id="fraction" value="#{unitEdit.selectedFraction}">-->
-<!--                            <f:selectItems value="#{unitEdit.fractions}" />-->
-<!--                        </h:selectOneMenu>-->
-<!--                    </div>-->
-<!--                </div>-->
                 <ui:repeat value="#{unitEdit.fractions}" var="fraction">
                     <div class="form-check">
                         <h:selectOneRadio id="radioId" group="fraction"
