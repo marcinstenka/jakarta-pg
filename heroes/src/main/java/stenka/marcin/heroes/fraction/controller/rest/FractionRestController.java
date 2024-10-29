@@ -6,6 +6,7 @@ import jakarta.ws.rs.NotAllowedException;
 import jakarta.ws.rs.NotFoundException;
 import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.Context;
+import jakarta.ws.rs.Path;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.UriInfo;
 import stenka.marcin.heroes.component.DtoFunctionFactory;
@@ -18,6 +19,7 @@ import stenka.marcin.heroes.fraction.service.FractionService;
 
 import java.util.UUID;
 
+@Path("")
 public class FractionRestController implements FractionController {
     private final FractionService fractionService;
 

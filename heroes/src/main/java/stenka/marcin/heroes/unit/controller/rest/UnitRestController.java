@@ -8,6 +8,7 @@ import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.UriInfo;
+import jakarta.ws.rs.Path;
 import stenka.marcin.heroes.component.DtoFunctionFactory;
 import stenka.marcin.heroes.unit.controller.api.UnitController;
 import stenka.marcin.heroes.unit.dto.GetUnitResponse;
@@ -19,6 +20,7 @@ import stenka.marcin.heroes.unit.service.UnitService;
 
 import java.util.UUID;
 
+@Path("")
 public class UnitRestController implements UnitController {
     private final UnitService unitService;
 

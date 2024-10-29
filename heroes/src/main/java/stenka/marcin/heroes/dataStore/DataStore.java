@@ -117,6 +117,8 @@ public class DataStore {
     public synchronized void deleteFraction(UUID id) throws IllegalArgumentException {
         if (!fractions.removeIf(fraction -> fraction.getId().equals(id))) {
             throw new IllegalArgumentException("The fraction with id \"%s\" does not exist".formatted(id));
+        } else {
+            units.removeIf(unit -> unit.getFraction().getId().equals(id));
         }
     }
 }
