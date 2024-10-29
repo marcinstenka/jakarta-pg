@@ -53,11 +53,6 @@ public class FractionService {
         unitsToDelete.ifPresent(units -> units.forEach(unit -> {
             unitService.delete(unit.getId());
         }));
-
-        unitsToDelete.ifPresent(units -> {
-
-        });
-
         fractionRepository.delete(fraction);
     }
 }
