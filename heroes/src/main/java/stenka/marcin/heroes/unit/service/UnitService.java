@@ -2,7 +2,7 @@ package stenka.marcin.heroes.unit.service;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import stenka.marcin.heroes.controller.servlet.exception.NotFoundException;
+import jakarta.ws.rs.NotFoundException;
 import stenka.marcin.heroes.fraction.entity.Fraction;
 import stenka.marcin.heroes.fraction.service.FractionService;
 import stenka.marcin.heroes.unit.entity.Unit;

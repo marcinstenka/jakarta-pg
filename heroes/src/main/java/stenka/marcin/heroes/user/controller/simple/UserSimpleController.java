@@ -3,14 +3,14 @@ package stenka.marcin.heroes.user.controller.simple;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import stenka.marcin.heroes.component.DtoFunctionFactory;
-import stenka.marcin.heroes.controller.servlet.exception.AlreadyExistsException;
 import stenka.marcin.heroes.user.controller.api.UserController;
 import stenka.marcin.heroes.user.dto.GetUserResponse;
 import stenka.marcin.heroes.user.dto.GetUsersResponse;
 import stenka.marcin.heroes.user.dto.PatchUserRequest;
 import stenka.marcin.heroes.user.dto.PutUserRequest;
 import stenka.marcin.heroes.user.service.UserService;
-import stenka.marcin.heroes.controller.servlet.exception.NotFoundException;
+import jakarta.ws.rs.NotAllowedException;
+import jakarta.ws.rs.NotFoundException;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -49,7 +49,7 @@ public class UserSimpleController implements UserController {
         try {
             userService.create(factory.requestToUser().apply(id, request));
         } catch (IllegalArgumentException ex) {
-            throw new AlreadyExistsException("User already exists, to update user use PATCH method");
+            throw new NotAllowedException("User already exists, to update user use PATCH method");
         }
     }
 

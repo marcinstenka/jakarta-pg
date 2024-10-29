@@ -1,10 +1,15 @@
-package stenka.marcin.heroes.unit.controller.simple;
+package stenka.marcin.heroes.unit.controller.rest;
 
-import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.ws.rs.NotAllowedException;
+import jakarta.ws.rs.NotFoundException;
+import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.core.Context;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.UriInfo;
+import jakarta.ws.rs.Path;
 import stenka.marcin.heroes.component.DtoFunctionFactory;
-import stenka.marcin.heroes.controller.servlet.exception.AlreadyExistsException;
-import stenka.marcin.heroes.controller.servlet.exception.NotFoundException;
 import stenka.marcin.heroes.unit.controller.api.UnitController;
 import stenka.marcin.heroes.unit.dto.GetUnitResponse;
 import stenka.marcin.heroes.unit.dto.GetUnitsResponse;
@@ -15,17 +20,26 @@ import stenka.marcin.heroes.unit.service.UnitService;
 
 import java.util.UUID;
 
-@RequestScoped
-public class UnitSimpleController implements UnitController {
-
+@Path("")
+public class UnitRestController implements UnitController {
     private final UnitService unitService;
 
     private final DtoFunctionFactory factory;
 
+    private final UriInfo uriInfo;
+
+    private HttpServletResponse response;
+
+    @Context
+    public void setResponse(HttpServletResponse response) {
+        this.response = response;
+    }
+
     @Inject
-    public UnitSimpleController(UnitService unitService, DtoFunctionFactory factory) {
+    public UnitRestController(UnitService unitService, DtoFunctionFactory factory, @SuppressWarnings("CdiInjectionPointsInspection") UriInfo uriInfo) {
         this.unitService = unitService;
         this.factory = factory;
+        this.uriInfo = uriInfo;
 
     }
 
@@ -60,8 +74,14 @@ public class UnitSimpleController implements UnitController {
         try {
             Unit unit = factory.requestToUnit().apply(id, request);
             unitService.create(unit, request.getUser(), request.getFraction());
+
+            response.setHeader("Location", uriInfo.getBaseUriBuilder()
+                    .path(UnitController.class, "getUnit")
+                    .build(id)
+                    .toString());
+            throw new WebApplicationException(Response.Status.CREATED);
         } catch (IllegalArgumentException ex) {
-            throw new AlreadyExistsException("Unit already exists, to update unit use PATCH method");
+            throw new NotAllowedException("Unit already exists, to update unit use PATCH method");
         } catch (NotFoundException ex) {
             throw new NotFoundException(ex.getMessage());
         }
@@ -80,6 +100,4 @@ public class UnitSimpleController implements UnitController {
             throw new NotFoundException("Unit not found");
         });
     }
-
-
 }

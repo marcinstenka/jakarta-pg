@@ -111,7 +111,19 @@ Content-Type: application/json
   "name": "Behemoth",
   "quantity": 1,
   "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d311",
-  "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d330"
+  "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d331"
+}
+
+###
+
+# Patch unit
+
+PATCH http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
+Content-Type: application/json
+
+{
+  "name": "Ancient Behemoth",
+  "quantity": "2"
 }
 
 ###

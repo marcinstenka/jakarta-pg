@@ -1,10 +1,15 @@
-package stenka.marcin.heroes.fraction.controller.simple;
+package stenka.marcin.heroes.fraction.controller.rest;
 
-import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.ws.rs.NotAllowedException;
+import jakarta.ws.rs.NotFoundException;
+import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.core.Context;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.UriInfo;
 import stenka.marcin.heroes.component.DtoFunctionFactory;
-import stenka.marcin.heroes.controller.servlet.exception.AlreadyExistsException;
-import stenka.marcin.heroes.controller.servlet.exception.NotFoundException;
 import stenka.marcin.heroes.fraction.controller.api.FractionController;
 import stenka.marcin.heroes.fraction.dto.GetFractionResponse;
 import stenka.marcin.heroes.fraction.dto.GetFractionsResponse;
@@ -14,16 +19,26 @@ import stenka.marcin.heroes.fraction.service.FractionService;
 
 import java.util.UUID;
 
-@RequestScoped
-public class FractionSimpleController implements FractionController {
+@Path("")
+public class FractionRestController implements FractionController {
     private final FractionService fractionService;
 
     private final DtoFunctionFactory factory;
 
+    private final UriInfo uriInfo;
+
+    private HttpServletResponse response;
+
+    @Context
+    public void setResponse(HttpServletResponse response) {
+        this.response = response;
+    }
+
     @Inject
-    public FractionSimpleController(final FractionService fractionService, final DtoFunctionFactory factory) {
+    public FractionRestController(final FractionService fractionService, final DtoFunctionFactory factory, @SuppressWarnings("CdiInjectionPointsInspection") UriInfo uriInfo) {
         this.factory = factory;
         this.fractionService = fractionService;
+        this.uriInfo = uriInfo;
     }
 
     @Override
@@ -42,8 +57,13 @@ public class FractionSimpleController implements FractionController {
     public void putFraction(UUID id, PutFractionRequest request) {
         try {
             fractionService.create(factory.requestToFraction().apply(id, request));
+            response.setHeader("Location", uriInfo.getBaseUriBuilder()
+                    .path(FractionController.class, "getFraction")
+                    .build(id)
+                    .toString());
+            throw new WebApplicationException(Response.Status.CREATED);
         } catch (IllegalArgumentException ex) {
-            throw new AlreadyExistsException("Fraction already exists, to update fraction use PATCH method");
+            throw new NotAllowedException("Fraction already exists, to update fraction use PATCH method");
         }
     }
 

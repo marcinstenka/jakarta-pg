@@ -1,8 +1,8 @@
 package stenka.marcin.heroes.user.service;
 
 import jakarta.inject.Inject;
-import stenka.marcin.heroes.controller.servlet.exception.AlreadyExistsException;
-import stenka.marcin.heroes.controller.servlet.exception.NotFoundException;
+import jakarta.ws.rs.NotFoundException;
+import jakarta.ws.rs.NotAllowedException;
 import stenka.marcin.heroes.unit.entity.Unit;
 import stenka.marcin.heroes.unit.service.UnitService;
 import stenka.marcin.heroes.user.entity.User;
@@ -66,12 +66,12 @@ public class UserService {
 
     }
 
-    public void createAvatar(UUID id, InputStream avatar, String pathToAvatars) throws AlreadyExistsException {
+    public void createAvatar(UUID id, InputStream avatar, String pathToAvatars) throws NotAllowedException {
         userRepository.find(id).ifPresent(user -> {
             try {
                 Path destinationPath = Path.of(pathToAvatars, id.toString() + ".png");
                 if (Files.exists(destinationPath)) {
-                    throw new AlreadyExistsException("Avatar already exists, to update avatar use PATCH method");
+                    throw new NotAllowedException("Avatar already exists, to update avatar use PATCH method");
                 }
                 Files.copy(avatar, destinationPath);
             } catch (IOException ex) {
