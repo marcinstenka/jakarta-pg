@@ -1,5 +1,6 @@
 package stenka.marcin.heroes.user.entity;
 
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -22,12 +23,16 @@ import java.util.UUID;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @ToString
 @EqualsAndHashCode(exclude = "units")
+@Entity
+@Table(name = "users")
 public class User implements Serializable {
+    @Id
     private UUID id;
 
     private String name;
 
     @ToString.Exclude
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
     private List<Unit> units;
 
     private LocalDate accountCreation;

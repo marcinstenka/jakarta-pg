@@ -1,5 +1,6 @@
 package stenka.marcin.heroes.fraction.entity;
 
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -7,6 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
 
 import lombok.experimental.SuperBuilder;
 import stenka.marcin.heroes.unit.entity.Unit;
@@ -22,13 +24,18 @@ import java.util.UUID;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @ToString(callSuper = true)
 @EqualsAndHashCode(exclude = "units")
+@Entity
+@Table(name = "fractions")
 public class Fraction implements Serializable {
+    @Id
     private UUID id;
 
     private String name;
 
     private FractionType fractionType;
 
+
     @ToString.Exclude
+    @OneToMany(mappedBy = "fraction", cascade = CascadeType.REMOVE)
     private List<Unit> units;
 }
