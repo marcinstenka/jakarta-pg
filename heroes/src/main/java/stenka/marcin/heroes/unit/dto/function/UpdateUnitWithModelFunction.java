@@ -2,7 +2,6 @@ package stenka.marcin.heroes.unit.dto.function;
 
 import lombok.SneakyThrows;
 import stenka.marcin.heroes.fraction.entity.Fraction;
-import stenka.marcin.heroes.fraction.model.FractionModel;
 import stenka.marcin.heroes.unit.entity.Unit;
 import stenka.marcin.heroes.unit.model.UnitEditModel;
 
