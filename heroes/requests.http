@@ -87,6 +87,7 @@ Content-Disposition: form-data; name="avatar"; filename="solmyr.png"
 # Get all fractions
 
 GET http://localhost:9080/heroes/api/fractions/
+Authorization: Basic T3NrYXI6T3NrYXI=
 
 ###
 
@@ -127,9 +128,9 @@ GET http://localhost:9080/heroes/api/units
 ###
 
 # Get single unit
-
-GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d324
-
+// @no-cookie-jar
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d320
+Authorization: Basic TWFyY2luOk1hcmNpbg==
 ###
 
 # Get user units

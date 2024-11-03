@@ -28,8 +28,7 @@ public class InitializeAdminService {
 
     @Inject
     public InitializeAdminService(
-            UserRepository userRepository,
-            @SuppressWarnings("CdiInjectionPointsInspection") Pbkdf2PasswordHash passwordHash
+            UserRepository userRepository,@SuppressWarnings("CdiInjectionPointsInspection") Pbkdf2PasswordHash passwordHash
     ) {
         this.userRepository = userRepository;
         this.passwordHash = passwordHash;

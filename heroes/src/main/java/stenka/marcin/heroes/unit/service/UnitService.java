@@ -55,6 +55,7 @@ public class UnitService {
 
     @RolesAllowed(UserRoles.USER)
     public Optional<Unit> findForCallerPrincipal(UUID id) {
+        System.out.println("Marcin");
         if (securityContext.isCallerInRole(UserRoles.ADMIN)) {
             return find(id);
         }
@@ -63,6 +64,7 @@ public class UnitService {
         return find(user, id);
     }
 
+    @RolesAllowed(UserRoles.USER)
     public List<Unit> findAll() {
         return unitRepository.findAll();
     }
