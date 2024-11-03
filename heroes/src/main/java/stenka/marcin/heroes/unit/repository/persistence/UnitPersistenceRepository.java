@@ -13,7 +13,6 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Dependent
-
 public class UnitPersistenceRepository implements UnitRepository {
 
     private EntityManager em;

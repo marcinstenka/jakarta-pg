@@ -1,5 +1,6 @@
 package stenka.marcin.heroes.unit.view;
 
+import jakarta.ejb.EJB;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
@@ -27,13 +28,13 @@ import java.util.UUID;
 @Named
 public class UnitCreate implements Serializable {
 
-    private final UnitService unitService;
+    private UnitService unitService;
 
     private final ModelFunctionFactory factory;
 
-    private final UserService userService;
+    private UserService userService;
 
-    private final FractionService fractionService;
+    private FractionService fractionService;
 
     @Setter
     @Getter
@@ -49,12 +50,25 @@ public class UnitCreate implements Serializable {
     private static final UUID TEMP_USER_ID = UUID.fromString("d9f823f4-f057-4f18-aeb7-b6654bc3d310");
 
     @Inject
-    public UnitCreate(UnitService unitService, ModelFunctionFactory factory, UserService userService, FractionService fractionService) {
-        this.unitService = unitService;
+    public UnitCreate(ModelFunctionFactory factory) {
         this.factory = factory;
+    }
+
+    @EJB
+    public void setUserService(UserService userService) {
         this.userService = userService;
+    }
+
+    @EJB
+    public void setUnitService(UnitService unitService) {
+        this.unitService = unitService;
+    }
+
+    @EJB
+    public void setFractionService(FractionService fractionService) {
         this.fractionService = fractionService;
     }
+
 
     public void init() throws IOException {
         User tempUser = this.userService.find(TEMP_USER_ID).get();

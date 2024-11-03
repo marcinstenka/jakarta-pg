@@ -1,5 +1,6 @@
 package stenka.marcin.heroes.fraction.view;
 
+import jakarta.ejb.EJB;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
@@ -21,11 +22,11 @@ import java.util.UUID;
 @ViewScoped
 @Named
 public class FractionView implements Serializable {
-    private final FractionService fractionService;
+    private FractionService fractionService;
 
     private final ModelFunctionFactory factory;
 
-    private final UnitService unitService;
+    private UnitService unitService;
 
     @Setter
     @Getter
@@ -35,9 +36,17 @@ public class FractionView implements Serializable {
     private FractionModel fraction;
 
     @Inject
-    public FractionView(FractionService fractionService, ModelFunctionFactory factory, UnitService unitService) {
-        this.fractionService = fractionService;
+    public FractionView(ModelFunctionFactory factory) {
         this.factory = factory;
+    }
+
+    @EJB
+    public void setFractionService(FractionService fractionService) {
+        this.fractionService = fractionService;
+    }
+
+    @EJB
+    public void setUnitService(UnitService unitService) {
         this.unitService = unitService;
     }
 

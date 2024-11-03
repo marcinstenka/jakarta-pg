@@ -37,9 +37,8 @@ public class FractionRestController implements FractionController {
     }
 
     @Inject
-    public FractionRestController(final FractionService fractionService, final DtoFunctionFactory factory, @SuppressWarnings("CdiInjectionPointsInspection") UriInfo uriInfo) {
+    public FractionRestController(DtoFunctionFactory factory, @SuppressWarnings("CdiInjectionPointsInspection") UriInfo uriInfo) {
         this.factory = factory;
-        this.fractionService = fractionService;
         this.uriInfo = uriInfo;
     }
 

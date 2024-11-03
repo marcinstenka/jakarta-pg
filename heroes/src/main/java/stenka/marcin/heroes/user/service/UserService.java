@@ -5,6 +5,7 @@ import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.NotFoundException;
 import jakarta.ws.rs.NotAllowedException;
+import lombok.NoArgsConstructor;
 import stenka.marcin.heroes.unit.entity.Unit;
 import stenka.marcin.heroes.unit.service.UnitService;
 import stenka.marcin.heroes.user.entity.User;
@@ -22,6 +23,7 @@ import java.util.UUID;
 
 @LocalBean
 @Stateless
+@NoArgsConstructor(force = true)
 public class UserService {
     private final UserRepository userRepository;
 
@@ -31,11 +33,6 @@ public class UserService {
     public UserService(UserRepository repository, UnitService unitService) {
         this.userRepository = repository;
         this.unitService = unitService;
-    }
-
-    public UserService() {
-        this.userRepository = null;
-        this.unitService = null;
     }
 
     public Optional<User> find(UUID id) {

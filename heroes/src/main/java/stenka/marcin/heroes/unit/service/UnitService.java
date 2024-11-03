@@ -4,6 +4,7 @@ import jakarta.ejb.LocalBean;
 import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.NotFoundException;
+import lombok.NoArgsConstructor;
 import stenka.marcin.heroes.fraction.entity.Fraction;
 import stenka.marcin.heroes.fraction.service.FractionService;
 import stenka.marcin.heroes.unit.entity.Unit;
@@ -18,6 +19,7 @@ import java.util.UUID;
 
 @LocalBean
 @Stateless
+@NoArgsConstructor(force = true)
 public class UnitService {
     private final UnitRepository unitRepository;
 
@@ -30,12 +32,6 @@ public class UnitService {
         this.unitRepository = unitRepository;
         this.userService = userService;
         this.fractionService = fractionService;
-    }
-
-    public UnitService() {
-        this.unitRepository = null;
-        this.userService = null;
-        this.fractionService = null;
     }
 
     public Optional<Unit> find(UUID id) {

@@ -41,11 +41,9 @@ public class UserRestController implements UserController {
         this.response = response;
     }
 
-
     @Inject
-    public UserRestController(DtoFunctionFactory factory, UserService userService, @SuppressWarnings("CdiInjectionPointsInspection") UriInfo uriInfo) {
+    public UserRestController(DtoFunctionFactory factory, @SuppressWarnings("CdiInjectionPointsInspection") UriInfo uriInfo) {
         this.factory = factory;
-        this.userService = userService;
         this.uriInfo = uriInfo;
     }
 

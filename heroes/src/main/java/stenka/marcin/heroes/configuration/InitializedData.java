@@ -1,15 +1,11 @@
 package stenka.marcin.heroes.configuration;
 
-import jakarta.ejb.EJB;
 import jakarta.annotation.PostConstruct;
+import jakarta.ejb.EJB;
+import jakarta.ejb.Singleton;
 import jakarta.ejb.Startup;
 import jakarta.ejb.TransactionAttribute;
 import jakarta.ejb.TransactionAttributeType;
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.enterprise.context.Initialized;
-import jakarta.enterprise.event.Observes;
-import jakarta.inject.Inject;
-import jakarta.inject.Singleton;
 import lombok.NoArgsConstructor;
 import lombok.SneakyThrows;
 import stenka.marcin.heroes.fraction.entity.Fraction;
@@ -52,28 +48,10 @@ public class InitializedData {
         this.fractionService = fractionService;
     }
 
-
-    @Inject
-    public InitializedData(
-            UserService userService,
-            UnitService unitService,
-            FractionService fractionService
-    ) {
-        this.userService = userService;
-        this.unitService = unitService;
-        this.fractionService = fractionService;
-    }
-
-
-    public void contextInitialized(@Observes @Initialized(ApplicationScoped.class) Object init) {
-        init();
-    }
-
-
     @PostConstruct
     @SneakyThrows
     private void init() {
-
+        System.out.println("MARCIn");
         if (userService.find("Marcin").isEmpty()) {
             Unit blackDragon = Unit.builder()
                     .id(UUID.fromString("d9f823f4-f057-4f18-aeb7-b6654bc3d320"))
@@ -155,5 +133,4 @@ public class InitializedData {
             unitService.create(cavalry, oskar.getId(), castle.getId());
         }
     }
-
 }
