@@ -51,7 +51,6 @@ public class InitializedData {
     @PostConstruct
     @SneakyThrows
     private void init() {
-        System.out.println("MARCIn");
         if (userService.find("Marcin").isEmpty()) {
             Unit blackDragon = Unit.builder()
                     .id(UUID.fromString("d9f823f4-f057-4f18-aeb7-b6654bc3d320"))
