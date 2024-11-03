@@ -1,10 +1,16 @@
 package stenka.marcin.heroes.configuration;
 
+import jakarta.ejb.EJB;
+import jakarta.annotation.PostConstruct;
+import jakarta.ejb.Startup;
+import jakarta.ejb.TransactionAttribute;
+import jakarta.ejb.TransactionAttributeType;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.context.Initialized;
-import jakarta.enterprise.context.control.RequestContextController;
 import jakarta.enterprise.event.Observes;
 import jakarta.inject.Inject;
+import jakarta.inject.Singleton;
+import lombok.NoArgsConstructor;
 import lombok.SneakyThrows;
 import stenka.marcin.heroes.fraction.entity.Fraction;
 import stenka.marcin.heroes.fraction.entity.FractionType;
@@ -17,10 +23,12 @@ import stenka.marcin.heroes.user.service.UserService;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.Collections;
-import java.util.List;
 import java.util.UUID;
 
-@ApplicationScoped
+@Singleton
+@Startup
+@TransactionAttribute(value = TransactionAttributeType.NOT_SUPPORTED)
+@NoArgsConstructor
 public class InitializedData {
 
     private UserService userService;
@@ -29,19 +37,31 @@ public class InitializedData {
 
     private FractionService fractionService;
 
-    private final RequestContextController requestContextController;
+    @EJB
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
+
+    @EJB
+    public void setUnitService(UnitService unitService) {
+        this.unitService = unitService;
+    }
+
+    @EJB
+    public void setFractionService(FractionService fractionService) {
+        this.fractionService = fractionService;
+    }
+
 
     @Inject
     public InitializedData(
             UserService userService,
             UnitService unitService,
-            FractionService fractionService,
-            RequestContextController requestContextController
+            FractionService fractionService
     ) {
         this.userService = userService;
         this.unitService = unitService;
         this.fractionService = fractionService;
-        this.requestContextController = requestContextController;
     }
 
 
@@ -50,9 +70,9 @@ public class InitializedData {
     }
 
 
+    @PostConstruct
     @SneakyThrows
     private void init() {
-        requestContextController.activate();
 
         if (userService.find("Marcin").isEmpty()) {
             Unit blackDragon = Unit.builder()
@@ -134,7 +154,6 @@ public class InitializedData {
             unitService.create(archer, marcin.getId(), castle.getId());
             unitService.create(cavalry, oskar.getId(), castle.getId());
         }
-        requestContextController.deactivate();
     }
 
 }
