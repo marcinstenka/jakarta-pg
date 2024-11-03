@@ -1,11 +1,11 @@
 package stenka.marcin.heroes.configuration;
 
 import jakarta.annotation.PostConstruct;
-import jakarta.ejb.EJB;
-import jakarta.ejb.Singleton;
-import jakarta.ejb.Startup;
-import jakarta.ejb.TransactionAttribute;
-import jakarta.ejb.TransactionAttributeType;
+import jakarta.annotation.security.DeclareRoles;
+import jakarta.annotation.security.RunAs;
+import jakarta.ejb.*;
+import jakarta.inject.Inject;
+import jakarta.security.enterprise.SecurityContext;
 import lombok.NoArgsConstructor;
 import lombok.SneakyThrows;
 import stenka.marcin.heroes.fraction.entity.Fraction;
@@ -14,17 +14,22 @@ import stenka.marcin.heroes.fraction.service.FractionService;
 import stenka.marcin.heroes.unit.entity.Unit;
 import stenka.marcin.heroes.unit.service.UnitService;
 import stenka.marcin.heroes.user.entity.User;
+import stenka.marcin.heroes.user.entity.UserRoles;
 import stenka.marcin.heroes.user.service.UserService;
 
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.Collections;
+import java.util.List;
 import java.util.UUID;
 
 @Singleton
 @Startup
 @TransactionAttribute(value = TransactionAttributeType.NOT_SUPPORTED)
 @NoArgsConstructor
+@DependsOn("InitializeAdminService")
+@DeclareRoles({UserRoles.ADMIN, UserRoles.USER})
+@RunAs(UserRoles.ADMIN)
 public class InitializedData {
 
     private UserService userService;
@@ -32,6 +37,9 @@ public class InitializedData {
     private UnitService unitService;
 
     private FractionService fractionService;
+
+    @Inject
+    private SecurityContext securityContext;
 
     @EJB
     public void setUserService(UserService userService) {
@@ -73,6 +81,7 @@ public class InitializedData {
                     .id(UUID.fromString("d9f823f4-f057-4f18-aeb7-b6654bc3d310"))
                     .name("Marcin")
                     .accountCreation(LocalDate.of(2020, Month.JANUARY, 8))
+                    .roles(List.of(UserRoles.ADMIN, UserRoles.USER))
                     .units(Collections.emptyList())
                     .build();
 
@@ -80,18 +89,21 @@ public class InitializedData {
                     .id(UUID.fromString("d9f823f4-f057-4f18-aeb7-b6654bc3d311"))
                     .name("Oskar")
                     .accountCreation(LocalDate.of(2021, Month.JULY, 2))
+                    .roles(List.of(UserRoles.USER))
                     .units(Collections.emptyList())
                     .build();
             User lukasz = User.builder()
                     .id(UUID.fromString("d9f823f4-f057-4f18-aeb7-b6654bc3d312"))
                     .name("Lukasz")
                     .accountCreation(LocalDate.of(2022, Month.MAY, 30))
+                    .roles(List.of(UserRoles.USER))
                     .units(Collections.emptyList())
                     .build();
             User piotrek = User.builder()
                     .id(UUID.fromString("d9f823f4-f057-4f18-aeb7-b6654bc3d313"))
                     .name("Piotrek")
                     .accountCreation(LocalDate.of(2024, Month.SEPTEMBER, 14))
+                    .roles(List.of(UserRoles.USER))
                     .units(Collections.emptyList())
                     .build();
 

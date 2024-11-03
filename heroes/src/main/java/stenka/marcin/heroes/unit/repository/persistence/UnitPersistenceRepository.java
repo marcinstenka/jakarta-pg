@@ -2,6 +2,7 @@ package stenka.marcin.heroes.unit.repository.persistence;
 
 import jakarta.enterprise.context.Dependent;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.NoResultException;
 import jakarta.persistence.PersistenceContext;
 import stenka.marcin.heroes.fraction.entity.Fraction;
 import stenka.marcin.heroes.unit.entity.Unit;
@@ -35,6 +36,18 @@ public class UnitPersistenceRepository implements UnitRepository {
         return em.createQuery("select u from Unit u where u.fraction = :fraction", Unit.class)
                 .setParameter("fraction", fraction)
                 .getResultList();
+    }
+
+    @Override
+    public Optional<Unit> findByIdAndUser(UUID id, User user) {
+        try {
+            return Optional.of(em.createQuery("select c from Unit c where c.id = :id and c.user = :user", Unit.class)
+                    .setParameter("user", user)
+                    .setParameter("id", id)
+                    .getSingleResult());
+        } catch (NoResultException ex) {
+            return Optional.empty();
+        }
     }
 
     @Override

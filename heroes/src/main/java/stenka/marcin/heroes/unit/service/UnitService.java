@@ -1,8 +1,10 @@
 package stenka.marcin.heroes.unit.service;
 
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.ejb.LocalBean;
 import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
+import jakarta.security.enterprise.SecurityContext;
 import jakarta.ws.rs.NotFoundException;
 import lombok.NoArgsConstructor;
 import stenka.marcin.heroes.fraction.entity.Fraction;
@@ -10,6 +12,7 @@ import stenka.marcin.heroes.fraction.service.FractionService;
 import stenka.marcin.heroes.unit.entity.Unit;
 import stenka.marcin.heroes.unit.repository.api.UnitRepository;
 import stenka.marcin.heroes.user.entity.User;
+import stenka.marcin.heroes.user.entity.UserRoles;
 import stenka.marcin.heroes.user.service.UserService;
 
 import java.util.ArrayList;
@@ -27,15 +30,37 @@ public class UnitService {
 
     private final FractionService fractionService;
 
+    private final SecurityContext securityContext;
+
     @Inject
-    public UnitService(UnitRepository unitRepository, UserService userService, FractionService fractionService) {
+    public UnitService(UnitRepository unitRepository, UserService userService, FractionService fractionService,
+                       @SuppressWarnings("CdiInjectionPointsInspection") SecurityContext securityContext) {
         this.unitRepository = unitRepository;
         this.userService = userService;
         this.fractionService = fractionService;
+        this.securityContext = securityContext;
+
     }
 
+    @RolesAllowed(UserRoles.USER)
     public Optional<Unit> find(UUID id) {
         return unitRepository.find(id);
+    }
+
+    @RolesAllowed(UserRoles.USER)
+    public Optional<Unit> find(User user, UUID id) {
+        return unitRepository.findByIdAndUser(id, user);
+    }
+
+
+    @RolesAllowed(UserRoles.USER)
+    public Optional<Unit> findForCallerPrincipal(UUID id) {
+        if (securityContext.isCallerInRole(UserRoles.ADMIN)) {
+            return find(id);
+        }
+        User user = userService.find(securityContext.getCallerPrincipal().getName())
+                .orElseThrow(IllegalStateException::new);
+        return find(user, id);
     }
 
     public List<Unit> findAll() {

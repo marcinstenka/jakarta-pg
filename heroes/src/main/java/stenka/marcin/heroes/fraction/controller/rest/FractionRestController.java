@@ -1,5 +1,6 @@
 package stenka.marcin.heroes.fraction.controller.rest;
 
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.ejb.EJB;
 import jakarta.ejb.EJBException;
 import jakarta.inject.Inject;
@@ -16,12 +17,14 @@ import stenka.marcin.heroes.fraction.dto.GetFractionsResponse;
 import stenka.marcin.heroes.fraction.dto.PatchFractionRequest;
 import stenka.marcin.heroes.fraction.dto.PutFractionRequest;
 import stenka.marcin.heroes.fraction.service.FractionService;
+import stenka.marcin.heroes.user.entity.UserRoles;
 
 import java.util.UUID;
 import java.util.logging.Level;
 
 @Path("")
 @Log
+@RolesAllowed(UserRoles.USER)
 public class FractionRestController implements FractionController {
     private FractionService fractionService;
 
