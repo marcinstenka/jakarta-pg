@@ -8,7 +8,7 @@ import stenka.marcin.heroes.unit.dto.PatchUnitRequest;
 import stenka.marcin.heroes.unit.dto.PutUnitRequest;
 
 import java.util.UUID;
-
+@Path("")
 public interface UnitController {
     @GET
     @Path("/users/{id}/units")

@@ -1,12 +1,14 @@
-package stenka.marcin.heroes.user.controller.simple;
+package stenka.marcin.heroes.user.controller.rest;
 
+import jakarta.ejb.EJB;
+import jakarta.ejb.EJBException;
 import jakarta.inject.Inject;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.UriInfo;
+import lombok.extern.java.Log;
 import stenka.marcin.heroes.component.DtoFunctionFactory;
 import stenka.marcin.heroes.user.controller.api.UserController;
 import stenka.marcin.heroes.user.dto.GetUserResponse;
@@ -14,19 +16,19 @@ import stenka.marcin.heroes.user.dto.GetUsersResponse;
 import stenka.marcin.heroes.user.dto.PatchUserRequest;
 import stenka.marcin.heroes.user.dto.PutUserRequest;
 import stenka.marcin.heroes.user.service.UserService;
-import jakarta.ws.rs.NotAllowedException;
-import jakarta.ws.rs.NotFoundException;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.UUID;
+import java.util.logging.Level;
 
 @Path("")
-public class UserSimpleController implements UserController {
+@Log
+public class UserRestController implements UserController {
 
-    private final UserService userService;
+    private UserService userService;
 
     private final DtoFunctionFactory factory;
 
@@ -41,11 +43,17 @@ public class UserSimpleController implements UserController {
 
 
     @Inject
-    public UserSimpleController(DtoFunctionFactory factory, UserService userService, @SuppressWarnings("CdiInjectionPointsInspection") UriInfo uriInfo) {
+    public UserRestController(DtoFunctionFactory factory, UserService userService, @SuppressWarnings("CdiInjectionPointsInspection") UriInfo uriInfo) {
         this.factory = factory;
         this.userService = userService;
         this.uriInfo = uriInfo;
     }
+
+    @EJB
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
+
 
     @Override
     public GetUserResponse getUser(UUID id) {
@@ -68,8 +76,12 @@ public class UserSimpleController implements UserController {
                     .build(id)
                     .toString());
             throw new WebApplicationException(Response.Status.CREATED);
-        } catch (IllegalArgumentException ex) {
-            throw new NotAllowedException("User already exists, to update User use PATCH method");
+        } catch (EJBException ex) {
+            if (ex.getCause() instanceof IllegalArgumentException) {
+                log.log(Level.WARNING, ex.getMessage(), ex);
+                throw new BadRequestException("User already exists, to update user use PATCH method");
+            }
+            throw ex;
         }
     }
 

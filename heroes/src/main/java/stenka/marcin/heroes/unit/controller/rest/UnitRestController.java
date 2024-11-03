@@ -1,14 +1,14 @@
 package stenka.marcin.heroes.unit.controller.rest;
 
+import jakarta.ejb.EJB;
+import jakarta.ejb.EJBException;
 import jakarta.inject.Inject;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.ws.rs.NotAllowedException;
-import jakarta.ws.rs.NotFoundException;
-import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.UriInfo;
-import jakarta.ws.rs.Path;
+import lombok.extern.java.Log;
 import stenka.marcin.heroes.component.DtoFunctionFactory;
 import stenka.marcin.heroes.unit.controller.api.UnitController;
 import stenka.marcin.heroes.unit.dto.GetUnitResponse;
@@ -19,10 +19,12 @@ import stenka.marcin.heroes.unit.entity.Unit;
 import stenka.marcin.heroes.unit.service.UnitService;
 
 import java.util.UUID;
+import java.util.logging.Level;
 
 @Path("")
+@Log
 public class UnitRestController implements UnitController {
-    private final UnitService unitService;
+    private UnitService unitService;
 
     private final DtoFunctionFactory factory;
 
@@ -42,6 +44,12 @@ public class UnitRestController implements UnitController {
         this.uriInfo = uriInfo;
 
     }
+
+    @EJB
+    public void setUnitService(UnitService unitService) {
+        this.unitService = unitService;
+    }
+
 
     @Override
     public GetUnitsResponse getUserUnits(UUID id) {
@@ -76,8 +84,12 @@ public class UnitRestController implements UnitController {
                     .build(unitId)
                     .toString());
             throw new WebApplicationException(Response.Status.CREATED);
-        } catch (IllegalArgumentException ex) {
-            throw new NotAllowedException("Unit already exists, to update unit use PATCH method");
+        } catch (EJBException ex) {
+            if (ex.getCause() instanceof IllegalArgumentException) {
+                log.log(Level.WARNING, ex.getMessage(), ex);
+                throw new BadRequestException("Unit already exists, to update unit use PATCH method");
+            }
+            throw ex;
         } catch (NotFoundException ex) {
             throw new NotFoundException(ex.getMessage());
         }

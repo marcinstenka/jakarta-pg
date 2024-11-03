@@ -1,14 +1,14 @@
 package stenka.marcin.heroes.fraction.controller.rest;
 
+import jakarta.ejb.EJB;
+import jakarta.ejb.EJBException;
 import jakarta.inject.Inject;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.ws.rs.NotAllowedException;
-import jakarta.ws.rs.NotFoundException;
-import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
-import jakarta.ws.rs.Path;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.UriInfo;
+import lombok.extern.java.Log;
 import stenka.marcin.heroes.component.DtoFunctionFactory;
 import stenka.marcin.heroes.fraction.controller.api.FractionController;
 import stenka.marcin.heroes.fraction.dto.GetFractionResponse;
@@ -18,10 +18,12 @@ import stenka.marcin.heroes.fraction.dto.PutFractionRequest;
 import stenka.marcin.heroes.fraction.service.FractionService;
 
 import java.util.UUID;
+import java.util.logging.Level;
 
 @Path("")
+@Log
 public class FractionRestController implements FractionController {
-    private final FractionService fractionService;
+    private FractionService fractionService;
 
     private final DtoFunctionFactory factory;
 
@@ -39,6 +41,11 @@ public class FractionRestController implements FractionController {
         this.factory = factory;
         this.fractionService = fractionService;
         this.uriInfo = uriInfo;
+    }
+
+    @EJB
+    public void setFractionService(FractionService fractionService) {
+        this.fractionService = fractionService;
     }
 
     @Override
@@ -62,8 +69,12 @@ public class FractionRestController implements FractionController {
                     .build(id)
                     .toString());
             throw new WebApplicationException(Response.Status.CREATED);
-        } catch (IllegalArgumentException ex) {
-            throw new NotAllowedException("Fraction already exists, to update fraction use PATCH method");
+        } catch (EJBException ex) {
+            if (ex.getCause() instanceof IllegalArgumentException) {
+                log.log(Level.WARNING, ex.getMessage(), ex);
+                throw new BadRequestException("Fraction already exists, to update fraction use PATCH method");
+            }
+            throw ex;
         }
     }
 
