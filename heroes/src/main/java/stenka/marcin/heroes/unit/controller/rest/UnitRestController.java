@@ -58,6 +58,50 @@ public class UnitRestController implements UnitController {
     }
 
     @Override
+    public GetUnitResponse getFractionUnit(UUID fractionId, UUID unitId) {
+        return unitService.findByFractionAndUnit(fractionId, unitId)
+                .map(factory.unitToResponse())
+                .orElseThrow(() -> new NotFoundException("Unit not found in the specified fraction"));
+    }
+
+    @Override
+    public void putFractionUnit(UUID fractionId, UUID unitId, PutUnitRequest request) {
+        try {
+            request.setFraction(fractionId);
+            Unit unit = factory.requestToUnit().apply(unitId, request);
+            unitService.create(unit, request.getUser(), fractionId);
+
+            response.setHeader("Location", uriInfo.getBaseUriBuilder()
+                    .path(UnitController.class, "getUnit")
+                    .build(unitId)
+                    .toString());
+            throw new WebApplicationException(Response.Status.CREATED);
+        } catch (IllegalArgumentException ex) {
+            throw new NotAllowedException("Unit already exists, to update unit use PATCH method");
+        } catch (NotFoundException ex) {
+            throw new NotFoundException(ex.getMessage());
+        }
+    }
+
+    @Override
+    public void patchFractionUnit(UUID fractionId, UUID unitId, PatchUnitRequest request) {
+        unitService.findByFractionAndUnit(fractionId, unitId).ifPresentOrElse(
+                entity -> unitService.update(factory.updateUnit().apply(entity, request), fractionId),
+                () -> {
+                    throw new NotFoundException("Unit not found in the specified fraction");
+                });
+    }
+
+    @Override
+    public void deleteFractionUnit(UUID fractionId, UUID unitId) {
+        unitService.findByFractionAndUnit(fractionId, unitId).ifPresentOrElse(
+                entity -> unitService.delete(unitId),
+                () -> {
+                    throw new NotFoundException("Unit not found in the specified fraction");
+                });
+    }
+
+    @Override
     public GetUnitsResponse getUnits() {
         return factory.unitsToResponse().apply(unitService.findAll());
     }
@@ -69,35 +113,4 @@ public class UnitRestController implements UnitController {
                 .orElseThrow(() -> new NotFoundException("Unit not found"));
     }
 
-    @Override
-    public void putUnit(UUID id, PutUnitRequest request) {
-        try {
-            Unit unit = factory.requestToUnit().apply(id, request);
-            unitService.create(unit, request.getUser(), request.getFraction());
-
-            response.setHeader("Location", uriInfo.getBaseUriBuilder()
-                    .path(UnitController.class, "getUnit")
-                    .build(id)
-                    .toString());
-            throw new WebApplicationException(Response.Status.CREATED);
-        } catch (IllegalArgumentException ex) {
-            throw new NotAllowedException("Unit already exists, to update unit use PATCH method");
-        } catch (NotFoundException ex) {
-            throw new NotFoundException(ex.getMessage());
-        }
-    }
-
-    @Override
-    public void patchUnit(UUID id, PatchUnitRequest request) {
-        unitService.find(id).ifPresentOrElse(entity -> unitService.update(factory.updateUnit().apply(entity, request), entity.getFraction().getId()), () -> {
-            throw new NotFoundException("Unit not found");
-        });
-    }
-
-    @Override
-    public void deleteUnit(UUID id) {
-        unitService.find(id).ifPresentOrElse(entity -> unitService.delete(id), () -> {
-            throw new NotFoundException("Unit not found");
-        });
-    }
 }

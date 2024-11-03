@@ -44,6 +44,14 @@ public class UnitService {
         return unitRepository.findAll();
     }
 
+    public Optional<Unit> findByFractionAndUnit(UUID fractionId, UUID unitId) {
+        Fraction fraction = fractionService.find(fractionId)
+                .orElseThrow(() -> new NotFoundException("Fraction not found: " + fractionId));
+
+        return unitRepository.find(unitId)
+                .filter(unit -> unit.getFraction().getId().equals(fraction.getId()));
+    }
+
     public void create(Unit unit, UUID userId, UUID fractionId) {
 
         User user = userService.find(userId).orElseThrow(() -> new NotFoundException("User not found: " + userId));

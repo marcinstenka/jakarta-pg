@@ -84,68 +84,6 @@ Content-Disposition: form-data; name="avatar"; filename="solmyr.png"
 
 ###
 
-# Get all units
-
-GET http://localhost:9080/heroes/api/units
-
-###
-
-# Get single unit
-
-GET http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
-
-###
-
-# Get user units
-
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d311/units/
-
-###
-
-# Put unit
-
-PUT http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
-Content-Type: application/json
-
-{
-  "name": "Behemoth",
-  "quantity": 1,
-  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d311",
-  "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d331"
-}
-
-###
-
-# Patch unit
-
-PATCH http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
-Content-Type: application/json
-
-{
-  "name": "Ancient Behemoth",
-  "quantity": "2"
-}
-
-###
-
-# Update user avatar.
-
-PATCH http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
-Content-Type: application/json
-
-{
-  "name": "Griffin",
-  "quantity": 20
-}
-
-###
-
-# Delete unit
-
-DELETE http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
-
-###
-
 # Get all fractions
 
 GET http://localhost:9080/heroes/api/fractions/
@@ -179,5 +117,54 @@ Content-Type: application/json
 # Delete fraction
 
 DELETE http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330
+
+###
+
+# Get all units
+
+GET http://localhost:9080/heroes/api/units
+
+###
+
+# Get single unit
+
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d324
+
+###
+
+# Get user units
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d311/units/
+
+###
+
+# Put unit
+
+PUT http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d324
+Content-Type: application/json
+
+{
+  "name": "Behemoth",
+  "quantity": 1,
+  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d311"
+}
+
+###
+
+# Patch unit
+
+PATCH http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d324
+Content-Type: application/json
+
+{
+  "name": "Ancient Behemoth",
+  "quantity": "2"
+}
+
+###
+
+# Delete unit
+
+DELETE http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d324
 
 ###
