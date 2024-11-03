@@ -32,7 +32,7 @@ public class User implements Serializable {
     private String name;
 
     @ToString.Exclude
-    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
     private List<Unit> units;
 
     private LocalDate accountCreation;

@@ -1,7 +1,12 @@
 package stenka.marcin.heroes.user.controller.simple;
 
-import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.core.Context;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.UriInfo;
 import stenka.marcin.heroes.component.DtoFunctionFactory;
 import stenka.marcin.heroes.user.controller.api.UserController;
 import stenka.marcin.heroes.user.dto.GetUserResponse;
@@ -15,21 +20,31 @@ import jakarta.ws.rs.NotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.UUID;
 
-@RequestScoped
+@Path("")
 public class UserSimpleController implements UserController {
 
     private final UserService userService;
 
     private final DtoFunctionFactory factory;
 
+    private final UriInfo uriInfo;
+
+    private HttpServletResponse response;
+
+    @Context
+    public void setResponse(HttpServletResponse response) {
+        this.response = response;
+    }
+
+
     @Inject
-    public UserSimpleController(DtoFunctionFactory factory, UserService userService) {
+    public UserSimpleController(DtoFunctionFactory factory, UserService userService, @SuppressWarnings("CdiInjectionPointsInspection") UriInfo uriInfo) {
         this.factory = factory;
         this.userService = userService;
+        this.uriInfo = uriInfo;
     }
 
     @Override
@@ -48,32 +63,36 @@ public class UserSimpleController implements UserController {
     public void putUser(UUID id, PutUserRequest request) {
         try {
             userService.create(factory.requestToUser().apply(id, request));
+            response.setHeader("Location", uriInfo.getBaseUriBuilder()
+                    .path(UserController.class, "getUser")
+                    .build(id)
+                    .toString());
+            throw new WebApplicationException(Response.Status.CREATED);
         } catch (IllegalArgumentException ex) {
-            throw new NotAllowedException("User already exists, to update user use PATCH method");
+            throw new NotAllowedException("User already exists, to update User use PATCH method");
         }
     }
 
     @Override
     public void patchUser(UUID id, PatchUserRequest request) {
-        userService.find(id).ifPresentOrElse(entity -> userService.update(factory.updateUser().apply(entity, request)), () -> {
-            throw new NotFoundException("User not found, to create user use PUT method");
-        });
+        userService.find(id)
+                .ifPresentOrElse(entity -> userService.update(factory.updateUser().apply(entity, request)), () -> {
+                    throw new NotFoundException("User not found");
+                });
 
     }
 
     @Override
     public void deleteUser(UUID id) {
-        userService.find(id).ifPresentOrElse(
-                entity -> userService.delete(id),
-                () -> {
-                    throw new NotFoundException("User not found");
-                }
-        );
+        userService.find(id).ifPresentOrElse(entity -> userService.delete(id), () -> {
+            throw new NotFoundException("Fraction not found");
+        });
     }
 
     @Override
     public byte[] getUserAvatar(UUID id, String pathToAvatars) {
-        Path pathToAvatar = Paths.get(
+
+        java.nio.file.Path pathToAvatar = Paths.get(
                 pathToAvatars,
                 userService.find(id)
                         .map(user -> user.getId().toString())
@@ -107,7 +126,7 @@ public class UserSimpleController implements UserController {
         userService.find(id).ifPresentOrElse(
                 user -> {
                     try {
-                        Path avatarPath = Paths.get(pathToAvatars, user.getId().toString() + ".png");
+                        java.nio.file.Path avatarPath = Paths.get(pathToAvatars, user.getId().toString() + ".png");
                         if (!Files.exists(avatarPath)) {
                             throw new NotFoundException("User avatar does not exist");
                         }
