@@ -1,6 +1,7 @@
 package stenka.marcin.heroes.unit.service;
 
-import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.ejb.LocalBean;
+import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.NotFoundException;
 import stenka.marcin.heroes.fraction.entity.Fraction;
@@ -15,7 +16,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-@ApplicationScoped
+@LocalBean
+@Stateless
 public class UnitService {
     private final UnitRepository unitRepository;
 

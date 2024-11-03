@@ -1,5 +1,7 @@
 package stenka.marcin.heroes.fraction.service;
 
+import jakarta.ejb.LocalBean;
+import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.NotFoundException;
@@ -12,10 +14,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-import jakarta.enterprise.context.ApplicationScoped;
-
-
-@ApplicationScoped
+@LocalBean
+@Stateless
 public class FractionService {
     private final FractionRepository fractionRepository;
 
@@ -40,17 +40,14 @@ public class FractionService {
         return fractionRepository.findAll();
     }
 
-    @Transactional
     public void create(Fraction fraction) {
         fractionRepository.create(fraction);
     }
 
-    @Transactional
     public void update(Fraction fraction) {
         fractionRepository.update(fraction);
     }
 
-    @Transactional
     public void delete(UUID id) {
         Fraction fraction = fractionRepository.find(id).orElseThrow(NotFoundException::new);
         Optional<List<Unit>> unitsToDelete = unitService.findAllByFraction(id);

@@ -1,6 +1,6 @@
 package stenka.marcin.heroes.unit.repository.persistence;
 
-import jakarta.enterprise.context.RequestScoped;
+import jakarta.enterprise.context.Dependent;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import stenka.marcin.heroes.fraction.entity.Fraction;
@@ -12,7 +12,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-@RequestScoped
+@Dependent
+
 public class UnitPersistenceRepository implements UnitRepository {
 
     private EntityManager em;

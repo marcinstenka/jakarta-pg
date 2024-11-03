@@ -1,7 +1,8 @@
 package stenka.marcin.heroes.user.service;
 
+import jakarta.ejb.LocalBean;
+import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
-import jakarta.transaction.Transactional;
 import jakarta.ws.rs.NotFoundException;
 import jakarta.ws.rs.NotAllowedException;
 import stenka.marcin.heroes.unit.entity.Unit;
@@ -18,9 +19,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-import jakarta.enterprise.context.ApplicationScoped;
 
-@ApplicationScoped
+@LocalBean
+@Stateless
 public class UserService {
     private final UserRepository userRepository;
 
@@ -49,17 +50,14 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    @Transactional
     public void create(User user) {
         userRepository.create(user);
     }
 
-    @Transactional
     public void update(User user) {
         userRepository.update(user);
     }
 
-    @Transactional
     public void delete(UUID id) {
         User user = userRepository.find(id).orElseThrow(NotFoundException::new);
         Optional<List<Unit>> unitsToDelete = unitService.findAllByUser(id);
