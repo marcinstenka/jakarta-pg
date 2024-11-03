@@ -2,6 +2,7 @@ package stenka.marcin.heroes.unit.service;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import jakarta.transaction.Transactional;
 import jakarta.ws.rs.NotFoundException;
 import stenka.marcin.heroes.fraction.entity.Fraction;
 import stenka.marcin.heroes.fraction.service.FractionService;
@@ -44,6 +45,7 @@ public class UnitService {
         return unitRepository.findAll();
     }
 
+    @Transactional
     public void create(Unit unit, UUID userId, UUID fractionId) {
 
         User user = userService.find(userId).orElseThrow(() -> new NotFoundException("User not found: " + userId));
@@ -63,6 +65,7 @@ public class UnitService {
         fractionService.update(fraction);
     }
 
+    @Transactional
     public void update(Unit unit, UUID initialFraction) {
         User user = userService.find(unit.getUser().getId())
                 .orElseThrow(() -> new NotFoundException("User not found: " + unit.getUser().getId()));
@@ -93,6 +96,7 @@ public class UnitService {
         unitRepository.update(unit);
     }
 
+    @Transactional
     public void delete(UUID id) {
         Unit unit = unitRepository.find(id)
                 .orElseThrow(NotFoundException::new);

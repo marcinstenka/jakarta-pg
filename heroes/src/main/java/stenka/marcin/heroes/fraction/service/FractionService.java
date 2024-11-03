@@ -1,6 +1,7 @@
 package stenka.marcin.heroes.fraction.service;
 
 import jakarta.inject.Inject;
+import jakarta.transaction.Transactional;
 import jakarta.ws.rs.NotFoundException;
 import stenka.marcin.heroes.fraction.entity.Fraction;
 import stenka.marcin.heroes.fraction.repository.api.FractionRepository;
@@ -47,6 +48,7 @@ public class FractionService {
         fractionRepository.update(fraction);
     }
 
+    @Transactional
     public void delete(UUID id) {
         Fraction fraction = fractionRepository.find(id).orElseThrow(NotFoundException::new);
         Optional<List<Unit>> unitsToDelete = unitService.findAllByFraction(id);

@@ -1,6 +1,7 @@
 package stenka.marcin.heroes.user.service;
 
 import jakarta.inject.Inject;
+import jakarta.transaction.Transactional;
 import jakarta.ws.rs.NotFoundException;
 import jakarta.ws.rs.NotAllowedException;
 import stenka.marcin.heroes.unit.entity.Unit;
@@ -56,6 +57,7 @@ public class UserService {
         userRepository.update(user);
     }
 
+    @Transactional
     public void delete(UUID id) {
         User user = userRepository.find(id).orElseThrow(NotFoundException::new);
         Optional<List<Unit>> unitsToDelete = unitService.findAllByUser(id);
