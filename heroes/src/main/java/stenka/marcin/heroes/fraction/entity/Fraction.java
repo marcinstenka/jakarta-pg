@@ -36,6 +36,6 @@ public class Fraction implements Serializable {
 
 
     @ToString.Exclude
-    @OneToMany(mappedBy = "fraction", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "fraction", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
     private List<Unit> units;
 }

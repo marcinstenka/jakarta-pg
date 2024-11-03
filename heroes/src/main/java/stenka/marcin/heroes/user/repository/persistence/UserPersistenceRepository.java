@@ -2,6 +2,7 @@ package stenka.marcin.heroes.user.repository.persistence;
 
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.NoResultException;
 import jakarta.persistence.PersistenceContext;
 import stenka.marcin.heroes.user.entity.User;
 import stenka.marcin.heroes.user.repository.api.UserRepository;
@@ -21,9 +22,15 @@ public class UserPersistenceRepository implements UserRepository {
 
     @Override
     public Optional<User> findByName(String name) {
-        return Optional.ofNullable(em.find(User.class, name));
-
+        try {
+            return Optional.of(em.createQuery("select u from User u where u.name = :name", User.class)
+                    .setParameter("name", name)
+                    .getSingleResult());
+        } catch (NoResultException ex) {
+            return Optional.empty();
+        }
     }
+
 
     @Override
     public Optional<User> find(UUID id) {

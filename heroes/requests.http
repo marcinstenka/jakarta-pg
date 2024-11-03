@@ -128,18 +128,6 @@ Content-Type: application/json
 
 ###
 
-# Update user avatar.
-
-PATCH http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
-Content-Type: application/json
-
-{
-  "name": "Griffin",
-  "quantity": 20
-}
-
-###
-
 # Delete unit
 
 DELETE http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
@@ -154,7 +142,7 @@ GET http://localhost:9080/heroes/api/fractions/
 
 # Get single fraction
 
-GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d331
 
 ###
 

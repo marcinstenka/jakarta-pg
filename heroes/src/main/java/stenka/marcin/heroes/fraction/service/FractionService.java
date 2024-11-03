@@ -40,10 +40,12 @@ public class FractionService {
         return fractionRepository.findAll();
     }
 
+    @Transactional
     public void create(Fraction fraction) {
         fractionRepository.create(fraction);
     }
 
+    @Transactional
     public void update(Fraction fraction) {
         fractionRepository.update(fraction);
     }

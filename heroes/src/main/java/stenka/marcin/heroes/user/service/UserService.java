@@ -49,10 +49,12 @@ public class UserService {
         return userRepository.findAll();
     }
 
+    @Transactional
     public void create(User user) {
         userRepository.create(user);
     }
 
+    @Transactional
     public void update(User user) {
         userRepository.update(user);
     }
