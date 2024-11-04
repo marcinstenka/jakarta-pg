@@ -124,15 +124,15 @@ Authorization: Basic T3NrYXI6T3NrYXI=
 ###
 
 # Get all units
-
+// @no-cookie-jar
 GET http://localhost:9080/heroes/api/units
-
+Authorization: Basic TWFyY2luOk1hcmNpbg==
 ###
 
 # Get single unit
 // @no-cookie-jar
-GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d320
-Authorization: Basic TWFyY2luOk1hcmNpbg==
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d321
+Authorization: Basic T3NrYXI6T3NrYXI=
 ###
 
 # Get user units

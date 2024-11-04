@@ -1,6 +1,7 @@
 package stenka.marcin.heroes.unit.service;
 
 import jakarta.annotation.security.RolesAllowed;
+import jakarta.ejb.EJBAccessException;
 import jakarta.ejb.LocalBean;
 import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
@@ -9,7 +10,6 @@ import jakarta.ws.rs.NotFoundException;
 import lombok.NoArgsConstructor;
 import stenka.marcin.heroes.fraction.entity.Fraction;
 import stenka.marcin.heroes.fraction.service.FractionService;
-import stenka.marcin.heroes.unit.dto.PutUnitRequest;
 import stenka.marcin.heroes.unit.entity.Unit;
 import stenka.marcin.heroes.unit.repository.api.UnitRepository;
 import stenka.marcin.heroes.user.entity.User;
@@ -55,13 +55,9 @@ public class UnitService {
 
 
     @RolesAllowed(UserRoles.USER)
-    public Optional<Unit> findForCallerPrincipal(UUID id) {
-        if (securityContext.isCallerInRole(UserRoles.ADMIN)) {
-            return find(id);
-        }
-        User user = userService.find(securityContext.getCallerPrincipal().getName())
-                .orElseThrow(IllegalStateException::new);
-        return find(user, id);
+    public Optional<Unit> findForCallerPrincipal(UUID fractionId, UUID unitId) {
+        checkAdminRoleOrOwner(unitRepository.find(unitId));
+        return findByFractionAndUnit(fractionId, unitId);
     }
 
     @RolesAllowed(UserRoles.USER)
@@ -70,20 +66,13 @@ public class UnitService {
     }
 
 
+
     public Optional<Unit> findByFractionAndUnit(UUID fractionId, UUID unitId) {
         Fraction fraction = fractionService.find(fractionId)
                 .orElseThrow(() -> new NotFoundException("Fraction not found: " + fractionId));
 
         return unitRepository.find(unitId)
                 .filter(unit -> unit.getFraction().getId().equals(fraction.getId()));
-    }
-
-    @RolesAllowed(UserRoles.USER)
-    public void createForCallerPrincipal(Unit unit, UUID userId, UUID fractionId) {
-        User user = userService.find(securityContext.getCallerPrincipal().getName())
-                .orElseThrow(IllegalStateException::new);
-        unit.setUser(user);
-        create(unit, userId, fractionId);
     }
 
     public void create(Unit unit, UUID userId, UUID fractionId) {
@@ -161,5 +150,18 @@ public class UnitService {
     public Optional<List<Unit>> findAllByFraction(UUID id) {
         return fractionService.find(id)
                 .map(unitRepository::findAllByFraction);
+    }
+
+
+    private void checkAdminRoleOrOwner(Optional<Unit> unit) throws EJBAccessException {
+        if (securityContext.isCallerInRole(UserRoles.ADMIN)) {
+            return;
+        }
+        if (securityContext.isCallerInRole(UserRoles.USER)
+                && unit.isPresent()
+                && unit.get().getUser().getName().equals(securityContext.getCallerPrincipal().getName())) {
+            return;
+        }
+        throw new EJBAccessException("Caller not authorized.");
     }
 }
