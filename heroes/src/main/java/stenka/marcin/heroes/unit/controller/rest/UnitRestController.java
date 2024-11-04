@@ -1,5 +1,7 @@
 package stenka.marcin.heroes.unit.controller.rest;
 
+import jakarta.annotation.security.PermitAll;
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.ejb.EJB;
 import jakarta.ejb.EJBException;
 import jakarta.inject.Inject;
@@ -20,12 +22,14 @@ import stenka.marcin.heroes.unit.dto.PatchUnitRequest;
 import stenka.marcin.heroes.unit.dto.PutUnitRequest;
 import stenka.marcin.heroes.unit.entity.Unit;
 import stenka.marcin.heroes.unit.service.UnitService;
+import stenka.marcin.heroes.user.entity.UserRoles;
 
 import java.util.UUID;
 import java.util.logging.Level;
 
 @Path("")
 @Log
+@RolesAllowed(UserRoles.USER)
 public class UnitRestController implements UnitController {
     private UnitService unitService;
 
@@ -66,6 +70,7 @@ public class UnitRestController implements UnitController {
                 .orElseThrow(() -> new NotFoundException("Fraction not found"));
     }
 
+    @PermitAll
     @Override
     public GetUnitResponse getFractionUnit(UUID fractionId, UUID unitId) {
         return unitService.findByFractionAndUnit(fractionId, unitId)
@@ -78,7 +83,7 @@ public class UnitRestController implements UnitController {
         try {
             request.setFraction(fractionId);
             Unit unit = factory.requestToUnit().apply(unitId, request);
-            unitService.create(unit, request.getUser(), fractionId);
+            unitService.createForCallerPrincipal(unit, request.getUser(), fractionId);
 
             response.setHeader("Location", uriInfo.getBaseUriBuilder()
                     .path(UnitController.class, "getUnit")
@@ -95,7 +100,7 @@ public class UnitRestController implements UnitController {
             throw new NotFoundException(ex.getMessage());
         }
     }
-
+    @PermitAll
     @Override
     public void patchFractionUnit(UUID fractionId, UUID unitId, PatchUnitRequest request) {
         unitService.findByFractionAndUnit(fractionId, unitId).ifPresentOrElse(
