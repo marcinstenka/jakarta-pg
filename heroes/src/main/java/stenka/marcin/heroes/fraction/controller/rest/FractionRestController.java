@@ -61,7 +61,7 @@ public class FractionRestController implements FractionController {
     public GetFractionsResponse getFractions() {
         return factory.fractionsToResponse().apply(fractionService.findAll());
     }
-
+    @RolesAllowed("admin")
     @Override
     public void putFraction(UUID id, PutFractionRequest request) {
         try {
@@ -87,7 +87,7 @@ public class FractionRestController implements FractionController {
                     throw new NotFoundException("Fraction not found");
                 });
     }
-
+    @RolesAllowed("admin")
     @Override
     public void deleteFraction(UUID id) {
         fractionService.find(id).ifPresentOrElse(entity -> fractionService.delete(id), () -> {

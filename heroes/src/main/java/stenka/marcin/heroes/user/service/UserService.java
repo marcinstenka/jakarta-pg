@@ -1,8 +1,10 @@
 package stenka.marcin.heroes.user.service;
 
+import jakarta.annotation.security.PermitAll;
 import jakarta.ejb.LocalBean;
 import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
+import jakarta.security.enterprise.identitystore.Pbkdf2PasswordHash;
 import jakarta.ws.rs.NotFoundException;
 import jakarta.ws.rs.NotAllowedException;
 import lombok.NoArgsConstructor;
@@ -29,10 +31,13 @@ public class UserService {
 
     private final UnitService unitService;
 
+    private final Pbkdf2PasswordHash passwordHash;
+
     @Inject
-    public UserService(UserRepository repository, UnitService unitService) {
+    public UserService(UserRepository repository, UnitService unitService, @SuppressWarnings("CdiInjectionPointsInspection") Pbkdf2PasswordHash passwordHash) {
         this.userRepository = repository;
         this.unitService = unitService;
+        this.passwordHash = passwordHash;
     }
 
     public Optional<User> find(UUID id) {
@@ -47,7 +52,9 @@ public class UserService {
         return userRepository.findAll();
     }
 
+    @PermitAll
     public void create(User user) {
+        user.setPassword(passwordHash.generate(user.getPassword().toCharArray()));
         userRepository.create(user);
     }
 

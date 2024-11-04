@@ -18,12 +18,13 @@ GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d315
 
 # Put user
 
-PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
+PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d315
 Content-Type: application/json
 
 {
   "name": "Blazej",
-  "accountCreation": "2012-04-23"
+  "accountCreation": "2012-04-23",
+  "password": "Blazej"
 }
 
 ###
@@ -104,9 +105,10 @@ GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d
 ###
 
 # Put fraction
-
+// @no-cookie-jar
 PUT http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d332
 Content-Type: application/json
+Authorization: Basic T3NrYXI6T3NrYXI=
 
 {
   "name": "Stronghold",
@@ -116,9 +118,9 @@ Content-Type: application/json
 ###
 
 # Delete fraction
-
-DELETE http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330
-
+// @no-cookie-jar
+DELETE http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d332
+Authorization: Basic T3NrYXI6T3NrYXI=
 ###
 
 # Get all units
@@ -169,3 +171,8 @@ Content-Type: application/json
 DELETE http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d324
 
 ###
+
+admin-service: YWRtaW4tc2VydmljZTphZG1pbmFkbWlu
+Marcin z USER, ADMIN: TWFyY2luOk1hcmNpbg==
+Oskar z USER: T3NrYXI6T3NrYXI=
+Nowoutworzony Blazej: QmxhemVqOkJsYXplag==

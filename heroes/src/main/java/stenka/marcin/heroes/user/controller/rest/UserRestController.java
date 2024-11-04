@@ -1,5 +1,7 @@
 package stenka.marcin.heroes.user.controller.rest;
 
+import jakarta.annotation.security.PermitAll;
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.ejb.EJB;
 import jakarta.ejb.EJBException;
 import jakarta.inject.Inject;
@@ -15,6 +17,7 @@ import stenka.marcin.heroes.user.dto.GetUserResponse;
 import stenka.marcin.heroes.user.dto.GetUsersResponse;
 import stenka.marcin.heroes.user.dto.PatchUserRequest;
 import stenka.marcin.heroes.user.dto.PutUserRequest;
+import stenka.marcin.heroes.user.entity.UserRoles;
 import stenka.marcin.heroes.user.service.UserService;
 
 import java.io.IOException;
@@ -26,6 +29,7 @@ import java.util.logging.Level;
 
 @Path("")
 @Log
+@RolesAllowed(UserRoles.USER)
 public class UserRestController implements UserController {
 
     private UserService userService;
@@ -65,6 +69,7 @@ public class UserRestController implements UserController {
         return factory.usersToResponse().apply(userService.findAll());
     }
 
+    @PermitAll
     @Override
     public void putUser(UUID id, PutUserRequest request) {
         try {
