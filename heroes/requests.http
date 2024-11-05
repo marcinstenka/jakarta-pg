@@ -168,9 +168,9 @@ Content-Type: application/json
 ###
 
 # Delete unit
-
+// @no-cookie-jar
 DELETE http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d324
-
+Authorization: Basic T3NrYXI6T3NrYXI=
 ###
 
 admin-service: YWRtaW4tc2VydmljZTphZG1pbmFkbWlu

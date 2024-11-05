@@ -66,7 +66,6 @@ public class UnitService {
     }
 
 
-
     public Optional<Unit> findByFractionAndUnit(UUID fractionId, UUID unitId) {
         Fraction fraction = fractionService.find(fractionId)
                 .orElseThrow(() -> new NotFoundException("Fraction not found: " + fractionId));
@@ -75,6 +74,7 @@ public class UnitService {
                 .filter(unit -> unit.getFraction().getId().equals(fraction.getId()));
     }
 
+    @RolesAllowed(UserRoles.USER)
     public void create(Unit unit, UUID userId, UUID fractionId) {
 
         User user = userService.find(userId).orElseThrow(() -> new NotFoundException("User not found: " + userId));
@@ -94,7 +94,10 @@ public class UnitService {
         fractionService.update(fraction);
     }
 
+    @RolesAllowed(UserRoles.USER)
     public void update(Unit unit, UUID initialFraction) {
+        checkAdminRoleOrOwner(unitRepository.find(unit.getId()));
+
         User user = userService.find(unit.getUser().getId())
                 .orElseThrow(() -> new NotFoundException("User not found: " + unit.getUser().getId()));
 
@@ -124,7 +127,10 @@ public class UnitService {
         unitRepository.update(unit);
     }
 
+    @RolesAllowed(UserRoles.USER)
     public void delete(UUID id) {
+        checkAdminRoleOrOwner(unitRepository.find(id));
+
         Unit unit = unitRepository.find(id)
                 .orElseThrow(NotFoundException::new);
 
