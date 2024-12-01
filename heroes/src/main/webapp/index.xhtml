@@ -5,12 +5,13 @@
                 xmlns:f="jakarta.faces.core"
                 template="/WEB-INF/template/main.xhtml">
     <ui:define name="content">
-        <article class="">
+        <f:loadBundle var="msg" basename="stenka.marcin.heroes.view.authentication.view.i18n.messages"/>
+        <article>
             <header>
-                <h2>Home</h2>
+                <h2>#{msg.home}</h2>
             </header>
             <section>
-                <p>Heroes 3 to najlepsza gra ever</p>
+                <p>#{msg.home_text}</p>
             </section>
         </article>
     </ui:define>

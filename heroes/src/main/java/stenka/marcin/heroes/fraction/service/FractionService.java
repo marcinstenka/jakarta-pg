@@ -28,7 +28,7 @@ public class FractionService {
     private final SecurityContext securityContext;
 
     @Inject
-    public FractionService(FractionRepository fractionRepository, UnitService unitService, @SuppressWarnings("CdiInjectionPointsInspection") SecurityContext securityContext ) {
+    public FractionService(FractionRepository fractionRepository, UnitService unitService, @SuppressWarnings("CdiInjectionPointsInspection") SecurityContext securityContext) {
         this.fractionRepository = fractionRepository;
         this.unitService = unitService;
         this.securityContext = securityContext;

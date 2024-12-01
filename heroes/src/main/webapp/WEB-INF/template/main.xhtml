@@ -16,28 +16,28 @@
     </h:head>
     <h:body>
         <header>
-            <h1 class="main-header">Heroes 3 webpage</h1>
+            <h1 class="main-header">#{messages.home_text}</h1>
             <h:form styleClass="container d-flex  align-items-center justify-content-end"
                     rendered="#{facesContext.externalContext.userPrincipal != null}">
-                Logged: <h:outputText value="#{facesContext.externalContext.userPrincipal.name}"/>
-                <h:commandButton styleClass="btn btn-link" value="Logout"
+                #{messages.logged} <h:outputText value="#{facesContext.externalContext.userPrincipal.name}"/>
+                <h:commandButton styleClass="btn btn-link" value="#{messages.logout}:"
                                  action="#{userLogout.logoutAction()}"/>
             </h:form>
         </header>
 
         <nav class="nav">
             <div class="logo-container">
-                <h:graphicImage name="img/logo.png" alt="Logo"/>
+                <h:graphicImage name="img/logo_#{messages.lang}.png" alt="Logo"/>
             </div>
             <ul class="nav-list">
                 <li>
-                    <h:link outcome="/index.xhtml">Home</h:link>
+                    <h:link outcome="/index.xhtml">#{messages['nav.home']}</h:link>
                 </li>
                 <li>
-                    <h:link outcome="/fraction/fraction_list.xhtml">Fractions</h:link>
+                    <h:link outcome="/fraction/fraction_list.xhtml">#{messages['nav.fractions']}</h:link>
                 </li>
                 <li>
-                    <h:link outcome="/unit/unit_create.xhtml">Create new unit</h:link>
+                    <h:link outcome="/unit/unit_create.xhtml">#{messages['nav.add_unit']}</h:link>
                 </li>
                 <h:panelGroup rendered="#{facesContext.externalContext.isUserInRole('admin')}">
                     <li class="nav-item">

@@ -11,6 +11,7 @@
     </f:metadata>
 
     <ui:define name="content">
+        <f:loadBundle var="msg" basename="stenka.marcin.heroes.view.authentication.view.i18n.messages"/>
         <header>
             <h2>
                 <h:outputText value="#{fractionView.fraction.name}"/>
@@ -18,7 +19,7 @@
         </header>
         <main>
             <div>
-                Fraction type:
+                ${}:
                 <h:outputText value="#{fractionView.fraction.fractionType}"/>
             </div>
             <div>Units:</div>

@@ -10,23 +10,24 @@
     </f:metadata>
 
     <ui:define name="content">
+        <f:loadBundle var="msg" basename="stenka.marcin.heroes.view.authentication.view.i18n.messages"/>
         <article>
-            <header><h2>Create unit</h2></header>
+            <header><h2>#{msg.create_unit}</h2></header>
             <h:form styleClass="container" onreset="onReset()" enctype="multipart/form-data">
 
                 <div>
-                    <h:outputLabel for="name" value="Name:" styleClass="form-label"/>
+                    <h:outputLabel for="name" value="#{msg.name}:" styleClass="form-label"/>
                     <h:inputText id="name" value="#{unitCreate.unit.name}" styleClass="form-control"/>
                 </div>
 
                 <div>
-                    <h:outputLabel for="quantity" value="Quantity:"/>
+                    <h:outputLabel for="quantity" value="#{msg.quantity}:"/>
                     <h:inputText id="quantity" value="#{unitCreate.unit.quantity}" type="number"/>
 
                 </div>
 
                 <div>
-                    <p style="margin: 5px 0">Choose fraction:</p>
+                    <p style="margin: 5px 0">#{msg.choose_fraction}</p>
                     <ui:repeat value="#{unitCreate.fractions}" var="fraction">
                         <div class="form-check">
                             <h:selectOneRadio id="radioId" group="fraction"

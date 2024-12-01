@@ -6,8 +6,9 @@
                 template="/WEB-INF/template/main.xhtml">
 
     <ui:define name="content">
+        <f:loadBundle var="msg" basename="stenka.marcin.heroes.view.all.i18n.messages"/>
         <article class="text--justified">
-            <header><h2>Fractions:</h2></header>
+            <header><h2>#{msg.fractions}:</h2></header>
             <h:dataTable value="#{fractionList.fractions.fractions}" var="fraction">
                 <h:column>
                     <h:link outcome="/fraction/fraction_view.xhtml">
