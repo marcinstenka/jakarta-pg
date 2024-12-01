@@ -52,10 +52,10 @@ public class UserLogin {
                 withParams().credential(credential));
         if (status == AuthenticationStatus.SUCCESS) {
             System.out.println("SUCCESS");
-            userService.updateCallerPrincipalLastLoginDateTime();
+//            userService.updateCallerPrincipalLastLoginDateTime();
         } else if (status == AuthenticationStatus.SEND_CONTINUE) {
             System.out.println("SEND_CONTINUE");
-            userService.updateCallerPrincipalLastLoginDateTime();
+//            userService.updateCallerPrincipalLastLoginDateTime();
         } else if (status == AuthenticationStatus.SEND_FAILURE) {
             System.out.println("Authentication failed");
         }

@@ -113,18 +113,12 @@ public class UserService {
 
     }
 
-    @PermitAll
-    public boolean verify(String login, String password) {
-        return find(login)
-                .map(employee -> passwordHash.verify(password.toCharArray(), employee.getPassword()))
-                .orElse(false);
-    }
 
 
-    @PermitAll
-    public void updateCallerPrincipalLastLoginDateTime() {
-        findCallerPrincipal().ifPresent(principal -> principal.setLastLoginDateTime(LocalDateTime.now()));
-    }
+//    @PermitAll
+//    public void updateCallerPrincipalLastLoginDateTime() {
+//        findCallerPrincipal().ifPresent(principal -> principal.setLastLoginDateTime(LocalDateTime.now()));
+//    }
 
     public Optional<User> findCallerPrincipal() {
         if (securityContext.getCallerPrincipal() != null) {

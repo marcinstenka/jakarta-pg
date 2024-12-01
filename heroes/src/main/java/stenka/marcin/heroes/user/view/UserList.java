@@ -22,7 +22,7 @@ public class UserList {
         this.service = service;
         this.factory = factory;
     }
-    public UsersModel getUser() {
+    public UsersModel getUsers() {
         if (users == null) {
             users = factory.usersToModel().apply(service.findAll());
         }

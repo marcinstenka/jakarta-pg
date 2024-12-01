@@ -17,6 +17,12 @@
     <h:body>
         <header>
             <h1 class="main-header">Heroes 3 webpage</h1>
+            <h:form styleClass="container d-flex  align-items-center justify-content-end"
+                    rendered="#{facesContext.externalContext.userPrincipal != null}">
+                Logged: <h:outputText value="#{facesContext.externalContext.userPrincipal.name}"/>
+                <h:commandButton styleClass="btn btn-link" value="Logout"
+                                 action="#{userLogout.logoutAction()}"/>
+            </h:form>
         </header>
 
         <nav class="nav">
@@ -33,6 +39,12 @@
                 <li>
                     <h:link outcome="/unit/unit_create.xhtml">Create new unit</h:link>
                 </li>
+                <h:panelGroup rendered="#{facesContext.externalContext.isUserInRole('admin')}">
+                    <li class="nav-item">
+                        <h:link styleClass="nav-link"
+                                outcome="/user/user_list.xhtml">Users</h:link>
+                    </li>
+                </h:panelGroup>
             </ul>
         </nav>
 

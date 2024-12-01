@@ -24,7 +24,7 @@ import java.util.logging.Level;
 
 @Path("")
 @Log
-@RolesAllowed(UserRoles.USER)
+@RolesAllowed({UserRoles.ADMIN,UserRoles.USER})
 public class FractionRestController implements FractionController {
     private FractionService fractionService;
 
@@ -87,7 +87,7 @@ public class FractionRestController implements FractionController {
                     throw new NotFoundException("Fraction not found");
                 });
     }
-    @RolesAllowed("admin")
+    @RolesAllowed(UserRoles.ADMIN)
     @Override
     public void deleteFraction(UUID id) {
         fractionService.find(id).ifPresentOrElse(entity -> fractionService.delete(id), () -> {

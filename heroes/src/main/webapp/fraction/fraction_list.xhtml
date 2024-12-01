@@ -16,9 +16,10 @@
                     </h:link>
                 </h:column>
                 <h:column>
-                    <h:form>
-                        <h:commandButton class="button" value="Delete"
-                                         action="#{fractionList.deleteAction(fraction)}"/>
+                    <h:form rendered="#{facesContext.externalContext.isUserInRole('admin')}">
+                        <h:commandButton styleClass="btn" value="Delete"
+                                         action="#{fractionList.deleteAction(fraction)}"
+                                         rendered="#{facesContext.externalContext.isUserInRole('admin')}"/>
                     </h:form>
                 </h:column>
             </h:dataTable>
