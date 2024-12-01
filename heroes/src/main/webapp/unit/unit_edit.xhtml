@@ -11,19 +11,21 @@
     </f:metadata>
 
     <ui:define name="content">
+        <f:loadBundle var="msg" basename="stenka.marcin.heroes.view.authentication.view.i18n.messages"/>
+
         <article>
-            <header><h2>Edit unit</h2></header>
+            <header><h2>#{msg.edit_unit}</h2></header>
             <h:form onreset="onReset()" enctype="multipart/form-data">
                 <div>
                     <div>
-                        <h:outputLabel for="name" value="Name:" styleClass="form-label"/>
+                        <h:outputLabel for="name" value="#{msg.name}:" styleClass="form-label"/>
                         <h:inputText id="name" value="#{unitEdit.unit.name}"/>
                     </div>
                 </div>
 
                 <div>
                     <div>
-                        <h:outputLabel for="quantity" value="Quantity:"/>
+                        <h:outputLabel for="quantity" value="#{msg.quantity}:"/>
                         <h:inputText id="quantity" value="#{unitEdit.unit.quantity}" type="number"/>
                     </div>
                 </div>
@@ -36,9 +38,9 @@
                     </div>
                 </ui:repeat>
                 <div class="button-container">
-                        <h:commandButton class="button" value="Update"
+                        <h:commandButton class="button" value="#{msg.update}"
                                          action="#{unitEdit.saveAction()}"/>
-                        <h:commandButton class="button" type="reset" value="Reset"/>
+                        <h:commandButton class="button" type="reset" value="#{msg.reset}"/>
                 </div>
             </h:form>
         </article>

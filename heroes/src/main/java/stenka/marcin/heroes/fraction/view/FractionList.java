@@ -1,6 +1,9 @@
 package stenka.marcin.heroes.fraction.view;
 
+import jakarta.ejb.EJB;
 import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.context.ExternalContext;
+import jakarta.faces.context.FacesContext;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import stenka.marcin.heroes.component.ModelFunctionFactory;
@@ -10,7 +13,7 @@ import stenka.marcin.heroes.fraction.service.FractionService;
 @RequestScoped
 @Named
 public class FractionList {
-    private final FractionService fractionService;
+    private FractionService fractionService;
 
     private final ModelFunctionFactory factory;
 
@@ -18,9 +21,16 @@ public class FractionList {
 
 
     @Inject
-    public FractionList(FractionService fractionService, ModelFunctionFactory factory) {
-        this.fractionService = fractionService;
+    public FractionList(ModelFunctionFactory factory) {
         this.factory = factory;
+        FacesContext facesContext = FacesContext.getCurrentInstance();
+        ExternalContext externalContext = facesContext.getExternalContext();
+    }
+
+
+    @EJB
+    public void setFractionService(FractionService fractionService) {
+        this.fractionService = fractionService;
     }
 
     public FractionsModel getFractions() {

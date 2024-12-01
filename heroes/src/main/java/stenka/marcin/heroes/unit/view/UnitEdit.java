@@ -1,5 +1,6 @@
 package stenka.marcin.heroes.unit.view;
 
+import jakarta.ejb.EJB;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
@@ -25,11 +26,11 @@ import java.util.UUID;
 @Named
 public class UnitEdit implements Serializable {
 
-    private final UnitService unitService;
+    private UnitService unitService;
 
     private final ModelFunctionFactory factory;
 
-    private final FractionService fractionService;
+    private FractionService fractionService;
 
     @Setter
     @Getter
@@ -47,9 +48,17 @@ public class UnitEdit implements Serializable {
     private List<FractionModel> fractions;
 
     @Inject
-    public UnitEdit(UnitService unitService, ModelFunctionFactory factory, FractionService fractionService) {
-        this.unitService = unitService;
+    public UnitEdit(ModelFunctionFactory factory) {
         this.factory = factory;
+    }
+
+    @EJB
+    public void setUnitService(UnitService unitService) {
+        this.unitService = unitService;
+    }
+
+    @EJB
+    public void setFractionService(FractionService fractionService) {
         this.fractionService = fractionService;
     }
 

@@ -1,5 +1,6 @@
 package stenka.marcin.heroes.unit.view;
 
+import jakarta.ejb.EJB;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
@@ -20,7 +21,7 @@ import java.util.UUID;
 @ViewScoped
 @Named
 public class UnitView implements Serializable {
-    private final UnitService unitService;
+    private UnitService unitService;
 
     private final ModelFunctionFactory factory;
 
@@ -32,9 +33,13 @@ public class UnitView implements Serializable {
     private UnitModel unit;
 
     @Inject
-    public UnitView(UnitService unitService, ModelFunctionFactory factory) {
-        this.unitService = unitService;
+    public UnitView(ModelFunctionFactory factory) {
         this.factory = factory;
+    }
+
+    @EJB
+    public void setUnitService(UnitService unitService) {
+        this.unitService = unitService;
     }
 
     public void init() throws IOException {

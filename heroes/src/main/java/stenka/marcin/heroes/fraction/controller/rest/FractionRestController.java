@@ -1,14 +1,15 @@
 package stenka.marcin.heroes.fraction.controller.rest;
 
+import jakarta.annotation.security.RolesAllowed;
+import jakarta.ejb.EJB;
+import jakarta.ejb.EJBException;
 import jakarta.inject.Inject;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.ws.rs.NotAllowedException;
-import jakarta.ws.rs.NotFoundException;
-import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
-import jakarta.ws.rs.Path;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.UriInfo;
+import lombok.extern.java.Log;
 import stenka.marcin.heroes.component.DtoFunctionFactory;
 import stenka.marcin.heroes.fraction.controller.api.FractionController;
 import stenka.marcin.heroes.fraction.dto.GetFractionResponse;
@@ -16,12 +17,16 @@ import stenka.marcin.heroes.fraction.dto.GetFractionsResponse;
 import stenka.marcin.heroes.fraction.dto.PatchFractionRequest;
 import stenka.marcin.heroes.fraction.dto.PutFractionRequest;
 import stenka.marcin.heroes.fraction.service.FractionService;
+import stenka.marcin.heroes.user.entity.UserRoles;
 
 import java.util.UUID;
+import java.util.logging.Level;
 
 @Path("")
+@Log
+@RolesAllowed({UserRoles.ADMIN,UserRoles.USER})
 public class FractionRestController implements FractionController {
-    private final FractionService fractionService;
+    private FractionService fractionService;
 
     private final DtoFunctionFactory factory;
 
@@ -35,10 +40,14 @@ public class FractionRestController implements FractionController {
     }
 
     @Inject
-    public FractionRestController(final FractionService fractionService, final DtoFunctionFactory factory, @SuppressWarnings("CdiInjectionPointsInspection") UriInfo uriInfo) {
+    public FractionRestController(DtoFunctionFactory factory, @SuppressWarnings("CdiInjectionPointsInspection") UriInfo uriInfo) {
         this.factory = factory;
-        this.fractionService = fractionService;
         this.uriInfo = uriInfo;
+    }
+
+    @EJB
+    public void setFractionService(FractionService fractionService) {
+        this.fractionService = fractionService;
     }
 
     @Override
@@ -52,7 +61,7 @@ public class FractionRestController implements FractionController {
     public GetFractionsResponse getFractions() {
         return factory.fractionsToResponse().apply(fractionService.findAll());
     }
-
+    @RolesAllowed("admin")
     @Override
     public void putFraction(UUID id, PutFractionRequest request) {
         try {
@@ -62,8 +71,12 @@ public class FractionRestController implements FractionController {
                     .build(id)
                     .toString());
             throw new WebApplicationException(Response.Status.CREATED);
-        } catch (IllegalArgumentException ex) {
-            throw new NotAllowedException("Fraction already exists, to update fraction use PATCH method");
+        } catch (EJBException ex) {
+            if (ex.getCause() instanceof IllegalArgumentException) {
+                log.log(Level.WARNING, ex.getMessage(), ex);
+                throw new BadRequestException("Fraction already exists, to update fraction use PATCH method");
+            }
+            throw ex;
         }
     }
 
@@ -74,7 +87,7 @@ public class FractionRestController implements FractionController {
                     throw new NotFoundException("Fraction not found");
                 });
     }
-
+    @RolesAllowed(UserRoles.ADMIN)
     @Override
     public void deleteFraction(UUID id) {
         fractionService.find(id).ifPresentOrElse(entity -> fractionService.delete(id), () -> {

@@ -6,8 +6,9 @@
                 template="/WEB-INF/template/main.xhtml">
 
     <ui:define name="content">
+        <f:loadBundle var="msg" basename="stenka.marcin.heroes.view.all.i18n.messages"/>
         <article class="text--justified">
-            <header><h2>Fractions:</h2></header>
+            <header><h2>#{msg.fractions}:</h2></header>
             <h:dataTable value="#{fractionList.fractions.fractions}" var="fraction">
                 <h:column>
                     <h:link outcome="/fraction/fraction_view.xhtml">
@@ -16,9 +17,10 @@
                     </h:link>
                 </h:column>
                 <h:column>
-                    <h:form>
-                        <h:commandButton class="button" value="Delete"
-                                         action="#{fractionList.deleteAction(fraction)}"/>
+                    <h:form rendered="#{facesContext.externalContext.isUserInRole('admin')}">
+                        <h:commandButton styleClass="btn" value="Delete"
+                                         action="#{fractionList.deleteAction(fraction)}"
+                                         rendered="#{facesContext.externalContext.isUserInRole('admin')}"/>
                     </h:form>
                 </h:column>
             </h:dataTable>

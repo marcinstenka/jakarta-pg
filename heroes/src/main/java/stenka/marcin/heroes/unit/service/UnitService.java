@@ -1,13 +1,19 @@
 package stenka.marcin.heroes.unit.service;
 
-import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.annotation.security.RolesAllowed;
+import jakarta.ejb.EJBAccessException;
+import jakarta.ejb.LocalBean;
+import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
+import jakarta.security.enterprise.SecurityContext;
 import jakarta.ws.rs.NotFoundException;
+import lombok.NoArgsConstructor;
 import stenka.marcin.heroes.fraction.entity.Fraction;
 import stenka.marcin.heroes.fraction.service.FractionService;
 import stenka.marcin.heroes.unit.entity.Unit;
 import stenka.marcin.heroes.unit.repository.api.UnitRepository;
 import stenka.marcin.heroes.user.entity.User;
+import stenka.marcin.heroes.user.entity.UserRoles;
 import stenka.marcin.heroes.user.service.UserService;
 
 import java.util.ArrayList;
@@ -15,7 +21,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-@ApplicationScoped
+@LocalBean
+@Stateless
+@NoArgsConstructor(force = true)
 public class UnitService {
     private final UnitRepository unitRepository;
 
@@ -23,27 +31,50 @@ public class UnitService {
 
     private final FractionService fractionService;
 
+    private final SecurityContext securityContext;
+
     @Inject
-    public UnitService(UnitRepository unitRepository, UserService userService, FractionService fractionService) {
+    public UnitService(UnitRepository unitRepository, UserService userService, FractionService fractionService,
+                       @SuppressWarnings("CdiInjectionPointsInspection") SecurityContext securityContext) {
         this.unitRepository = unitRepository;
         this.userService = userService;
         this.fractionService = fractionService;
+        this.securityContext = securityContext;
+
     }
 
-    public UnitService() {
-        this.unitRepository = null;
-        this.userService = null;
-        this.fractionService = null;
-    }
-
+    @RolesAllowed(UserRoles.USER)
     public Optional<Unit> find(UUID id) {
         return unitRepository.find(id);
     }
 
+    @RolesAllowed(UserRoles.USER)
+    public Optional<Unit> find(User user, UUID id) {
+        return unitRepository.findByIdAndUser(id, user);
+    }
+
+
+    @RolesAllowed(UserRoles.USER)
+    public Optional<Unit> findForCallerPrincipal(UUID fractionId, UUID unitId) {
+        checkAdminRoleOrOwner(unitRepository.find(unitId));
+        return findByFractionAndUnit(fractionId, unitId);
+    }
+
+    @RolesAllowed(UserRoles.USER)
     public List<Unit> findAll() {
         return unitRepository.findAll();
     }
 
+
+    public Optional<Unit> findByFractionAndUnit(UUID fractionId, UUID unitId) {
+        Fraction fraction = fractionService.find(fractionId)
+                .orElseThrow(() -> new NotFoundException("Fraction not found: " + fractionId));
+
+        return unitRepository.find(unitId)
+                .filter(unit -> unit.getFraction().getId().equals(fraction.getId()));
+    }
+
+    @RolesAllowed(UserRoles.USER)
     public void create(Unit unit, UUID userId, UUID fractionId) {
 
         User user = userService.find(userId).orElseThrow(() -> new NotFoundException("User not found: " + userId));
@@ -63,7 +94,10 @@ public class UnitService {
         fractionService.update(fraction);
     }
 
+    @RolesAllowed(UserRoles.USER)
     public void update(Unit unit, UUID initialFraction) {
+        checkAdminRoleOrOwner(unitRepository.find(unit.getId()));
+
         User user = userService.find(unit.getUser().getId())
                 .orElseThrow(() -> new NotFoundException("User not found: " + unit.getUser().getId()));
 
@@ -93,7 +127,10 @@ public class UnitService {
         unitRepository.update(unit);
     }
 
+    @RolesAllowed(UserRoles.USER)
     public void delete(UUID id) {
+        checkAdminRoleOrOwner(unitRepository.find(id));
+
         Unit unit = unitRepository.find(id)
                 .orElseThrow(NotFoundException::new);
 
@@ -119,5 +156,18 @@ public class UnitService {
     public Optional<List<Unit>> findAllByFraction(UUID id) {
         return fractionService.find(id)
                 .map(unitRepository::findAllByFraction);
+    }
+
+
+    private void checkAdminRoleOrOwner(Optional<Unit> unit) throws EJBAccessException {
+        if (securityContext.isCallerInRole(UserRoles.ADMIN)) {
+            return;
+        }
+        if (securityContext.isCallerInRole(UserRoles.USER)
+                && unit.isPresent()
+                && unit.get().getUser().getName().equals(securityContext.getCallerPrincipal().getName())) {
+            return;
+        }
+        throw new EJBAccessException("Caller not authorized.");
     }
 }

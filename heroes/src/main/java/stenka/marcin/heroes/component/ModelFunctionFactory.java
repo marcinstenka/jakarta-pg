@@ -9,6 +9,8 @@ import stenka.marcin.heroes.unit.dto.function.UpdateUnitWithModelFunction;
 import stenka.marcin.heroes.unit.model.function.ModelToUnitFunction;
 import stenka.marcin.heroes.unit.model.function.UnitToEditModelFunction;
 import stenka.marcin.heroes.unit.model.function.UnitToModelFunction;
+import stenka.marcin.heroes.user.model.function.UserToModelFunction;
+import stenka.marcin.heroes.user.model.function.UsersToModelFunction;
 
 @ApplicationScoped
 public class ModelFunctionFactory {
@@ -43,5 +45,12 @@ public class ModelFunctionFactory {
 
     public UpdateUnitWithModelFunction updateUnit() {
         return new UpdateUnitWithModelFunction();
+    }
+
+    public UserToModelFunction userToModel() {
+        return new UserToModelFunction();
+    }
+    public UsersToModelFunction usersToModel() {
+        return new UsersToModelFunction();
     }
 }

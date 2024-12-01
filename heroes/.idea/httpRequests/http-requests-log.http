@@ -1,60 +1,174 @@
-GET http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
+# @no-cookie-jar
+GET http://localhost:9080/heroes/api/units
+Authorization: Basic TWFyY2luOk1hcmNpbg==
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
 content-length: 0
 
-<> 2024-10-29T232216.200.json
+<> 2024-11-04T215652.200.json
 
 ###
 
-PATCH http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
-Content-Type: application/json
-Content-Length: 51
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "name": "Ancient Behemoth",
-  "quantity": "2"
-}
-
-###
-
-GET http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
+# @no-cookie-jar
+GET http://localhost:9080/heroes/api/units
+Authorization: Basic T3NrYXI6T3NrYXI=
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
 content-length: 0
 
-<> 2024-10-29T232117.200.json
+###
+
+GET http://localhost:9080/heroes/api/units
+Authorization: Basic T3NrYXI6T3NrYXI=
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: LtpaToken2=MSK43oxkrlzkH+oe0eLTGwAwZJNnYej2nzHRDcMRlrOF5sZ74bAyw7+E/WRW4SOP2Mru/nAkhME9Jm8M97CpzZrS0/2HvXj+cImKcnEoVejqkpqJ4NRV6UMccuvhlBEEiAsBtkgNBQsjemdoRDxvQyyxUOwISenSRVLKw/cQyrJZVY0BbsfsNSBHdC3QGqNEjvh0dooGY/XMt1CptXrbERWQasKJfCDHKRWobga0zsn1v/b+SQVGt+m4mv3B2g5yT2lql+lxdKLEp7JYdi7JAVDdlgyssNs5bhyx7a2geLw/Y3Z/phpYpx0MLNfPRiLYKd1ltYfAstc8CoLT34cna6HArv4oUjfseuWQhWB/AN5RSuIVB3SUfLWQLRCCs95PQiijhEJiJFzdD6/U0dfHxU5noscoBb56X69mers5/xMuNEhfK8teusiZPiKm3+7o2Bm9xTEEAyH/qXUzIabavqE2Em9GWckUWGu7vsiK5qNJ4+Qy/2Ysep1/7OLP5bt6zo9ajgr7RUNxd6fLnP5N+w==
+content-length: 0
+
+<> 2024-11-04T215626.200.json
 
 ###
 
-GET http://localhost:9080/heroes/api/fractions/
+GET http://localhost:9080/heroes/api/units
+Authorization: Basic T3NrYXI6T3NrYXI=
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: LtpaToken2=MSK43oxkrlzkH+oe0eLTGwAwZJNnYej2nzHRDcMRlrOF5sZ74bAyw7+E/WRW4SOP2Mru/nAkhME9Jm8M97CpzZrS0/2HvXj+cImKcnEoVejqkpqJ4NRV6UMccuvhlBEEiAsBtkgNBQsjemdoRDxvQyyxUOwISenSRVLKw/cQyrJZVY0BbsfsNSBHdC3QGqNEjvh0dooGY/XMt1CptXrbERWQasKJfCDHKRWobga0zsn1v/b+SQVGt+m4mv3B2g5yT2lql+lxdKLEp7JYdi7JAVDdlgyssNs5bhyx7a2geLw/Y3Z/phpYpx0MLNfPRiLYKd1ltYfAstc8CoLT34cna6HArv4oUjfseuWQhWB/AN5RSuIVB3SUfLWQLRCCs95PQiijhEJiJFzdD6/U0dfHxU5noscoBb56X69mers5/xMuNEhfK8teusiZPiKm3+7o2Bm9xTEEAyH/qXUzIabavqE2Em9GWckUWGu7vsiK5qNJ4+Qy/2Ysep1/7OLP5bt6zo9ajgr7RUNxd6fLnP5N+w==
+content-length: 0
+
+<> 2024-11-04T215625.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/units
+Authorization: Basic T3NrYXI6T3NrYXI=
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: LtpaToken2=MSK43oxkrlzkH+oe0eLTGwAwZJNnYej2nzHRDcMRlrOF5sZ74bAyw7+E/WRW4SOP2Mru/nAkhME9Jm8M97CpzZrS0/2HvXj+cImKcnEoVejqkpqJ4NRV6UMccuvhlBEEiAsBtkgNBQsjemdoRDxvQyyxUOwISenSRVLKw/cQyrJZVY0BbsfsNSBHdC3QGqNEjvh0dooGY/XMt1CptXrbERWQasKJfCDHKRWobga0zsn1v/b+SQVGt+m4mv3B2g5yT2lql+lxdKLEp7JYdi7JAVDdlgyssNs5bhyx7a2geLw/Y3Z/phpYpx0MLNfPRiLYKd1ltYfAstc8CoLT34cna6HArv4oUjfseuWQhWB/AN5RSuIVB3SUfLWQLRCCs95PQiijhEJiJFzdD6/U0dfHxU5noscoBb56X69mers5/xMuNEhfK8teusiZPiKm3+7o2Bm9xTEEAyH/qXUzIabavqE2Em9GWckUWGu7vsiK5qNJ4+Qy/2Ysep1/7OLP5bt6zo9ajgr7RUNxd6fLnP5N+w==
+content-length: 0
+
+<> 2024-11-04T215624.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/units
+Authorization: Basic T3NrYXI6T3NrYXI=
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: LtpaToken2=MSK43oxkrlzkH+oe0eLTGwAwZJNnYej2nzHRDcMRlrOF5sZ74bAyw7+E/WRW4SOP2Mru/nAkhME9Jm8M97CpzZrS0/2HvXj+cImKcnEoVejqkpqJ4NRV6UMccuvhlBEEiAsBtkgNBQsjemdoRDxvQyyxUOwISenSRVLKw/cQyrJZVY0BbsfsNSBHdC3QGqNEjvh0dooGY/XMt1CptXrbERWQasKJfCDHKRWobga0zsn1v/b+SQVGt+m4mv3B2g5yT2lql+lxdKLEp7JYdi7JAVDdlgyssNs5bhyx7a2geLw/Y3Z/phpYpx0MLNfPRiLYKd1ltYfAstc8CoLT34cna6HArv4oUjfseuWQhWB/AN5RSuIVB3SUfLWQLRCCs95PQiijhEJiJFzdD6/U0dfHxU5noscoBb56X69mers5/xMuNEhfK8teusiZPiKm3+7o2Bm9xTEEAyH/qXUzIabavqE2Em9GWckUWGu7vsiK5qNJ4+Qy/2Ysep1/7OLP5bt6zo9ajgr7RUNxd6fLnP5N+w==
+content-length: 0
+
+<> 2024-11-04T215621.200.json
+
+###
+
+GET http://localhost:9080/heroes/api/units
+Authorization: Basic T3NrYXI6T3NrYXI=
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: LtpaToken2=MSK43oxkrlzkH+oe0eLTGwAwZJNnYej2nzHRDcMRlrOF5sZ74bAyw7+E/WRW4SOP2Mru/nAkhME9Jm8M97CpzZrS0/2HvXj+cImKcnEoVejqkpqJ4NRV6UMccuvhlBEEiAsBtkgNBQsjemdoRDxvQyyxUOwISenSRVLKw/cQyrJZVY0BbsfsNSBHdC3QGqNEjvh0dooGY/XMt1CptXrbERWQasKJfCDHKRWobga0zsn1v/b+SQVGt+m4mv3B2g5yT2lql+lxdKLEp7JYdi7JAVDdlgyssNs5bhyx7a2geLw/Y3Z/phpYpx0MLNfPRiLYKd1ltYfAstc8CoLT34cna6HArv4oUjfseuWQhWB/AN5RSuIVB3SUfLWQLRCCs95PQiijhEJiJFzdD6/U0dfHxU5noscoBb56X69mers5/xMuNEhfK8teusiZPiKm3+7o2Bm9xTEEAyH/qXUzIabavqE2Em9GWckUWGu7vsiK5qNJ4+Qy/2Ysep1/7OLP5bt6zo9ajgr7RUNxd6fLnP5N+w==
+content-length: 0
+
+<> 2024-11-04T215619.200.json
+
+###
+
+# @no-cookie-jar
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d321
+Authorization: Basic T3NrYXI6T3NrYXI=
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
 content-length: 0
 
-<> 2024-10-29T232104.200.json
-
 ###
 
-PUT http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
-Content-Type: application/json
-Content-Length: 145
+# @no-cookie-jar
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d321
+Authorization: Basic T3NrYXI6T3NrYXI=
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
+content-length: 0
 
-{
-  "name": "Behemoth",
-  "quantity": 1,
-  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d311",
-  "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d331"
-}
+###
+
+# @no-cookie-jar
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d321
+Authorization: Basic T3NrYXI6T3NrYXI=
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-11-04T215232.500.json
+
+###
+
+# @no-cookie-jar
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d321
+Authorization: Basic T3NrYXI6T3NrYXI=
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-11-04T215230.500.json
+
+###
+
+# @no-cookie-jar
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d322
+Authorization: Basic TWFyY2luOk1hcmNpbg==
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-11-04T215158.200.json
+
+###
+
+# @no-cookie-jar
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d321
+Authorization: Basic TWFyY2luOk1hcmNpbg==
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-11-04T215154.200.json
+
+###
+
+# @no-cookie-jar
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d321
+Authorization: Basic T3NrYXI6T3NrYXI=
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-11-04T215121.500.json
+
+###
+
+# @no-cookie-jar
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d322
+Authorization: Basic T3NrYXI6T3NrYXI=
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-11-04T215059.200.json
 
 ###
 
@@ -62,49 +176,40 @@ GET http://localhost:9080/heroes/api/units
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
+Cookie: LtpaToken2=MSK43oxkrlzkH+oe0eLTGwAwZJNnYej2nzHRDcMRlrOF5sZ74bAyw7+E/WRW4SOP2Mru/nAkhME9Jm8M97CpzZrS0/2HvXj+cImKcnEoVejqkpqJ4NRV6UMccuvhlBEEiAsBtkgNBQsjemdoRDxvQyyxUOwISenSRVLKw/cQyrJZVY0BbsfsNSBHdC3QGqNEjvh0dooGY/XMt1CptXrbERWQasKJfCDHKRWobga0zsn1v/b+SQVGt+m4mv3B2g5yT2lql+lxdKLEp7JYdi7JAVDdlgyssNs5bhyx7a2geLw/Y3Z/phpYpx0MLNfPRiLYKd1ltYfAstc8CoLT34cna6HArv4oUjfseuWQhWB/AN5RSuIVB3SUfLWQLRCCs95PQiijhEJiJFzdD6/U0dfHxU5noscoBb56X69mers5/xMuNEhfK8teusiZPiKm3+7o2Bm9xTEEAyH/qXUzIabavqE2Em9GWckUWGu7vsiK5qNJ4+Qy/2Ysep1/7OLP5bt6zo9ajgr7RUNxd6fLnP5N+w==
 content-length: 0
 
-<> 2024-10-29T232047.200.json
+<> 2024-11-04T215047.200.json
 
 ###
 
-GET http://localhost:9080/heroes/api/fractions/
+# @no-cookie-jar
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d322
+Authorization: Basic T3NrYXI6T3NrYXI=
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
 content-length: 0
 
-<> 2024-10-29T232042.200.json
+<> 2024-11-04T215005.200.json
 
 ###
 
-GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330
+# @no-cookie-jar
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d322
+Authorization: Basic TWFyY2luOk1hcmNpbg==
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
 content-length: 0
 
-###
-
-DELETE http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
+<> 2024-11-04T214951.200.json
 
 ###
 
-GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-29T232020.200.json
-
-###
-
-GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330units
+# @no-cookie-jar
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d320
+Authorization: Basic TWFyY2luOk1hcmNpbg==
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
@@ -112,7 +217,9 @@ content-length: 0
 
 ###
 
-GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330units
+# @no-cookie-jar
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d320
+Authorization: Basic TWFyY2luOk1hcmNpbg==
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
@@ -120,39 +227,53 @@ content-length: 0
 
 ###
 
-GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d331/units
+# @no-cookie-jar
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d322
+Authorization: Basic TWFyY2luOk1hcmNpbg==
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
 content-length: 0
 
-<> 2024-10-29T232005.200.json
+<> 2024-11-04T214844.200.json
 
 ###
 
-GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d332/units
+# @no-cookie-jar
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d321
+Authorization: Basic TWFyY2luOk1hcmNpbg==
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
 content-length: 0
 
-<> 2024-10-29T231959.200.json
-
 ###
 
-GET http://localhost:9080/heroes/api/fractions/
+# @no-cookie-jar
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d320
+Authorization: Basic TWFyY2luOk1hcmNpbg==
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
 content-length: 0
 
-<> 2024-10-29T231953.200.json
+###
+
+# @no-cookie-jar
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d320
+Authorization: Basic TWFyY2luOk1hcmNpbg==
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
 
 ###
 
-PUT http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
+# @no-cookie-jar
+PUT http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d325
 Content-Type: application/json
-Content-Length: 145
+Authorization: Basic T3NrYXI6T3NrYXI=
+Content-Length: 91
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
@@ -160,15 +281,18 @@ Accept: */*
 {
   "name": "Behemoth",
   "quantity": 1,
-  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d311",
-  "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d335"
+  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d311"
 }
+
+<> 2024-11-04T212421.500.octet-stream
 
 ###
 
-PUT http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
+# @no-cookie-jar
+PUT http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d324
 Content-Type: application/json
-Content-Length: 145
+Authorization: Basic TWFyY2luOk1hcmNpbg==
+Content-Length: 91
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
@@ -176,24 +300,27 @@ Accept: */*
 {
   "name": "Behemoth",
   "quantity": 1,
-  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d311",
-  "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d330"
+  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d311"
 }
 
 ###
 
 GET http://localhost:9080/heroes/api/fractions/
+Authorization: Basic T3NrYXI6T3NrYXI=
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
+Cookie: LtpaToken2=MSK43oxkrlzkH+oe0eLTGwAwZJNnYej2nzHRDcMRlrOF5sZ74bAyw7+E/WRW4SOP2Mru/nAkhME9Jm8M97CpzZrS0/2HvXj+cImKcnEoVejqkpqJ4NRV6UMccuvhlBEEiAsBtkgNBQsjemdoRDxvQyyxUOwISenSRVLKw/cQyrJZVY0BbsfsNSBHdC3QGqNEjvh0dooGY/XMt1CptXrbERWQasKJfCDHKRWobga0zsn1v/b+SQVGt+m4mv3B2g5yT2lql+lxdKLEp7JYdi7JAVDdlgyssNs5bhyx7a2geLw/Y3Z/phpYpx0MLNfPRiLYKd1ltYfAstc8CoLT34cna6HArv4oUjfseuWQhWB/AN5RSuIVB3SUfLWQLRCCs95PQiijhEJiJFzdD6/U0dfHxU5noscoBb56X69mers5/xMuNEhfK8teusiZPiKm3+7o2Bm9xTEEAyH/qXUzIabavqE2Em9GWckUWGu7vsiK5qNJ4+Qy/2Ysep1/7OLP5bt6zo9ajgr7RUNxd6fLnP5N+w==
 content-length: 0
 
-<> 2024-10-29T231928.200.json
+<> 2024-11-04T211723.200.json
 
 ###
 
-PUT http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d332
+# @no-cookie-jar
+PUT http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d333
 Content-Type: application/json
+Authorization: Basic T3NrYXI6T3NrYXI=
 Content-Length: 55
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
 Accept-Encoding: br, deflate, gzip, x-gzip
@@ -206,305 +333,322 @@ Accept: */*
 
 ###
 
-GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-29T231921.200.json
-
-###
-
-GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-29T231918.200.json
-
-###
-
-GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-29T231917.200.json
-
-###
-
 GET http://localhost:9080/heroes/api/fractions/
+Authorization: Basic T3NrYXI6T3NrYXI=
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
+Cookie: LtpaToken2=MSK43oxkrlzkH+oe0eLTGwAwZJNnYej2nzHRDcMRlrOF5sZ74bAyw7+E/WRW4SOP2Mru/nAkhME9Jm8M97CpzZrS0/2HvXj+cImKcnEoVejqkpqJ4NRV6UMccuvhlBEEiAsBtkgNBQsjemdoRDxvQyyxUOwISenSRVLKw/cQyrJZVY0BbsfsNSBHdC3QGqNEjvh0dooGY/XMt1CptXrbERWQasKJfCDHKRWobga0zsn1v/b+SQVGt+m4mv3B2g5yT2lql+lxdKLEp7JYdi7JAVDdlgyssNs5bhyx7a2geLw/Y3Z/phpYpx0MLNfPRiLYKd1ltYfAstc8CoLT34cna6HArv4oUjfseuWQhWB/AN5RSuIVB3SUfLWQLRCCs95PQiijhEJiJFzdD6/U0dfHxU5noscoBb56X69mers5/xMuNEhfK8teusiZPiKm3+7o2Bm9xTEEAyH/qXUzIabavqE2Em9GWckUWGu7vsiK5qNJ4+Qy/2Ysep1/7OLP5bt6zo9ajgr7RUNxd6fLnP5N+w==
 content-length: 0
 
-<> 2024-10-29T231912.200.json
+<> 2024-11-04T211713.200.json
 
 ###
 
-GET http://localhost:9080/heroes/api/fractions/
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-###
-
-GET http://localhost:9080/heroes/api/fractions/
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-###
-
-GET http://localhost:9080/heroes/api/units
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-###
-
-GET http://localhost:9080/api/units
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-29T231439.404.html
-
-###
-
-GET http://localhost:9080/heroes/api/fractions
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-###
-
-GET http://localhost:9080/heroes/api/fractions
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-###
-
-GET http://localhost:9080/heroes/api/fractions/
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-###
-
-GET http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-###
-
-GET http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-###
-
-GET http://localhost:9080/heroes/api/units
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-###
-
-GET http://localhost:9080/heroes/api/units
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-###
-
-GET http://localhost:9080/heroes/api/units
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-###
-
-GET http://localhost:9080/heroes/api/users
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-###
-
-GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T224941.200.json
-
-###
-
-GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T224100.200.json
-
-###
-
-GET http://localhost:9080/heroes/api/fractions/
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T224052.200.json
-
-###
-
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d311/units/
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T224049.200.json
-
-###
-
-DELETE http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-###
-
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d311/units/
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T224043.200.json
-
-###
-
-PUT http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
+# @no-cookie-jar
+PUT http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d332
 Content-Type: application/json
-Content-Length: 145
+Authorization: Basic QmxhemVqOkJsYXplag==
+Content-Length: 55
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
 
 {
-  "name": "Behemoth",
-  "quantity": 1,
-  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d311",
-  "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d330"
+  "name": "Stronghold",
+  "fractionType": "NEUTRAL"
 }
 
 ###
 
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d311/units/
+GET http://localhost:9080/heroes/api/fractions/
+Authorization: Basic QmxhemVqOkJsYXplag==
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
+Cookie: LtpaToken2=MSK43oxkrlzkH+oe0eLTGwAwZJNnYej2nzHRDcMRlrOF5sZ74bAyw7+E/WRW4SOP2Mru/nAkhME9Jm8M97CpzZrS0/2HvXj+cImKcnEoVejqkpqJ4NRV6UMccuvhlBEEiAsBtkgNBQsjemdoRDxvQyyxUOwISenSRVLKw/cQyrJZVY0BbsfsNSBHdC3QGqNEjvh0dooGY/XMt1CptXrbERWQasKJfCDHKRWobga0zsn1v/b+SQVGt+m4mv3B2g5yT2lql+lxdKLEp7JYdi7JAVDdlgyssNs5bhyx7a2geLw/Y3Z/phpYpx0MLNfPRiLYKd1ltYfAstc8CoLT34cna6HArv4oUjfseuWQhWB/AN5RSuIVB3SUfLWQLRCCs95PQiijhEJiJFzdD6/U0dfHxU5noscoBb56X69mers5/xMuNEhfK8teusiZPiKm3+7o2Bm9xTEEAyH/qXUzIabavqE2Em9GWckUWGu7vsiK5qNJ4+Qy/2Ysep1/7OLP5bt6zo9ajgr7RUNxd6fLnP5N+w==
 content-length: 0
 
-<> 2024-10-20T223913.200.json
+<> 2024-11-04T211613.200.json
 
 ###
 
-DELETE http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-###
-
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d311/units/
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2024-10-20T223904.200.json
-
-###
-
-PUT http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
+PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d315
 Content-Type: application/json
-Content-Length: 145
+Content-Length: 81
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: LtpaToken2=MSK43oxkrlzkH+oe0eLTGwAwZJNnYej2nzHRDcMRlrOF5sZ74bAyw7+E/WRW4SOP2Mru/nAkhME9Jm8M97CpzZrS0/2HvXj+cImKcnEoVejqkpqJ4NRV6UMccuvhlBEEiAsBtkgNBQsjemdoRDxvQyyxUOwISenSRVLKw/cQyrJZVY0BbsfsNSBHdC3QGqNEjvh0dooGY/XMt1CptXrbERWQasKJfCDHKRWobga0zsn1v/b+SQVGt+m4mv3B2g5yT2lql+lxdKLEp7JYdi7JAVDdlgyssNs5bhyx7a2geLw/Y3Z/phpYpx0MLNfPRiLYKd1ltYfAstc8CoLT34cna6HArv4oUjfseuWQhWB/AN5RSuIVB3SUfLWQLRCCs95PQiijhEJiJFzdD6/U0dfHxU5noscoBb56X69mers5/xMuNEhfK8teusiZPiKm3+7o2Bm9xTEEAyH/qXUzIabavqE2Em9GWckUWGu7vsiK5qNJ4+Qy/2Ysep1/7OLP5bt6zo9ajgr7RUNxd6fLnP5N+w==
+
+{
+  "name": "Blazej",
+  "accountCreation": "2012-04-23",
+  "password": "Blazej"
+}
+
+###
+
+PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
+Content-Type: application/json
+Content-Length: 81
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: LtpaToken2=MSK43oxkrlzkH+oe0eLTGwAwZJNnYej2nzHRDcMRlrOF5sZ74bAyw7+E/WRW4SOP2Mru/nAkhME9Jm8M97CpzZrS0/2HvXj+cImKcnEoVejqkpqJ4NRV6UMccuvhlBEEiAsBtkgNBQsjemdoRDxvQyyxUOwISenSRVLKw/cQyrJZVY0BbsfsNSBHdC3QGqNEjvh0dooGY/XMt1CptXrbERWQasKJfCDHKRWobga0zsn1v/b+SQVGt+m4mv3B2g5yT2lql+lxdKLEp7JYdi7JAVDdlgyssNs5bhyx7a2geLw/Y3Z/phpYpx0MLNfPRiLYKd1ltYfAstc8CoLT34cna6HArv4oUjfseuWQhWB/AN5RSuIVB3SUfLWQLRCCs95PQiijhEJiJFzdD6/U0dfHxU5noscoBb56X69mers5/xMuNEhfK8teusiZPiKm3+7o2Bm9xTEEAyH/qXUzIabavqE2Em9GWckUWGu7vsiK5qNJ4+Qy/2Ysep1/7OLP5bt6zo9ajgr7RUNxd6fLnP5N+w==
+
+{
+  "name": "Blazej",
+  "accountCreation": "2012-04-23",
+  "password": "Blazej"
+}
+
+<> 2024-11-04T211544.500.octet-stream
+
+###
+
+DELETE http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d310
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: LtpaToken2=MSK43oxkrlzkH+oe0eLTGwAwZJNnYej2nzHRDcMRlrOF5sZ74bAyw7+E/WRW4SOP2Mru/nAkhME9Jm8M97CpzZrS0/2HvXj+cImKcnEoVejqkpqJ4NRV6UMccuvhlBEEiAsBtkgNBQsjemdoRDxvQyyxUOwISenSRVLKw/cQyrJZVY0BbsfsNSBHdC3QGqNEjvh0dooGY/XMt1CptXrbERWQasKJfCDHKRWobga0zsn1v/b+SQVGt+m4mv3B2g5yT2lql+lxdKLEp7JYdi7JAVDdlgyssNs5bhyx7a2geLw/Y3Z/phpYpx0MLNfPRiLYKd1ltYfAstc8CoLT34cna6HArv4oUjfseuWQhWB/AN5RSuIVB3SUfLWQLRCCs95PQiijhEJiJFzdD6/U0dfHxU5noscoBb56X69mers5/xMuNEhfK8teusiZPiKm3+7o2Bm9xTEEAyH/qXUzIabavqE2Em9GWckUWGu7vsiK5qNJ4+Qy/2Ysep1/7OLP5bt6zo9ajgr7RUNxd6fLnP5N+w==
+content-length: 0
+
+###
+
+PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
+Content-Type: application/json
+Content-Length: 81
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: LtpaToken2=MSK43oxkrlzkH+oe0eLTGwAwZJNnYej2nzHRDcMRlrOF5sZ74bAyw7+E/WRW4SOP2Mru/nAkhME9Jm8M97CpzZrS0/2HvXj+cImKcnEoVejqkpqJ4NRV6UMccuvhlBEEiAsBtkgNBQsjemdoRDxvQyyxUOwISenSRVLKw/cQyrJZVY0BbsfsNSBHdC3QGqNEjvh0dooGY/XMt1CptXrbERWQasKJfCDHKRWobga0zsn1v/b+SQVGt+m4mv3B2g5yT2lql+lxdKLEp7JYdi7JAVDdlgyssNs5bhyx7a2geLw/Y3Z/phpYpx0MLNfPRiLYKd1ltYfAstc8CoLT34cna6HArv4oUjfseuWQhWB/AN5RSuIVB3SUfLWQLRCCs95PQiijhEJiJFzdD6/U0dfHxU5noscoBb56X69mers5/xMuNEhfK8teusiZPiKm3+7o2Bm9xTEEAyH/qXUzIabavqE2Em9GWckUWGu7vsiK5qNJ4+Qy/2Ysep1/7OLP5bt6zo9ajgr7RUNxd6fLnP5N+w==
+
+{
+  "name": "Blazej",
+  "accountCreation": "2012-04-23",
+  "password": "Blazej"
+}
+
+###
+
+PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
+Content-Type: application/json
+Content-Length: 81
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: LtpaToken2=MSK43oxkrlzkH+oe0eLTGwAwZJNnYej2nzHRDcMRlrOF5sZ74bAyw7+E/WRW4SOP2Mru/nAkhME9Jm8M97CpzZrS0/2HvXj+cImKcnEoVejqkpqJ4NRV6UMccuvhlBEEiAsBtkgNBQsjemdoRDxvQyyxUOwISenSRVLKw/cQyrJZVY0BbsfsNSBHdC3QGqNEjvh0dooGY/XMt1CptXrbERWQasKJfCDHKRWobga0zsn1v/b+SQVGt+m4mv3B2g5yT2lql+lxdKLEp7JYdi7JAVDdlgyssNs5bhyx7a2geLw/Y3Z/phpYpx0MLNfPRiLYKd1ltYfAstc8CoLT34cna6HArv4oUjfseuWQhWB/AN5RSuIVB3SUfLWQLRCCs95PQiijhEJiJFzdD6/U0dfHxU5noscoBb56X69mers5/xMuNEhfK8teusiZPiKm3+7o2Bm9xTEEAyH/qXUzIabavqE2Em9GWckUWGu7vsiK5qNJ4+Qy/2Ysep1/7OLP5bt6zo9ajgr7RUNxd6fLnP5N+w==
+
+{
+  "name": "Blazej",
+  "accountCreation": "2012-04-23",
+  "password": "Blazej"
+}
+
+<> 2024-11-04T211306.500.octet-stream
+
+###
+
+PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
+Content-Type: application/json
+Content-Length: 57
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: LtpaToken2=MSK43oxkrlzkH+oe0eLTGwAwZJNnYej2nzHRDcMRlrOF5sZ74bAyw7+E/WRW4SOP2Mru/nAkhME9Jm8M97CpzZrS0/2HvXj+cImKcnEoVejqkpqJ4NRV6UMccuvhlBEEiAsBtkgNBQsjemdoRDxvQyyxUOwISenSRVLKw/cQyrJZVY0BbsfsNSBHdC3QGqNEjvh0dooGY/XMt1CptXrbERWQasKJfCDHKRWobga0zsn1v/b+SQVGt+m4mv3B2g5yT2lql+lxdKLEp7JYdi7JAVDdlgyssNs5bhyx7a2geLw/Y3Z/phpYpx0MLNfPRiLYKd1ltYfAstc8CoLT34cna6HArv4oUjfseuWQhWB/AN5RSuIVB3SUfLWQLRCCs95PQiijhEJiJFzdD6/U0dfHxU5noscoBb56X69mers5/xMuNEhfK8teusiZPiKm3+7o2Bm9xTEEAyH/qXUzIabavqE2Em9GWckUWGu7vsiK5qNJ4+Qy/2Ysep1/7OLP5bt6zo9ajgr7RUNxd6fLnP5N+w==
+
+{
+  "name": "Blazej",
+  "accountCreation": "2012-04-23"
+}
+
+<> 2024-11-04T211251.500.octet-stream
+
+###
+
+PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
+Content-Type: application/json
+Content-Length: 57
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: LtpaToken2=MSK43oxkrlzkH+oe0eLTGwAwZJNnYej2nzHRDcMRlrOF5sZ74bAyw7+E/WRW4SOP2Mru/nAkhME9Jm8M97CpzZrS0/2HvXj+cImKcnEoVejqkpqJ4NRV6UMccuvhlBEEiAsBtkgNBQsjemdoRDxvQyyxUOwISenSRVLKw/cQyrJZVY0BbsfsNSBHdC3QGqNEjvh0dooGY/XMt1CptXrbERWQasKJfCDHKRWobga0zsn1v/b+SQVGt+m4mv3B2g5yT2lql+lxdKLEp7JYdi7JAVDdlgyssNs5bhyx7a2geLw/Y3Z/phpYpx0MLNfPRiLYKd1ltYfAstc8CoLT34cna6HArv4oUjfseuWQhWB/AN5RSuIVB3SUfLWQLRCCs95PQiijhEJiJFzdD6/U0dfHxU5noscoBb56X69mers5/xMuNEhfK8teusiZPiKm3+7o2Bm9xTEEAyH/qXUzIabavqE2Em9GWckUWGu7vsiK5qNJ4+Qy/2Ysep1/7OLP5bt6zo9ajgr7RUNxd6fLnP5N+w==
+
+{
+  "name": "Blazej",
+  "accountCreation": "2012-04-23"
+}
+
+<> 2024-11-04T211154.500.octet-stream
+
+###
+
+GET http://localhost:9080/heroes/api/fractions/
+Authorization: Basic T3NrYXI6T3NrYXI=
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: LtpaToken2=MSK43oxkrlzkH+oe0eLTGwAwZJNnYej2nzHRDcMRlrOF5sZ74bAyw7+E/WRW4SOP2Mru/nAkhME9Jm8M97CpzZrS0/2HvXj+cImKcnEoVejqkpqJ4NRV6UMccuvhlBEEiAsBtkgNBQsjemdoRDxvQyyxUOwISenSRVLKw/cQyrJZVY0BbsfsNSBHdC3QGqNEjvh0dooGY/XMt1CptXrbERWQasKJfCDHKRWobga0zsn1v/b+SQVGt+m4mv3B2g5yT2lql+lxdKLEp7JYdi7JAVDdlgyssNs5bhyx7a2geLw/Y3Z/phpYpx0MLNfPRiLYKd1ltYfAstc8CoLT34cna6HArv4oUjfseuWQhWB/AN5RSuIVB3SUfLWQLRCCs95PQiijhEJiJFzdD6/U0dfHxU5noscoBb56X69mers5/xMuNEhfK8teusiZPiKm3+7o2Bm9xTEEAyH/qXUzIabavqE2Em9GWckUWGu7vsiK5qNJ4+Qy/2Ysep1/7OLP5bt6zo9ajgr7RUNxd6fLnP5N+w==
+content-length: 0
+
+<> 2024-11-04T211006.200.json
+
+###
+
+# @no-cookie-jar
+PUT http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d332
+Content-Type: application/json
+Authorization: Basic T3NrYXI6T3NrYXI=
+Content-Length: 55
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
 
 {
-  "name": "Behemoth",
-  "quantity": 1,
-  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d311",
-  "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d330"
+  "name": "Stronghold",
+  "fractionType": "NEUTRAL"
 }
 
 ###
 
-PUT http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
+# @no-cookie-jar
+DELETE http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d332
+Authorization: Basic T3NrYXI6T3NrYXI=
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-11-04T210648.500.octet-stream
+
+###
+
+# @no-cookie-jar
+PUT http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d332
 Content-Type: application/json
-Content-Length: 145
+Authorization: Basic TWFyY2luOk1hcmNpbg==
+Content-Length: 55
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
 
 {
-  "name": "Behemoth",
-  "quantity": 1,
-  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d314",
-  "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d330"
+  "name": "Stronghold",
+  "fractionType": "NEUTRAL"
 }
 
-<> 2024-10-20T223852.404.html
-
 ###
 
-GET http://localhost:9080/heroes/api/units
+# @no-cookie-jar
+DELETE http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d331
+Authorization: Basic TWFyY2luOk1hcmNpbg==
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
 content-length: 0
 
-<> 2024-10-20T223254.200.json
-
 ###
 
-GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units
+# @no-cookie-jar
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d320
+Authorization: Basic TWFyY2luOk1hcmNpbg==
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
 content-length: 0
 
-<> 2024-10-20T223248.404.html
+###
+
+# @no-cookie-jar
+PUT http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d332
+Content-Type: application/json
+Authorization: Basic T3NrYXI6T3NrYXI=
+Content-Length: 55
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "Stronghold",
+  "fractionType": "NEUTRAL"
+}
+
+<> 2024-11-04T210553.500.octet-stream
+
+###
+
+# @no-cookie-jar
+PUT http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d332
+Content-Type: application/json
+Authorization: Basic T3NrYXI6T3NrYXI=
+Content-Length: 55
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "Stronghold",
+  "fractionType": "NEUTRAL"
+}
+
+<> 2024-11-04T210525.500.octet-stream
+
+###
+
+# @no-cookie-jar
+DELETE http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d332
+Authorization: Basic T3NrYXI6T3NrYXI=
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
+# @no-cookie-jar
+DELETE http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d332
+Authorization: Basic T3NrYXI6T3NrYXI=
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
+# @no-cookie-jar
+PUT http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d332
+Content-Type: application/json
+Authorization: Basic T3NrYXI6T3NrYXI=
+Content-Length: 55
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "Stronghold",
+  "fractionType": "NEUTRAL"
+}
+
+<> 2024-11-04T210442.500.octet-stream
+
+###
+
+# @no-cookie-jar
+PUT http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d332
+Content-Type: application/json
+Authorization: Basic T3NrYXI6T3NrYXI=
+Content-Length: 55
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "Stronghold",
+  "fractionType": "NEUTRAL"
+}
+
+<> 2024-11-04T210340.500.octet-stream
 
 ###
 

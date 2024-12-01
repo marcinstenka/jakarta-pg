@@ -18,12 +18,13 @@ GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d315
 
 # Put user
 
-PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d314
+PUT http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d315
 Content-Type: application/json
 
 {
   "name": "Blazej",
-  "accountCreation": "2012-04-23"
+  "accountCreation": "2012-04-23",
+  "password": "Blazej"
 }
 
 ###
@@ -84,71 +85,10 @@ Content-Disposition: form-data; name="avatar"; filename="solmyr.png"
 
 ###
 
-# Get all units
-
-GET http://localhost:9080/heroes/api/units
-
-###
-
-# Get single unit
-
-GET http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
-
-###
-
-# Get user units
-
-GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d311/units/
-
-###
-
-# Put unit
-
-PUT http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
-Content-Type: application/json
-
-{
-  "name": "Behemoth",
-  "quantity": 1,
-  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d311",
-  "fraction": "d9f823f4-f057-4f18-aeb7-b6654bc3d331"
-}
-
-###
-
-# Patch unit
-
-PATCH http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
-Content-Type: application/json
-
-{
-  "name": "Ancient Behemoth",
-  "quantity": "2"
-}
-
-###
-
-# Update user avatar.
-
-PATCH http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
-Content-Type: application/json
-
-{
-  "name": "Griffin",
-  "quantity": 20
-}
-
-###
-
-# Delete unit
-
-DELETE http://localhost:9080/heroes/api/units/d9f823f4-f057-4f18-aeb7-b6654bc3d323
-
-###
-
 # Get all fractions
 
 GET http://localhost:9080/heroes/api/fractions/
+Authorization: Basic T3NrYXI6T3NrYXI=
 
 ###
 
@@ -165,9 +105,10 @@ GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d
 ###
 
 # Put fraction
-
+// @no-cookie-jar
 PUT http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d332
 Content-Type: application/json
+Authorization: Basic T3NrYXI6T3NrYXI=
 
 {
   "name": "Stronghold",
@@ -177,7 +118,62 @@ Content-Type: application/json
 ###
 
 # Delete fraction
+// @no-cookie-jar
+DELETE http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d332
+Authorization: Basic T3NrYXI6T3NrYXI=
+###
 
-DELETE http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330
+# Get all units
+// @no-cookie-jar
+GET http://localhost:9080/heroes/api/units
+Authorization: Basic TWFyY2luOk1hcmNpbg==
+###
+
+# Get single unit
+// @no-cookie-jar
+GET http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d321
+Authorization: Basic T3NrYXI6T3NrYXI=
+###
+
+# Get user units
+
+GET http://localhost:9080/heroes/api/users/d9f823f4-f057-4f18-aeb7-b6654bc3d311/units/
 
 ###
+
+# Put unit
+// @no-cookie-jar
+PUT http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d325
+Content-Type: application/json
+Authorization: Basic T3NrYXI6T3NrYXI=
+
+{
+  "name": "Behemoth",
+  "quantity": 1,
+  "user": "d9f823f4-f057-4f18-aeb7-b6654bc3d311"
+}
+
+###
+
+# Patch unit
+
+PATCH http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d324
+Content-Type: application/json
+
+{
+  "name": "Ancient Behemoth",
+  "quantity": "2"
+}
+
+###
+
+# Delete unit
+// @no-cookie-jar
+DELETE http://localhost:9080/heroes/api/fractions/d9f823f4-f057-4f18-aeb7-b6654bc3d330/units/d9f823f4-f057-4f18-aeb7-b6654bc3d324
+Authorization: Basic T3NrYXI6T3NrYXI=
+###
+
+admin-service: YWRtaW4tc2VydmljZTphZG1pbmFkbWlu
+Marcin z USER, ADMIN: TWFyY2luOk1hcmNpbg==
+Oskar z USER: T3NrYXI6T3NrYXI=
+Nowoutworzony Blazej: QmxhemVqOkJsYXplag==

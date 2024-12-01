@@ -8,7 +8,7 @@ import stenka.marcin.heroes.unit.dto.PatchUnitRequest;
 import stenka.marcin.heroes.unit.dto.PutUnitRequest;
 
 import java.util.UUID;
-
+@Path("")
 public interface UnitController {
     @GET
     @Path("/users/{id}/units")
@@ -21,6 +21,24 @@ public interface UnitController {
     GetUnitsResponse getFractionUnits(@PathParam("id") UUID id);
 
     @GET
+    @Path("/fractions/{fractionId}/units/{unitId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    GetUnitResponse getFractionUnit(@PathParam("fractionId") UUID fractionId, @PathParam("unitId") UUID unitId);
+
+    @PUT
+    @Path("/fractions/{fractionId}/units/{unitId}")
+    void putFractionUnit(@PathParam("fractionId") UUID fractionId, @PathParam("unitId") UUID unitId, PutUnitRequest request);
+
+    @PATCH
+    @Path("/fractions/{fractionId}/units/{unitId}")
+    void patchFractionUnit(@PathParam("fractionId") UUID fractionId, @PathParam("unitId") UUID unitId, PatchUnitRequest request);
+
+    @DELETE
+    @Path("/fractions/{fractionId}/units/{unitId}")
+    void deleteFractionUnit(@PathParam("fractionId") UUID fractionId, @PathParam("unitId") UUID unitId);
+
+    // Test only
+    @GET
     @Path("/units")
     @Produces(MediaType.APPLICATION_JSON)
     GetUnitsResponse getUnits();
@@ -30,16 +48,5 @@ public interface UnitController {
     @Produces(MediaType.APPLICATION_JSON)
     GetUnitResponse getUnit(@PathParam("id") UUID id);
 
-    @PUT
-    @Path("/units/{id}")
-    void putUnit(@PathParam("id") UUID id, PutUnitRequest request);
-
-    @PATCH
-    @Path("/units/{id}")
-    void patchUnit(@PathParam("id") UUID id, PatchUnitRequest request);
-
-    @DELETE
-    @Path("/units/{id}")
-    void deleteUnit(@PathParam("id") UUID id);
 
 }
