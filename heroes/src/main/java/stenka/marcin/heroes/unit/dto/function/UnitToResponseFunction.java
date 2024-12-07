@@ -12,6 +12,7 @@ public class UnitToResponseFunction implements Function<Unit, GetUnitResponse> {
                 .id(unit.getId())
                 .name(unit.getName())
                 .quantity(unit.getQuantity())
+                .version(unit.getVersion())
                 .user(GetUnitResponse.User.builder()
                         .id(unit.getUser().getId())
                         .build())

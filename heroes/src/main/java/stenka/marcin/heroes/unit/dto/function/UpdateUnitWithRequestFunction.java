@@ -14,6 +14,8 @@ public class UpdateUnitWithRequestFunction implements BiFunction<Unit, PatchUnit
                 .quantity(request.getQuantity())
                 .user(unit.getUser())
                 .fraction(unit.getFraction())
+                .version(request.getVersion())
+                .creationDateTime(unit.getCreationDateTime())
                 .build();
     }
 }

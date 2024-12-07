@@ -22,6 +22,7 @@ public class UnitToEditModelFunction implements Function<Unit, UnitEditModel>, S
                         .fractionType(unit.getFraction().getFractionType())
                         .units(unit.getFraction().getUnits())
                         .build())
+                .version(unit.getVersion())
                 .build();
     }
 }

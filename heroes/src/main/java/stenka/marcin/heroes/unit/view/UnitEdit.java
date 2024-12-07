@@ -1,11 +1,14 @@
 package stenka.marcin.heroes.unit.view;
 
 import jakarta.ejb.EJB;
+import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
+import jakarta.persistence.OptimisticLockException;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.transaction.TransactionalException;
 import lombok.Getter;
 import lombok.Setter;
 import stenka.marcin.heroes.component.ModelFunctionFactory;
@@ -32,6 +35,8 @@ public class UnitEdit implements Serializable {
 
     private FractionService fractionService;
 
+    private final FacesContext facesContext;
+
     @Setter
     @Getter
     private UUID id;
@@ -48,8 +53,9 @@ public class UnitEdit implements Serializable {
     private List<FractionModel> fractions;
 
     @Inject
-    public UnitEdit(ModelFunctionFactory factory) {
+    public UnitEdit( ModelFunctionFactory factory, FacesContext facesContext) {
         this.factory = factory;
+        this.facesContext = facesContext;
     }
 
     @EJB
@@ -73,13 +79,21 @@ public class UnitEdit implements Serializable {
         }
     }
 
-    public String saveAction() {
+    public String saveAction() throws IOException {
         if (unit.getFraction() == null || unit.getName() == null) {
             return null;
         }
-        unitService.update(factory.updateUnit().apply(unitService.find(id).orElseThrow(), unit), initialFraction);
-        String viewId = FacesContext.getCurrentInstance().getViewRoot().getViewId();
-        return viewId + "?faces-redirect=true&includeViewParams=true";
+        try {
+            unitService.update(factory.updateUnit().apply(unitService.find(id).orElseThrow(), unit), initialFraction);
+            String viewId = FacesContext.getCurrentInstance().getViewRoot().getViewId();
+            return viewId + "?faces-redirect=true&includeViewParams=true";
+        } catch (TransactionalException ex) {
+            if (ex.getCause() instanceof OptimisticLockException) {
+                init();
+                facesContext.addMessage(null, new FacesMessage("Version collision."));
+            }
+            return null;
+        }
     }
 
 }

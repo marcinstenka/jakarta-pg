@@ -13,27 +13,29 @@
         <f:loadBundle var="msg" basename="stenka.marcin.heroes.view.authentication.view.i18n.messages"/>
         <article>
             <header><h2>#{msg.create_unit}</h2></header>
-            <h:form styleClass="container" onreset="onReset()" enctype="multipart/form-data">
-
+            <h:form styleClass="container" onreset="onReset()" enctype="multipart/form-data" id="form">
+                <h:messages/>
                 <div>
                     <h:outputLabel for="name" value="#{msg.name}:" styleClass="form-label"/>
-                    <h:inputText id="name" value="#{unitCreate.unit.name}" styleClass="form-control"/>
+                    <h:inputText id="name" value="#{unitCreate.unit.name}" styleClass="form-control" required="true" binding="#{nameInput}"/>
+                    <h:message for="name"/>
                 </div>
 
                 <div>
                     <h:outputLabel for="quantity" value="#{msg.quantity}:"/>
-                    <h:inputText id="quantity" value="#{unitCreate.unit.quantity}" type="number"/>
-
+                    <h:inputText id="quantity" value="#{unitCreate.unit.quantity}" type="number" required="true" binding="#{quantityInput}"/>
+                    <h:message for="quantity"/>
                 </div>
 
                 <div>
                     <p style="margin: 5px 0">#{msg.choose_fraction}</p>
                     <ui:repeat value="#{unitCreate.fractions}" var="fraction">
                         <div class="form-check">
-                            <h:selectOneRadio id="radioId" group="fraction"
-                                              value="#{unitCreate.unit.fraction}">
+                            <h:selectOneRadio id="fraction" group="fraction"
+                                              value="#{unitCreate.unit.fraction}" required="true" binding="#{fractionInput}">
                                 <f:selectItem itemValue="#{fraction}" itemLabel="#{fraction.name}"/>
                             </h:selectOneRadio>
+                            <h:message for="fraction"/>
                         </div>
                     </ui:repeat>
                 </div>

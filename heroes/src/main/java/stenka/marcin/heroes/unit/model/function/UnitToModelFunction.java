@@ -14,6 +14,8 @@ public class UnitToModelFunction implements Function<Unit, UnitModel>, Serializa
                 .id(unit.getId())
                 .name(unit.getName())
                 .quantity(unit.getQuantity())
+                .version(unit.getVersion())
+                .creationDateTime(unit.getCreationDateTime())
                 .build();
     }
 }

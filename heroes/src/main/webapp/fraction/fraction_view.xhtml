@@ -19,12 +19,15 @@
         </header>
         <main>
             <div>
-                ${}:
+                #{msg.fraction_type}:
                 <h:outputText value="#{fractionView.fraction.fractionType}"/>
             </div>
             <div>Units:</div>
             <ui:repeat layout="unorderedList" value="#{fractionView.fraction.units}" var="unit">
                 <li style="display: flex">
+                    <h:outputText value="#{unit.creationDateTime}">
+                        <f:convertDateTime type="localDateTime" pattern="yyyy-MM-dd HH:mm"/>
+                    </h:outputText>
                     <h:link outcome="/unit/unit_view.xhtml">
                         <h:outputText value="#{unit.name}"/>
                         <f:param name="id" value="#{unit.id}"/>

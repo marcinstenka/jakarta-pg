@@ -21,4 +21,5 @@ public class PatchUnitRequest {
 
     private int quantity;
 
+    private Long version;
 }

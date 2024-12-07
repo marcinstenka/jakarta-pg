@@ -5,7 +5,9 @@ import jakarta.ejb.EJB;
 import jakarta.ejb.EJBAccessException;
 import jakarta.ejb.EJBException;
 import jakarta.inject.Inject;
+import jakarta.persistence.OptimisticLockException;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.transaction.TransactionalException;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.Response;
@@ -84,9 +86,7 @@ public class UnitRestController implements UnitController {
     public void putFractionUnit(UUID fractionId, UUID unitId, PutUnitRequest request) {
         try {
             request.setFraction(fractionId);
-            Unit unit = factory.requestToUnit().apply(unitId, request);
-            unitService.create(unit, request.getUser(), fractionId);
-
+            unitService.createForCallerPrincipal(factory.requestToUnit().apply(unitId, request));
             response.setHeader("Location", uriInfo.getBaseUriBuilder()
                     .path(UnitController.class, "getUnit")
                     .build(unitId)
@@ -100,16 +100,29 @@ public class UnitRestController implements UnitController {
             throw ex;
         } catch (NotFoundException ex) {
             throw new NotFoundException(ex.getMessage());
+        } catch (TransactionalException ex) {
+            if (ex.getCause() instanceof OptimisticLockException) {
+                throw new BadRequestException(ex.getCause());
+            }
         }
+
+
+
     }
 
     @Override
     public void patchFractionUnit(UUID fractionId, UUID unitId, PatchUnitRequest request) {
-        unitService.findByFractionAndUnit(fractionId, unitId).ifPresentOrElse(
-                entity -> unitService.update(factory.updateUnit().apply(entity, request), fractionId),
-                () -> {
-                    throw new NotFoundException("Unit not found in the specified fraction");
-                });
+        try {
+            unitService.findByFractionAndUnit(fractionId, unitId).ifPresentOrElse(
+                    entity -> unitService.update(factory.updateUnit().apply(entity, request), fractionId),
+                    () -> {
+                        throw new NotFoundException("Unit not found in the specified fraction");
+                    });
+        } catch (TransactionalException ex) {
+            if (ex.getCause() instanceof OptimisticLockException) {
+                throw new BadRequestException(ex.getCause());
+            }
+        }
     }
 
     @Override
@@ -124,7 +137,7 @@ public class UnitRestController implements UnitController {
     @RolesAllowed(UserRoles.ADMIN)
     @Override
     public GetUnitsResponse getUnits() {
-        return factory.unitsToResponse().apply(unitService.findAll());
+        return factory.unitsToResponse().apply(unitService.findAllForCallerPrincipal());
     }
 
     @Override

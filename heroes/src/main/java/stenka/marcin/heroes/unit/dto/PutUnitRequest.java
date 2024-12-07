@@ -26,4 +26,6 @@ public class PutUnitRequest {
     private UUID user;
 
     private UUID fraction;
+
+    private Long version;
 }

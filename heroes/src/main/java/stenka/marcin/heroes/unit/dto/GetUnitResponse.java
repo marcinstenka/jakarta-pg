@@ -52,4 +52,6 @@ public class GetUnitResponse {
     private User user;
 
     private Fraction fraction;
+
+    private Long version;
 }

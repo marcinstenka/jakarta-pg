@@ -14,6 +14,7 @@ import stenka.marcin.heroes.unit.entity.Unit;
 import stenka.marcin.heroes.unit.repository.api.UnitRepository;
 import stenka.marcin.heroes.user.entity.User;
 import stenka.marcin.heroes.user.entity.UserRoles;
+import stenka.marcin.heroes.user.repository.api.UserRepository;
 import stenka.marcin.heroes.user.service.UserService;
 
 import java.util.ArrayList;
@@ -27,6 +28,8 @@ import java.util.UUID;
 public class UnitService {
     private final UnitRepository unitRepository;
 
+    private final UserRepository userRepository;
+
     private final UserService userService;
 
     private final FractionService fractionService;
@@ -34,9 +37,10 @@ public class UnitService {
     private final SecurityContext securityContext;
 
     @Inject
-    public UnitService(UnitRepository unitRepository, UserService userService, FractionService fractionService,
+    public UnitService(UnitRepository unitRepository, UserRepository userRepository, UserService userService, FractionService fractionService,
                        @SuppressWarnings("CdiInjectionPointsInspection") SecurityContext securityContext) {
         this.unitRepository = unitRepository;
+        this.userRepository = userRepository;
         this.userService = userService;
         this.fractionService = fractionService;
         this.securityContext = securityContext;
@@ -60,9 +64,18 @@ public class UnitService {
         return findByFractionAndUnit(fractionId, unitId);
     }
 
+    @RolesAllowed({UserRoles.USER, UserRoles.ADMIN})
+    public List<Unit> findAllForCallerPrincipal() {
+        if (securityContext.isCallerInRole(UserRoles.ADMIN)) {
+            return unitRepository.findAll();
+        }
+        User user = userRepository.findByName(securityContext.getCallerPrincipal().getName()).orElseThrow(IllegalStateException::new);
+        return findAll(user);
+    }
+
     @RolesAllowed(UserRoles.USER)
-    public List<Unit> findAll() {
-        return unitRepository.findAll();
+    public List<Unit> findAll(User user) {
+        return unitRepository.findAllByUser(user);
     }
 
 
@@ -125,6 +138,13 @@ public class UnitService {
         userService.update(user);
         fractionService.update(newFraction);
         unitRepository.update(unit);
+    }
+
+    @RolesAllowed(UserRoles.USER)
+    public void createForCallerPrincipal(Unit unit) {
+        User user = userRepository.findByName(securityContext.getCallerPrincipal().getName()).orElseThrow(IllegalStateException::new);
+        unit.setUser(user);
+        unitRepository.create(unit);
     }
 
     @RolesAllowed(UserRoles.USER)

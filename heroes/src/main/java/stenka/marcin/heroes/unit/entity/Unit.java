@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
+import stenka.marcin.heroes.entity.VersionAndCreationDateAuditable;
 import stenka.marcin.heroes.fraction.entity.Fraction;
 import stenka.marcin.heroes.user.entity.User;
 
@@ -20,11 +21,11 @@ import java.util.UUID;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-@ToString(callSuper = true)
-@EqualsAndHashCode(exclude = "fraction")
+@ToString()
+@EqualsAndHashCode(callSuper = false)
 @Entity
-@Table(name = "units")
-public class Unit implements Serializable {
+@Table(name="units")
+public class Unit extends VersionAndCreationDateAuditable implements Serializable {
     @Id
     private UUID id;
 
@@ -33,10 +34,23 @@ public class Unit implements Serializable {
     private int quantity;
 
     @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @ManyToOne(fetch = FetchType.LAZY)
     private Fraction fraction;
 
     @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
+
+    @Override
+    public void updateCreationDateTime()
+    {
+        super.updateCreationDateTime();
+    }
+    @Override
+    public void updateEditDateTime()
+    {
+        super.updateEditDateTime();
+    }
 }

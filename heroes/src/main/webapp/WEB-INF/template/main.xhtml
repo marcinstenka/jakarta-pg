@@ -39,6 +39,9 @@
                 <li>
                     <h:link outcome="/unit/unit_create.xhtml">#{messages['nav.add_unit']}</h:link>
                 </li>
+                <li>
+                    <h:link outcome="/unit/unit_list.xhtml">#{messages['nav.list_unit']}</h:link>
+                </li>
                 <h:panelGroup rendered="#{facesContext.externalContext.isUserInRole('admin')}">
                     <li class="nav-item">
                         <h:link styleClass="nav-link"

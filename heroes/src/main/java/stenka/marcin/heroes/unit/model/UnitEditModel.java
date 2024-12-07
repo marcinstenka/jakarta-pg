@@ -19,4 +19,6 @@ public class UnitEditModel {
     private User user;
 
     private FractionModel fraction;
+
+    private Long version;
 }

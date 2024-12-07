@@ -1,15 +1,8 @@
-package stenka.marcin.heroes.unit.dto;
+package stenka.marcin.heroes.unit.model;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.Singular;
-import lombok.ToString;
+import lombok.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -20,8 +13,7 @@ import java.util.UUID;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @ToString
 @EqualsAndHashCode
-
-public class GetUnitsResponse {
+public class UnitsModel {
 
     @Getter
     @Setter
@@ -31,15 +23,16 @@ public class GetUnitsResponse {
     @ToString
     @EqualsAndHashCode
     public static class Unit {
+
         private UUID id;
-
-        private String name;
-
         private int quantity;
+        private String name;
+        private Long version;
+        private LocalDateTime creationDateTime;
+        private LocalDateTime modifiedDateTime;
     }
 
     @Singular
     private List<Unit> units;
 
-    private Long version;
 }

@@ -9,6 +9,7 @@ import stenka.marcin.heroes.unit.dto.function.UpdateUnitWithModelFunction;
 import stenka.marcin.heroes.unit.model.function.ModelToUnitFunction;
 import stenka.marcin.heroes.unit.model.function.UnitToEditModelFunction;
 import stenka.marcin.heroes.unit.model.function.UnitToModelFunction;
+import stenka.marcin.heroes.unit.model.function.UnitsToModelFunction;
 import stenka.marcin.heroes.user.model.function.UserToModelFunction;
 import stenka.marcin.heroes.user.model.function.UsersToModelFunction;
 
@@ -35,6 +36,10 @@ public class ModelFunctionFactory {
         return new UnitToModelFunction();
     }
 
+    public UnitsToModelFunction unitsToModel(){
+        return new UnitsToModelFunction();
+    }
+    
     public UnitToEditModelFunction unitToEditModel() {
         return new UnitToEditModelFunction();
     }
