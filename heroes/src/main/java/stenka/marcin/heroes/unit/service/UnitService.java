@@ -109,10 +109,10 @@ public class UnitService {
 
     @RolesAllowed(UserRoles.USER)
     public void update(Unit unit, UUID initialFraction) {
-        checkAdminRoleOrOwner(unitRepository.find(unit.getId()));
+        Unit existingUnit = unitRepository.find(unit.getId())
+                .orElseThrow(() -> new NotFoundException("Unit not found: " + unit.getId()));
 
-        User user = userService.find(unit.getUser().getId())
-                .orElseThrow(() -> new NotFoundException("User not found: " + unit.getUser().getId()));
+        checkAdminRoleOrOwner(Optional.of(existingUnit));
 
         Fraction newFraction = fractionService.find(unit.getFraction().getId())
                 .orElseThrow(() -> new NotFoundException("Fraction not found: " + unit.getFraction().getId()));
@@ -121,24 +121,20 @@ public class UnitService {
             Fraction oldFraction = fractionService.find(initialFraction)
                     .orElseThrow(() -> new NotFoundException("Initial fraction not found: " + initialFraction));
 
-            oldFraction.getUnits().removeIf(oldFractionUnit -> oldFractionUnit.getId().equals(unit.getId()));
+            oldFraction.getUnits().removeIf(f -> f.getId().equals(existingUnit.getId()));
             fractionService.update(oldFraction);
         }
 
-        boolean userUnitUpdated = user.getUnits().removeIf(userUnit -> userUnit.getId().equals(unit.getId()));
-        if (userUnitUpdated) {
-            user.getUnits().add(unit);
-        } else {
-            throw new NotFoundException("Unit not found in user's units: " + unit.getId());
-        }
+        existingUnit.setName(unit.getName());
+        existingUnit.setQuantity(unit.getQuantity());
+        existingUnit.setFraction(newFraction);
 
-        newFraction.getUnits().removeIf(fractionUnit -> fractionUnit.getId().equals(unit.getId()));
-        newFraction.getUnits().add(unit);
-
-        userService.update(user);
+        userService.update(existingUnit.getUser());
         fractionService.update(newFraction);
-        unitRepository.update(unit);
+
+        unitRepository.update(existingUnit);
     }
+
 
     @RolesAllowed(UserRoles.USER)
     public void createForCallerPrincipal(Unit unit) {

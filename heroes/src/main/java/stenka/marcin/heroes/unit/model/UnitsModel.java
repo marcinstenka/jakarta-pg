@@ -25,10 +25,15 @@ public class UnitsModel {
     public static class Unit {
 
         private UUID id;
+
         private int quantity;
+
         private String name;
+
         private Long version;
+
         private LocalDateTime creationDateTime;
+
         private LocalDateTime modifiedDateTime;
     }
 
